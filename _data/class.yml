@@ -1,25 +1,20 @@
 instructor: 
-  name: Andrew Christensen
-  email: achrist3@illinois.edu
-  office: 2019 NCSA Building
-  office_hours: Thursday 10AM - 12noon
+  name: Jill P. Naiman
+  email: jnaiman@illinois.edu
+  office: 2040 NCSA Building
+  office_hours: TBD
 tas:
   -
-    name: Arjitha Balaji
-    email: arjitha2@illinois.edu
-    office: TBA
-    office_hours: TBA
-  - 
-    name: Krishna Shanker-Rajhan
-    email: gs10@illinois.edu
+    name: Ming Jiang
+    email: mjiang17@illinois.edu
     office: TBA
     office_hours: TBA
 course:
   name: Data Visualization
-  number: LIS590DV
+  number: LIS590DVO
   semester: Spring 2019
-  location: 126 iSchool
-  time: Monday, 9-11:50AM
+  location: online
+  time: Thursday, 5:30-7:30pm
   credit_hours: 4
 urls:
   -
@@ -30,4 +25,4 @@ urls:
     url: https://is590dv-spring2019.slack.com/
   - 
     name: Moodle
-    url: https://courses.ischool.illinois.edu/course/view.php?id=3487
+    url: https://courses.ischool.illinois.edu/course/view.php?id=3644
