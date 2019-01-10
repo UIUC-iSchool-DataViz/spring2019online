@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Lecture 7</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+<!-- Printing and PDF exports -->
+<script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ?  '/revealjs/css/print/pdf.css' : '/revealjs/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+
+
+<style type="text/css">
+.reveal section.present {
+  text-align: left;
+}
+.centered {
+  text-align: center;
+}
+.reveal {
+  font-size: 30px;
+  font-family: 'Questrial', sans-serif;
+}
+.reveal section img {
+  box-shadow: none;
+  border: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reveal bigtext {
+  font-size: 800%;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  text-transform: none;
+}
+
+.reveal .titleslide h1 {
+  text-align: center;
+}
+.reveal .titleslide h2 {
+  text-align: right;
+}
+
+.vertical_center section {
+  vertical-align: middle;
+}
+
+.left_abs {
+  left:0%;
+  text-align: left;
+  float: left;
+  width:50%;
+  z-index:-10;
+}
+
+.left {
+  left:-8.33%;
+  text-align: left;
+  float: left;
+  width:50%;
+  z-index:-10;
+}
+
+.right {
+  left:31.25%;
+  top: 75px;
+  float: right;
+  text-align: right;
+  z-index:-10;
+  width:50%;
+}
+
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border: solid; 
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: solid; }
+
+.reveal .table-hl {
+  background: #aaa;
+}
+
+</style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown
+           data-separator="^\n---\n"
+           data-separator-vertical="^\n----\n"
+           data-separator-notes="notes?:"
+           >
+          <script type="text/template">
+<!-- .slide: class="titleslide" -->
+
+# Data Visualization
+<div style="height: 6.0em;"></div>
+## Matthew Turk
+## Fall 2018
+## Lecture 7
+
+---
+
+## Warm-Up Activity
+
+1. What is the visualization trying to show?
+1. What are its methods?
+1. What are the strengths / weaknesses?
+
+
+ * https://www.vox.com/platform/amp/policy-and-politics/2018/9/28/17914308/kavanaugh-ford-question-dodge-hearing-chart
+
+---
+
+## This Week
+
+ * Interactivity
+ * Some more bqplot
+ * Lab work
+
+---
+
+## Interactivity
+
+This week, we'll talk about some basics principles of interactivity in
+visualization.
+
+What do you think of when you think of interactive visualizations?
+
+---
+
+## Interactivity: Parameters
+
+<!-- .slide: data-background-image="images/brushlink_01.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+ * Point characteristics
+ * Axis limits/bounds
+ * Transform/scale
+
+---
+
+## Interactivity: Parameters
+
+<!-- .slide: data-background-image="images/brushlink_01.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+ * Click-and-drag
+ * Rectangle zoom
+ * Adjustment
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_02.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_02.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`filter( variable2 > variable1 )`
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_03.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`filter( variable2 > variable1 )`
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_04.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`filter( variable2 > variable1 )`
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_05.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_06.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_07.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+---
+
+<iframe width="1024" height="576"
+src="https://www.youtube.com/embed/B7XoW2qiFUA" frameborder="0"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+---
+
+## Implementing This
+
+Two main approaches to the selection process:
+
+ * Concurrent filtering
+ * Index-based selection
+
+What are the pros and cons of each?
+
+What are methods of showing "linked" and "brushed" data if you have:
+
+ * Scatter plot
+ * Histogram
+ * Field / image plot
+
+---
+
+## More bqplot
+
+Today, we return to bqplot to explore interactivity.
+
+Recall that with bqplot, we construct a set of objects that are related:
+
+ * Scales
+ * Axes
+ * Marks
+ * Figures
+ * Interactions
+
+---
+
+## Scales
+
+We have dealt primarily with quantitative scales.  bqplot provides several
+scales we can utilize:
+
+ * `LogScale`
+ * `LinearScale`
+ * `DateScale`
+ * `OrdinalScale`
+ * `ColorScale`
+ * A few more as well.
+
+([documentation](https://bqplot.readthedocs.io/en/latest/_generate/bqplot.scales.Scale.html))
+
+---
+
+## Marks
+
+bqplot has several different marks we can explore.  We will utilize a few more
+today:
+
+ * `HeatMap`
+ * `GridHeatMap`
+ * `Bars`
+ * `Graph`
+
+([documentation](https://bqplot.readthedocs.io/en/latest/_generate/bqplot.marks.Mark.html))
+
+---
+
+## bqplot interaction
+
+As noted in the previous class, bqplot widgets are all based on ipywidgets.  This
+means we use the same systems for describing the two.
+
+We add an interaction to a given figure via the `interaction` keyword argument
+to a figure.
+
+---
+
+## bqplot interactors
+
+We will be able to use these different interaction methods:
+
+ * `FastIntervalSelector`
+ * `IndexSelector`
+ * `BrushIntervalSelector` & `BrushSelector`
+ * `MultiSelector` 
+ * `LassoSelector`
+ * `HandDraw`
+ * `PanZoom`
+ * `Tooltip`
+
+---
+
+## Last Week's Assignment
+
+Your assignment from last week was:
+
+ * Using traitlets, widgets and bqplot, build a notebook that:
+   1. Uses the UFO datasets
+   2. Allows changing the x and y fields on a scatter plot from the UFO dataset
+   3. Displays tooltips when hovering over individual items
+ * Build a second widget that displays binned, aggregate values where you can change:
+   1. The field to "bin"
+   2. The method of aggregation (sum, mean, min, max, count)
+   3. The number of bins
+
+---
+
+## Today's Lab
+
+ * No more than one computer per three people.
+ * Starting with your notebook, we will progressively enhance.
+ * Create heat maps of the sightings
+ * Select based on states (do not use map marks yet)
+ * Manually create "bins" for aggregation
+ * Use different scales for dates, times, locations
+
+---
+
+## Assignment 4
+
+ * Build a dashboard for the buildings data.
+ * Left component:
+    * Grid heat map
+    * Rows are congressional district
+    * Columns are the governmental department
+    * Values are sum of total square footage for that set of criteria
+ * Right component:
+    * line plot
+    * x is the year
+    * y is total square footage *acquired* that year
+ * These two should be *linked* so that you can select cells and that will
+   update the square footage plot.
+ * Things to think about:
+    * Can you keep the x and y ranges static on the line plot?
+    * Can you change the style?
+
+          </script>
+        </section>
+      </div>
+    </div>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.min.js', async: true },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '/reveal.js-plugins/chalkboard/chalkboard.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/math/math.min.js', async: true }
+        ],
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+		},
+        center: false,
+        transition: 'none',
+        backgroundTransition: 'none',
+        showNotes: true,
+        progress: false,
+    });
+</script>
+  </body>
+</html>
+

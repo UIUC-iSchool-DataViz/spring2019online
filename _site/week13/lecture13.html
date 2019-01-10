@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Lecture 13</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+<!-- Printing and PDF exports -->
+<script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ?  '/revealjs/css/print/pdf.css' : '/revealjs/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.3.1/vega-lite.min.js"></script>
+
+
+<style type="text/css">
+.reveal section.present {
+  text-align: left;
+}
+.centered {
+  text-align: center;
+}
+.reveal {
+  font-size: 30px;
+  font-family: 'Questrial', sans-serif;
+}
+.reveal section img {
+  box-shadow: none;
+  border: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.reveal bigtext {
+  font-size: 800%;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  text-transform: none;
+}
+
+.reveal .titleslide h1 {
+  text-align: center;
+}
+.reveal .titleslide h2 {
+  text-align: right;
+}
+
+.vertical_center section {
+  vertical-align: middle;
+}
+
+.left_abs {
+  left:0%;
+  text-align: left;
+  float: left;
+  width:50%;
+  z-index:-10;
+}
+
+.left {
+  left:-8.33%;
+  text-align: left;
+  float: left;
+  width:50%;
+  z-index:-10;
+}
+
+.right {
+  left:31.25%;
+  top: 75px;
+  float: right;
+  text-align: right;
+  z-index:-10;
+  width:50%;
+}
+
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border: solid; 
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: solid; }
+
+.reveal .table-hl {
+  background: #aaa;
+}
+
+</style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown
+           data-separator="^\n---\n"
+           data-separator-vertical="^\n----\n"
+           data-separator-notes="notes?:"
+           >
+          <script type="text/template">
+<!-- .slide: class="titleslide" -->
+
+# Data Visualization
+<div style="height: 6.0em;"></div>
+## Matthew Turk
+## Fall 2018
+## Lecture 13
+
+---
+
+## Warm-Up Activity
+
+ 1. What is the visualization trying to show?
+ 1. What are its methods?
+ 1. What are the strengths / weaknesses?
+
+http://scienceofhiv.org/
+
+---
+
+## Today
+
+ * Final Project Update
+ * Really big data
+ * Data Scavenger Hunt
+
+---
+
+## Next Week
+
+ * Next week, you will present.
+ * Each group will have up to 10 minutes.
+ * You should present your final product first, whatever form it takes.
+ * Walk us back through to the beginning, and why you chose the dataset.
+
+---
+
+## Really Big Data
+
+How do we deal with data that is too large to fit into memory?
+
+ * Can we cycle our operations?
+ * Can we use tools to cycle operations?
+
+---
+
+## Operations
+
+Some operations we can manually cycle through, storing only reductions in
+memory rather than the full dataset.
+
+Clear candidates:
+
+ * Mean
+ * Extrema
+ * Histograms and "binning"
+
+Is this the same as incremental updates to a dataset?
+
+(What about the median?)
+
+---
+
+## Tools
+
+ * yt
+ * dask
+ * domain-specific tools
+
+---
+
+## Data Scavenger Hunt
+
+ * Count off into groups
+ * We will work on one dataset at a time
+   * Load the dataset into an editor or notebook
+   * Prototype a visualization of that dataset by hand
+   * Develop a visualization
+   * Keep track of iterations on the visualization
+ * Two datasets:
+   * WDI
+   * Names
+ * Thirty minutes for each dataset, ten minutes of presentation after
+
+
+          </script>
+        </section>
+      </div>
+    </div>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.min.js', async: true },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '/reveal.js-plugins/chalkboard/chalkboard.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/math/math.min.js', async: true }
+        ],
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+		},
+        center: false,
+        transition: 'none',
+        backgroundTransition: 'none',
+        showNotes: true,
+        progress: false,
+    });
+</script>
+  </body>
+</html>
+

@@ -1,0 +1,33 @@
+instructor: 
+  name: Andrew Christensen
+  email: achrist3@illinois.edu
+  office: 2019 NCSA Building
+  office_hours: Thursday 10AM - 12noon
+tas:
+  -
+    name: Arjitha Balaji
+    email: arjitha2@illinois.edu
+    office: TBA
+    office_hours: TBA
+  - 
+    name: Krishna Shanker-Rajhan
+    email: gs10@illinois.edu
+    office: TBA
+    office_hours: TBA
+course:
+  name: Data Visualization
+  number: LIS590DV
+  semester: Spring 2019
+  location: 126 iSchool
+  time: Monday, 9-11:50AM
+  credit_hours: 4
+urls:
+  -
+    name: Jupyterhub
+    url: https://jupyterhub.ischool.illinois.edu/
+  -
+    name: Slack
+    url: https://is590dv-spring2019.slack.com/
+  - 
+    name: Moodle
+    url: https://courses.ischool.illinois.edu/course/view.php?id=3487
