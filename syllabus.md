@@ -76,8 +76,7 @@ suggested readings.
 
 # About Your Instructor
 
-AJ Christensen is a Visualization Researcher in the Advanced Visualization Lab at the National Center for Supercomputing Applications. His background is in computer science and filmmaking, and he has credits in many science documentary films. His visualization research tasks include reading, processing, and designing 3D numerical scientific simulations for non-expert audiences in immersive theaters.
-
+Jill Naiman's background is in theoretical and computational astrophysics with a current research emphasis on scientific data visualization.  She is currently a Visiting Scholar at the Advanced Visualization Lab at the National Center for Supercomputing Applications.  She is currently involved in projects related to increasing access to industry-standard special effects software for scientists - more info can be found <a href="http://ytini.com">here</a> and <a href="http://astroblend.com">here</a>.  Information about her astrophysical research and outreach efforts can be found <a href="http://astronaiman.com">here</a>.
 
 # Library Resources
 | http://www.library.illinois.edu/lis/
@@ -218,20 +217,20 @@ course outline below is subject to some flexibilty; students will be encouraged
 to provide feedback on the topics covered, particularly toward the end.  Topics
 that are of particular interest will be emphasized.
 
- * Week 1 (Jan 14): Introduction, syllabus, examples, and some basics
- * Week 2 (Jan 28): Operational palette, structured python, and files
- * Week 3 (Feb 4): Quantitative plots, plot components
- * Week 4 (Feb 11): Histograms and distributions
- * Week 5 (Feb 18): R and ggplot
- * Week 6 (Feb 25): Images: color, colormaps
- * Week 7 (Mar 4): Comparisons between datasets
- * Week 8 (Mar 11): Comparisons between different datasets
- * Week 9 (Mar 25): Network visualization
- * Week 10 (Apr 1): Principles of interactive visualization
- * Week 11 (Apr 8): Interactive visualization with Python
- * Week 12 (Apr 15): Scientific visualization
- * Week 13 (Apr 22): Advanced topics
- * Week 14 (Apr 29): Group presentations
+ * Week 1 (Jan 17): Introduction, syllabus, examples, and some basics
+ * Week 2 (Jan 24): Operational palette, structured python, and files
+ * Week 3 (Jan 31): Quantitative plots, plot components
+ * Week 4 (Feb 7): Histograms and distributions
+ * Week 5 (Feb 14): R and ggplot
+ * Week 6 (Feb 21): Images: color, colormaps
+ * Week 7 (Feb 28): Comparisons between datasets
+ * Week 8 (Mar 7): Comparisons between different datasets
+ * Week 9 (Mar 14): Network visualization
+ * Week 10 (Mar 28): Principles of interactive visualization
+ * Week 11 (Apr 4): Interactive visualization with Python
+ * Week 12 (Apr 11): Scientific visualization
+ * Week 13 (Apr 18): Advanced topics
+ * Week 14 (Apr 25): Advanced topics
 
 ## Emergency Response: Run, Hide, Fight
 
