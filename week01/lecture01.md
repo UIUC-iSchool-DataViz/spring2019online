@@ -6,32 +6,54 @@ layout: lecture
 
 # Data Visualization
 <div style="height: 6.0em;"></div>
-## Matthew Turk
-## Fall 2018
+## Jill P. Naiman
+## Spring 2019
 
 ---
 <!-- .slide: class="vertical_center" -->
 ## Basics
 
-10AM-12:50PM Wednesdays, 2101 Everitt Elec & Comp Engr Lab
+5:30-7:30PM Thursdays, Online
 
-Matthew Turk - `mjturk@illinois.edu`
-Office Hours: Friday 2-4, LIS 222
+Jill Naiman - `jnaiman@illinois.edu`
+Office Hours: Wednesday 2-4, NCSA 2040 (Room may change) & Online
 
-TA Si Chen - `sichen12@illinois.edu`
+Ming Jiang - `mjiang17@illinois.edu`
+Office Hours: Monday 10-12, Room TBD
 
-https://uiuc-ischool-dataviz.github.io/fall2018/
+https://uiuc-ischool-dataviz.github.io/spring2019online/
+
+---
+## Moodle & Blackboard Collaborate
+
+Features of Blackboard:
+* Share applications/screens
+* Share whiteboard
+* Chat window
+* Mic & Video buttons
 
 ---
 
-## Timed activity!
+## Moodle & Blackboard Collaborate
 
-On a piece of paper:
+* Test 1: Microphones & Cameras
+* Test 2: Writing in the online chat
+* Test 3: Raising & lowering hands - also: pinging in the chat window works too!
+
+Moodle - where the assignments will be posted
+
+https://uiuc-ischool-dataviz.github.io/spring2019online/ - where lecture slides & general course info will live.
+
+---
+
+## Timed activity! (~3 minutes)
+
+On a piece of paper or in notes on your computer:
 
 * What are the most memorable movies you saw over the last year?
 * Do you prefer cats or dogs?
 * How would you quantify your experience in visualization?
-* How many people are at each table in this classroom?
+* How many hours do you spend online in classes each week?
 
 notes:
 We're going to use these pieces of data to explore how we might approach
@@ -44,9 +66,17 @@ about these types of data, and how we approach visualizing them.
 
 ---
 
-Break into groups based on your numbers, and visualize the results by whatever method you choose: by hand, by computer, or otherwise.
+## Breakout Groups: We will use these minimally
 
-Affix to or inscribe upon your sheet of paper.
+### Breakout Group 1:
+
+Break into online chat groups, and visualize the results: can use the *whiteboard* or
+in a program of your choosing. Remember to screen shot your visualizations to share
+in Breakout Group 2.
+
+### Breakout Group 2:
+Discuss
+
 
 notes:
 Don't get used to sitting in the same seat in this room!  We're going to move
@@ -530,6 +560,12 @@ and context, see his page http://www-personal.umich.edu/~mejn/election/2008/ .
  * [Map 3](http://www-personal.umich.edu/~mejn/election/2008/countymapredbluer1024.png)
  * [Map 4](http://www-personal.umich.edu/~mejn/election/2008/countymappurpler1024.png)
  * [Map 5](http://www-personal.umich.edu/~mejn/election/2008/countycartpurple1024.png)
+
+---
+
+## Getting started in Python
+
+*Open up Python & get started coding!*
 
 ---
 
