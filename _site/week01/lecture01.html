@@ -139,6 +139,26 @@ notes: go through website!!
 
 ---
 
+<img src="images/map_to_ncsa.png" alt="drawing" width="700"/>
+
+---
+
+# Terminology
+
+ * Visualization
+ * Information Visualization
+ * Scientific Visualization
+ * Simulation
+ * Illustration
+ * Scientific Illustration
+
+notes:
+visualization goes back to cave men painting star-tracking imagery during the Pleistocene Era
+
+illustration can be motivated by experts as well, but it can be problematic when an audience thinks it's real - which can be especially problematic when the presentation is so well done that it looks photographic.
+
+---
+
 ## Questions:
 
 * Who are you?
@@ -159,6 +179,60 @@ notes: go through website!!
 
 <!--![](images/intro_naiman1.png =0.1x)-->
 <img src="images/intro_naiman1.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+
+<img src="images/intro_naiman2.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+
+<img src="images/intro_naiman3.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+
+<img src="images/intro_naiman4.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman5.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman6.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman7.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman8.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
 
 ---
 
@@ -185,7 +259,7 @@ https://uiuc-ischool-dataviz.github.io/spring2019online/ - where lecture slides 
 
 ---
 
-## Timed activity! (~3 minutes)
+## Timed activity! (~2 minutes)
 
 On a piece of paper or in notes on your computer:
 
@@ -242,18 +316,11 @@ people are.
 
 There are no hard and fast "right" or "wrong" answers at this point, so don't worry!
 
-
 ---
 
-## Intake Survey
+## Download Anaconda!
 
-https://goo.gl/forms/62zaYT4PBiMYBQvw2
-
-notes:
-This survey will help guide the level of instruction during the course.
-Although we will be going over many of these topics, by knowing how well you
-are already acquainted with them I can guide the instruction to greater or
-lesser detail.
+[anaconda.com/download](anaconda.com/download)
 
 ---
 
@@ -264,7 +331,7 @@ lesser detail.
  * Week 3 (Jan 31): Quantitative plots, plot components
  * Week 4 (Feb 7): Histograms and distributions
  * Week 5 (Feb 14): R and ggplot
- * Week 6 (Feb 21): Images: color, colormaps
+ * Week 6 (Feb 21): Images, color, colormaps
  * Week 7 (Feb 28): Comparisons between datasets
 
 notes:
@@ -298,8 +365,9 @@ more group work and collaboration than the preceding assignments.
 
 # Class Mission
 
-Your role as a _consumer_ of visualizations should change to also include the
-perspective of a _producer_ of visualizations.
+While you are already a _consumer_ of visualizations, your
+perspective should change to that of a _producer_ of visualizations.
+You should be comfortable reading AND writing imagery.
 
 notes:
 We will be discussing this as the semester goes on, but the principal outcome I
@@ -319,8 +387,8 @@ consuming information visually.
    filterings, and other operations.
  * I want you to know _some_ of the packages that are out there to visualize
    data.  These will mostly be Python-based, with a couple in Javascript.
- * You won't learn how to use dashboarding software in detail.  Instead, we
-   will talk about the different operations that go into dashboarding software.
+ * You won't learn how to use dashboarding software (e.g. Tableau) in detail. Instead, we
+   will focus on the different operations that go into dashboarding software.
  * By the end of the course, you will have had the opportunity to look at and
    build visualizations in several different domains and understand how to
    interpret, critique and improve them.
@@ -344,14 +412,11 @@ get in the way of the underlying meaning?
 
 ## Structure of Class
 
- * Topic introduction and lecture (60-90 minutes)
+ * Topic introduction and lecture (~60 minutes)
  * Hands-on, collaborative coding
  * Wrap-up
 
-You will each be assigned to a group to do collective note-taking.  The day
-before class each week, you will be notified that you will be taking notes the
-next day and you will be provided the link to a collaborative document.
-Following the lecture, your notes will be added to the course website.
+(Today will be a little lecture heavy)
 
 notes:
 This structure will likely be deviated from during the course, but in general
@@ -369,7 +434,7 @@ simply be a "performance" of coding, but instead an opportunity to learn.
 ## Grading
 
  * 70% Weekly assignments in prose or code form
- * 30% Final project
+ * 30% Final project - which will essentially be a 3-part HW assignment
 
 notes:
 Your weekly assignments will take different forms.  The first assignment will
@@ -411,7 +476,7 @@ your own.  Always cite, and be reasonable in what you utilize.
 ## Our tools
 
  * Python, with some R and Javascript along the way
- * Jupyter and Jupyter notebooks on a Jupyterhub, with nbgrader
+ * Jupyter and Jupyter notebooks (maybe on a Jupyterhub)
  * The occasional usage of a shell such as bash
  * Once in a while some git, and GitHub
  * Slack
@@ -422,6 +487,8 @@ Javascript.  Your projects may be turned in via git.  We will also utilize
 Slack for class communication.
 
 ---
+
+## Jupyterhub when it is working...
 
 ![](images/jh_arch.svg)
 
@@ -436,10 +503,12 @@ the iSchool.
 
  * [jupyterhub.ischool.illinois.edu](https://jupyterhub.ischool.illinois.edu/)
  * Please store your notebooks on- and off-site
- * Submissions will be via `nbgrader`
- * Data will be available at `/home/shared/spr18-is590dv/data/`
- * Previous lectures will be in `/home/shared/spr18-is590dv/fall2018/`
+<!-- * Submissions will be via `nbgrader`-->
+<!-- * Data will be available at `/home/shared/spr18-is590dv/data/`-->
+<!-- * Previous lectures will be in `/home/shared/spr18-is590dv/fall2018/`-->
  * You will have access to conda, etc, but I may rebuild images to add packages.
+ * There will be shared data directories, but again, this depends on jupyterhub
+ being online.
 
 notes:
 It is possible that your JupyterHub instance may be lost -- don't store mission
@@ -449,37 +518,31 @@ that.
 
 ---
 
-## Assignment Flow
-
-![](images/assignment_flow.png)
-
- 1. Instructor "releases" an assignment
- 1. Assignment appears in student "Assignments" tab
- 1. Students "fetch" assignment, which copies it to their work directory
- 1. When done, students "submit" assignment, which copies it to the
-    instructor’s inbox
- 1. Grades and feedback will be posted on Moodle.
-
-notes:
-We will be using `nbgrader` for notebook grading.  This will in general allow
-you the opportunity to see *most* of the results of your grade prior to
-submission.
-
----
-
 ## Slack
 
- * Team is at `lis590dv-fall2018.slack.com`
+We will be sharing a slack channel with the in-person class, so feel free to
+converse with them as well!
+
+ * Team channel at `https://is590dv-spring2019.slack.com`
    * `#general` : General announcements
    * `#assignments` : Help with assignments
    * `#help` : General help with Python, Javascript, visualization, etc
-   * `#lectures` : During lectures, post links, comments, questions here
+   * `#_classroom-lectures` : Folks in the live lecture will post questions here during class
+   * `#online_specific_chat` : Can be used to ask online specific questions, but all "in class"
+   questions should be posted in the Blackboard Collaborate chat, or asked over a mic
+
+---
+
+## Slack (cont)
+
  * Use the `@` sign appropriately: `@[person]`, `@here`, `@channel`
  * Web client, standalone client and mobile devices can access this team.
  * At the end of the semester, the team will be discontinued.
  * Please think carefully before direct messaging if you could ask in a public
    forum instead.
  * Conduct will be held to same standards as any educational venue.
+
+As always, you can also post questions to the Moodle forum as well.
 
 notes:
 Please use slack as much as you need!  You can use it to share items and
@@ -490,10 +553,10 @@ feedback.  However, please do behave in a professional fashion.
 
 ## Github
 
- * Course repo is at [UIUC-iSchool-DataViz/fall2018](https://github.com/UIUC-iSchool-DataViz/fall2018/)
- * Automatically built to [uiuc-ischool-dataviz.github.io/fall2018/](https://uiuc-ischool-dataviz.github.io/fall2018/)
- * Lecture notes will be placed there, and available in your JupyterHub
-   instances in `shared/sp18-is590dv/fall2018`
+ * Course repo is at [UIUC-iSchool-DataViz/spring2019online](https://github.com/UIUC-iSchool-DataViz/spring2019online/)
+ * Automatically built to [uiuc-ischool-dataviz.github.io/spring2019online/](https://uiuc-ischool-dataviz.github.io/spring2019online/)
+ * When/if JupyterHub is up and running: Lecture notes will be placed there, and available in your JupyterHub
+   instances in `shared/sp19-is590dv/spring2019online`
  * Copy the notebooks to your directory before using them.
  * Supplemental materials can be found at [UIUC-iSchool-DataViz/support-files](https://github.com/UIUC-iSchool-DataViz/support-files)
 
@@ -513,6 +576,9 @@ to use any information in it in the future.
  * What types of data do we visualize?
  * How do we visualize?
 
+![](images/pie.jpg)
+
+
 notes:
 We're going to start out at a very high-level, discussing why we choose to
 visualize versus other types of representation, what types of data, and how we
@@ -530,9 +596,10 @@ is the necessary reductionism that visualization can require.
 
 ---
 
-<iframe width="1024" height="576"
-src="https://www.youtube.com/embed/In72QAQJ1tY?rel=0" frameborder="0"
-allow="encrypted-media" allowfullscreen></iframe>
+# We can't visualize everything
+
+Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0
 
 notes:
 "There are lots of thing you can compare on a graph / Like who is the shortest
@@ -540,6 +607,55 @@ or the tallest giraffe / You can chart how much you walk / How much that you
 laugh / There are lots of things you can compare on a graph"
 
 "But the one thing you can't chart / Is how you feel in your heart"
+
+---
+
+# We can't visualize everything
+
+Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0
+
+<img src="images/peg_cat1.png" alt="drawing" height="400"/>
+
+"There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe..."
+
+notes:
+"There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe / You can chart how much you walk / How much that you
+laugh / There are lots of things you can compare on a graph"
+
+"But the one thing you can't chart / Is how you feel in your heart"
+
+---
+
+# We can't visualize everything
+
+Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0
+
+<img src="images/peg_cat2.png" alt="drawing" height="400"/>
+
+"But the one thing you can't chart / Is how you feel in your heart"
+
+notes:
+"There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe / You can chart how much you walk / How much that you
+laugh / There are lots of things you can compare on a graph"
+
+"But the one thing you can't chart / Is how you feel in your heart"
+
+---
+
+# We can't visualize everything
+
+<img src="images/traesApp.png" alt="drawing" height="500"/>
+
+---
+
+# We can't visualize everything
+
+<img src="images/traesApp2.png" alt="drawing" height="500"/>
 
 ---
 
@@ -568,6 +684,40 @@ Also, fair warning: I'm not a medical doctor.
 This diagram shows the visual acuity of a "standard" human eye, as a function
 of angular distance from the fovea.  We have to think about this in
 *conjunction* with our field of view.
+
+---
+
+# Your brain does interpolation
+
+<img src="images/dotsillusion.jpg_large" alt="drawing" width="500"/>
+
+There are 12 dots, can you count them all at the same time?
+
+---
+
+# Your brain does interpolation
+
+<img src="images/blindspotcross.png" alt="drawing" width="500"/>
+
+Step 1: Look at the cross
+
+Step 2: Close left eye, keep looking at the cross
+
+Step 3: Slowly move your head toward & away from screen until dot disappears
+
+---
+
+# Your brain does interpolation
+
+<img src="images/blindspotcross.png" alt="drawing" width="500"/>
+
+Step 1: Look at the cross
+
+Step 2: Close left eye, keep looking at the cross
+
+Step 3: Slowly move your head toward & away from screen until dot disappears
+
+# ... and sometimes it gets it wrong!
 
 ---
 
@@ -606,6 +756,8 @@ we will talk about as class goes on is that often visualizations can have a
 consistent style.  FRED in particular has a "branding" that is quite obvious,
 even without the logo.
 
+Also, the data we read was in the last sort of gray area of this graph.
+
 ---
 
 # Who are you visualizing for?
@@ -639,6 +791,48 @@ collection, organization and representation of data.
 # Tenet 2:
 
 We tell lies to visualize, but we _must_ be honest.
+
+---
+
+### "The Principle of Proportional Ink" - callingbullshit.org
+![](images/proportionalInk.png)
+
+notes:
+So let's first talk about how misleading visualizations can be. This 3D pie chart violates the "principle of proportional ink" which states that the number of pixels that represent a value should be proportional to the value. With the raised edge on the pie chart, the blue wedge gets way more ink than it deserves and you get a disproportionate sense of value.
+
+---
+
+### "Spurious Correlations" - tylervigen.com
+<img src="images/spurious.png" alt="drawing" width="800"/>
+
+notes:
+you can have a lot of absurd fun with data - but when data is presented in a visualization, people often believe the authority of it even if it's outlandish. 
+Side note: This guy has some good ideas of where to find sample datasets for upcoming homework assignments too!
+
+---
+
+<!-- .slide: data-background-image="images/barCharts.png" data-background-size="contain" -->
+
+notes:
+Each of these bar chart examples are meant to show the same data. But you can see how they're a bit problematic.
+
+---
+
+<!-- .slide: data-background-image="images/gunDeaths.jpg" data-background-size="contain" -->
+
+notes:
+Now here's an example that's more brazen. I'll give you a minute to analyze this and tell me what's wrong with this graph.
+
+Some people will claim the Y-axis should always start from the bottom - at zero - to avoid confusion.
+
+---
+
+<!-- .slide: data-background-image="images/keelingCurve.svg" data-background-size="contain" -->
+
+notes:
+however, the Keeling Curve is an interesting counter-argument. This is the famous graph that was the original evidence for global warming, showing the rate at which atmospheric carbon dioxide was growing. 
+
+Does anyone know why it's generally accepted to show the y-axis like this, without it starting at the zero axis?
 
 ---
 
@@ -682,19 +876,31 @@ We tell lies to visualize, but we _must_ be honest.
 
 <!-- .slide: data-background-image="images/stitch_bg.png" data-background-size="contain"-->
 
+notes:
+This is a screenshot from the movie "Lilo and Stitch" where the little girl Lilo is graphing how much evil is in the alien Stitch. It borrows from a familiar visual - the thermometer. But how could this visualization be misinterpreted? How is it different from a thermometer?
+
 ---
 
 <!-- .slide: data-background-image="images/stitch_nobg.png" data-background-size="contain"-->
 
+notes:
+The angle can be misleading. So can the relative width of the head vs the feet. The surface area is not consistent from top to bottom. Also there are empty areas in the mouth and eyes!
+
 ---
 
 <!-- .slide: data-background-image="images/stitch_nobg_tilted.png" data-background-size="contain"-->
+
+notes:
+If we rotate the image so that the red liquid is level, do we get a different impression for how much bad is in Stitch?
 
 ---
 
 <iframe width="1024" height="576"
 src="https://www.youtube.com/embed/D-uBv6jB7r0" frameborder="0"
 allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+notes:
+How could this visualization be misleading? What about the camera move? What about the colors used? Are there actually several distinct layers of shells or is this a continuous volume?
 
 ---
 
@@ -720,6 +926,19 @@ and context, see his page http://www-personal.umich.edu/~mejn/election/2008/ .
  * [Map 3](http://www-personal.umich.edu/~mejn/election/2008/countymapredbluer1024.png)
  * [Map 4](http://www-personal.umich.edu/~mejn/election/2008/countymappurpler1024.png)
  * [Map 5](http://www-personal.umich.edu/~mejn/election/2008/countycartpurple1024.png)
+
+notes:
+These are great, but some criticisms might be that the color red is more apparent to the human eye than the color blue. And in the population-to-area adjusted maps, it's difficult to read for people used to geographic accuracy.
+
+Map1 - this is just a geographical map of red and blue
+
+Map2 - cartogram weighted by population (note, NOT by electoral college population)
+
+Map3 - election results by county
+
+Map4 - percentage of votes by county
+
+Map5 - percentage of votes by county, weighted by population
 
 ---
 
@@ -753,6 +972,28 @@ and context, see his page http://www-personal.umich.edu/~mejn/election/2008/ .
  * Replicate the visualization with different, but similarly “shaped,” data
    * By hand is acceptable
    * Computational methods should include source code
+
+Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html
+
+---
+
+## Assignment 1
+
+ * Identify three visualizations in pop culture -- *not* academic literature.
+   This could be, for instance, from:
+   * Movies / TV / Music videos
+   * Everyday life
+   * Advertisements
+ * Describe each one in detail
+   * Where did the data come from?
+   * Is the data quantitative, qualitative, categorical, etc?
+   * How was the data processed before being displayed?
+   * What method was used to display that data?
+ * <span style="color:red">Replicate the visualization with different, but similarly “shaped,” data</span>
+   * By hand is acceptable
+   * Computational methods should include source code
+
+Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html
 
 ---
 
