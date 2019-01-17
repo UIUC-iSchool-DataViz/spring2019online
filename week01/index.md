@@ -17,4 +17,4 @@ with our data.
 
 Also, for an activity, you can download this stitch image
 
- *[Stitch image](images/stitch_nobg_tilted.png)
+ *[Stitch image](images/stitch_reworked.png)
