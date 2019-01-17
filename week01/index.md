@@ -17,4 +17,4 @@ with our data.
 
 Also, for an activity, you can download this stitch image
 
- * [Stitch image](images/stitch_reworked.png)
+ * <a href="images/stitch_reworked.png" download>Stitch Image</a>
