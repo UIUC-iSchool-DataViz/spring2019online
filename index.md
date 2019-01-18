@@ -19,4 +19,7 @@ Some handy references you might appreciate:
  * [matplotlib tutorial](https://matplotlib.org/tutorials/index.html)
  * [python tutorial](https://docs.python.org/3.6/tutorial/)
  * [Effective Computation in Physics](https://www.oreilly.com/library/view/effective-computation-in/9781491901564/) by Scopatz & Huff (available through Safari at UIUC)
-  
+ * [Markdown Cheat Sheet](https://www.ibm.com/support/knowledgecenter/SSQNUZ_current/com.ibm.icpdata.doc/dsx/markd-jupyter.html)
+ * [Jupyter Cheat Sheet](https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/)
+
+ * [Shared Slack Channel](https://is590dv-spring2019.slack.com)
