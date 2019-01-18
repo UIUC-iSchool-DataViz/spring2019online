@@ -1,7 +1,7 @@
 ---
 title: Lecture 1
 layout: lecture
-visible_lec: false
+visible_lec: true
 visible_note: false
 ---
 <!-- .slide: class="titleslide" -->
@@ -863,7 +863,9 @@ Map5 - percentage of votes by county, weighted by population
    * By hand is acceptable
    * Computational methods should include source code
 
-Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html
+PLUS: an intake survey - https://goo.gl/forms/omTDQFvEpK5CwFIU2
+
+<small>Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html</small>
 
 ---
 
@@ -883,6 +885,8 @@ Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_
    * By hand is acceptable
    * Computational methods should include source code
 
-Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html
+PLUS: an intake survey - https://goo.gl/forms/omTDQFvEpK5CwFIU2
+
+<small>Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html</small>
 
 ---
