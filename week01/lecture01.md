@@ -2,7 +2,7 @@
 title: Lecture 1
 layout: lecture
 visible_lec: true
-visible_note: false
+visible_note: true
 ---
 <!-- .slide: class="titleslide" -->
 

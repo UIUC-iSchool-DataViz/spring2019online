@@ -15,6 +15,6 @@ with our data.
  * [FRED](https://fred.stlouisfed.org)
  * [Example Vega-Lite plot](https://vega.github.io/editor/#/gist/vega-lite/matthewturk/e3808b4172b7f80141788b45236831ca/dc65ec026c5cedc267a2da47d6fa4268d2b18bcb/movies-hconcat.json)
 
-Also, for an activity, you can download this stitch image
+<!--Also, for an activity, you can download this stitch image -->
 
- * <a href="images/stitch_reworked.png" download>Stitch Image</a>
+<!-- * <a href="images/stitch_reworked.png" download>Stitch Image</a>-->
