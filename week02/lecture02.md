@@ -1,8 +1,8 @@
 ---
 title: Lecture 2
 layout: lecture
-visible_lec: true
-visible_n: true
+visible_lec: false
+visible_n: false
 ---
 <!-- .slide: class="titleslide" -->
 
@@ -556,9 +556,9 @@ You can see that in this higher frequency data, the same sampling rates fall apa
 
 ---
 
-## 10 minute Break
+## 10 Lets try some stuff in Python!
 
-Then, a Jupyter group coding demo.
+... opening Jupyter...
 
 ---
 
@@ -566,4 +566,4 @@ Then, a Jupyter group coding demo.
 
  * Next week, we will cover mutations, histograms, and the elements of a
 visualization.
- * Next week you will receive your first coding assignment.
+ * Next week you will receive your first official coding assignment. <span style="color:red">This week please review the code we went over and ask questions as they come up!  We will assume folks are comfortable enough with Python next week to complete the HW assigned next week.</span>
