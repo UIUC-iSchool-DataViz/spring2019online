@@ -118,12 +118,12 @@
 
 # Data Visualization
 <div style="height: 6.0em;"></div>
-## Andrew Christensen
+## Jill P. Naiman
 ## Spring 2019
 ## Lecture 2
 
 ---
-## Warm-Up Activity
+## Brainstorming Warm-Up Activity
 
 1. What is the visualization trying to show?
 1. What are its methods?
@@ -133,14 +133,16 @@
 
 [Harvey's Energy Toll](https://www.axios.com/the-latest-on-harveys-energy-toll-2479055875.html)
 
+There are no concrete right or wrong answers here!
+
 ---
 
 ## Today's Topics
 
- * JupyterHub
+ * JupyterHub?  Status.
  * Data Formats
  * Operational Palette
- * Notebook walkthrough
+ * Notebook walkthrough & cheat sheets
    * Data structures: lists, dicts, sets
    * Iteration
    * Plotting
@@ -148,7 +150,16 @@
 
 ---
 
-<!-- .slide: data-background-image="images/viz_diagram.svg" data-background-size="contain"-->
+<!-- .slide: data-background-image="images/viz_diagram.svg.png" data-background-size="contain"-->
+
+notes: Today we are going to discuss different sorts of data formats.
+
+---
+
+<!-- .slide: data-background-image="images/viz_diagram2.svg.png" data-background-size="contain"-->
+
+notes: Usually we are going to be
+able to make use of readers
 
 ---
 
@@ -171,7 +182,13 @@
 
 <div class="right" markdown=1>
 
-![](diagrams/row_col.svg)
+<!--![](diagrams/row_col.svg)-->
+<img src="diagrams/row_col.svg" alt="drawing" width="150"/>
+
+<!--![](diagrams/hdf5pic.png)-->
+<img src="images/hdf5pic.png" alt="drawing" width="250"/>
+
+<img src="images/jsonex.png" alt="drawing" width="150"/>
 
 </div>
 
@@ -194,6 +211,52 @@ In computer memory, this data is all stored linearly, with one value immediately
 another. This can affect the speed of data processing.
 
 We can do this in two methods.
+
+---
+
+## Organization
+
+| | Column 1 | Column 2 | Column 3 | Column 4 |
+|-|-|-|-|-|
+|Row 1|11|21|31|41|
+|Row 2|12|22|32|42|
+|Row 3|13|23|33|43|
+
+<div style="height: 2.0em;"></div>
+
+### (1) Row
+
+||||||||||
+|-|-|-|-|-|-|-|-|-|-|-|
+| 11 <!--.element: class="table-hl" -->| <!--.element: class="table-hl" -->21 | 31 | 41 | 12 | 22 | 32 | 42 | 13 | 23 | 33 | 43 |
+
+In row-oriented storage, successive _fields_ (columns) for a single _record_ (rows) are
+adjacent.
+
+notes: point out mapping between rows and columns
+
+---
+
+## Organization
+
+| | Column 1 | Column 2 | Column 3 | Column 4 |
+|-|-|-|-|-|
+|Row 1|11|21|31|41|
+|Row 2|12|22|32|42|
+|Row 3|13|23|33|43|
+
+<div style="height: 2.0em;"></div>
+
+### (2) Column
+
+||||||||||
+|-|-|-|-|-|-|-|-|-|-|-|
+| 11 <!--.element: class="table-hl" -->| 12 | 13 | <!-- .element: class="table-hl" --> 21 | 22 | 23 | 31 | 32 | 33 | 41 | 42 | 43 |
+
+In column-oriented storage, successive _records_ (rows) for a single _field_ (columns) are
+adjacent.
+
+notes: point out mapping between rows and columns
 
 ---
 
@@ -239,9 +302,9 @@ These formats are more efficient when the information you're interested in is ad
 
 ![](images/automobilesCSV.png)
 
- * Lowest-common denominator format
- * Flexible delimiters
- * Ad hoc comments and headers
+ * "Lowest-common denominator format" (widest available)
+ * Flexible delimiters 
+ * Ad hoc comments and headers (data readers need to be adapted)
  * Row-oriented
  * Row-size can vary: no implicit indexing
 
@@ -320,7 +383,7 @@ If we assume ASCII encoding, this becomes:
 |"390" <!-- .element: class="table-hl" --> |51 |57 |48 |
 <!-- .element: style="margin-left: 0.2em;" -->
 
-![](images/ASCII-Table.jpg)
+![](images/ASCII-Table2.jpeg)
 
 notes:
 A string is not a number, but a list of characters. A character is a symbol represented by a unique byte as described in the ASCII table.
@@ -355,12 +418,38 @@ Breaking this further down, we encode each character:
 390,1.83970e-003,-4.53930e-004,1.21520e-002
 ```
 
-Then a string-to-float function translates the string "390" into a floating point number:
+Then a string-to-float function translates the string "390" into a floating point number.
 
-![](images/floatSample1.jpg)
+For a 32-bit, single-precision floating point number in the computer this looks like:
+
+![](images/floatSample1_2.jpg)
 
 notes:
 This is how our example would be stored as an IEEE754 Single precision 32-bit float. This IEEE standard for encoding floats tries to optimize for very small and very large numbers, with the understanding that computers cannot store infinite accuracy.
+
+---
+
+![](images/floatSample1_3.jpeg)
+
+---
+
+![](images/floatSample1_4.jpeg)
+
+---
+
+![](images/floatSample1_finalm3.jpeg)
+
+---
+
+![](images/floatSample1_finalm4.jpeg)
+
+---
+
+![](images/floatSample1_finalm5.jpeg)
+
+---
+
+![](images/floatSample1_finalm6.jpeg)
 
 ---
 ```
