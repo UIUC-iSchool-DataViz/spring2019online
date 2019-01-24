@@ -1,0 +1,671 @@
+<!-- .slide: class="titleslide" -->
+
+<h1 id="data-visualization">Data Visualization</h1>
+<div style="height: 6.0em;"></div>
+<h2 id="andrew-christensen">Andrew Christensen</h2>
+<h2 id="spring-2019">Spring 2019</h2>
+<h2 id="lecture-2">Lecture 2</h2>
+
+<hr />
+<h2 id="warm-up-activity">Warm-Up Activity</h2>
+
+<ol>
+  <li>What is the visualization trying to show?</li>
+  <li>What are its methods?</li>
+  <li>What are the strengths / weaknesses?</li>
+  <li>(Bonus) Where is the outright error?</li>
+</ol>
+
+<p><a href="https://www.axios.com/the-latest-on-harveys-energy-toll-2479055875.html">Harvey’s Energy Toll</a></p>
+
+<hr />
+
+<h2 id="todays-topics">Today’s Topics</h2>
+
+<ul>
+  <li>JupyterHub</li>
+  <li>Data Formats</li>
+  <li>Operational Palette</li>
+  <li>Notebook walkthrough
+    <ul>
+      <li>Data structures: lists, dicts, sets</li>
+      <li>Iteration</li>
+      <li>Plotting</li>
+      <li>Numpy and indexing</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<!-- .slide: data-background-image="images/viz_diagram.svg" data-background-size="contain"-->
+
+<hr />
+
+<!-- .slide: class="two-floating-elements" -->
+
+<h2 id="files-data-and-organization">Files, Data, and Organization</h2>
+
+<ul>
+  <li>Text
+    <ul>
+      <li>ASCII (raw)</li>
+      <li>CSV / TSV</li>
+      <li>JSON</li>
+    </ul>
+  </li>
+  <li>Binary
+    <ul>
+      <li>HDF5</li>
+      <li>PNG/BMP/GIF/JPG/etc</li>
+      <li>Excel</li>
+      <li>Arrow</li>
+    </ul>
+  </li>
+  <li>Query-based
+    <ul>
+      <li>SQL</li>
+      <li>JSON/REST</li>
+    </ul>
+  </li>
+</ul>
+
+<p>&lt;div class=”right” markdown=1&gt;</p>
+
+<p><img src="diagrams/row_col.svg" alt="" /></p>
+
+<p>&lt;/div&gt;</p>
+
+<p>notes:
+read-write operations from disk are extremely time consuming, so raw text files come with massive overhead</p>
+
+<p>REST = REpresentational State Transfer - web architecture that keeps clients and servers independent and queries using flexible JSON formatting.</p>
+
+<hr />
+
+<h2 id="organization">Organization</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+      <th>Column 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Row 1</td>
+      <td>11</td>
+      <td>21</td>
+      <td>31</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>Row 2</td>
+      <td>12</td>
+      <td>22</td>
+      <td>32</td>
+      <td>42</td>
+    </tr>
+    <tr>
+      <td>Row 3</td>
+      <td>13</td>
+      <td>23</td>
+      <td>33</td>
+      <td>43</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In computer memory, this data is all stored linearly, with one value immediately following
+another. This can affect the speed of data processing.</p>
+
+<p>We can do this in two methods.</p>
+
+<hr />
+
+<h3 id="organization-row">Organization: Row</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11 <!--.element: class="table-hl" --></td>
+      <td><!--.element: class="table-hl" -->21</td>
+      <td>31</td>
+      <td>41</td>
+      <td>12</td>
+      <td>22</td>
+      <td>32</td>
+      <td>42</td>
+      <td>13</td>
+      <td>23</td>
+      <td>33</td>
+      <td>43</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In row-oriented storage, successive <em>fields</em> for a single <em>record</em> are
+adjacent.</p>
+
+<div style="height: 2.0em;"></div>
+
+<h3 id="organization-column">Organization: Column</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>11 <!--.element: class="table-hl" --></td>
+      <td>12</td>
+      <td>13</td>
+      <td><!-- .element: class="table-hl" --> 21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+      <td>41</td>
+      <td>42</td>
+      <td>43</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In column-oriented storage, successive <em>records</em> for a single <em>field</em> are
+adjacent.</p>
+
+<p>notes:
+These formats are more efficient when the information you’re interested in is adjacent. For instance, operations requiring many rows and only a few columns benefit from row-oriented storage.</p>
+
+<hr />
+
+<h2 id="csv-comma-separated-values">CSV (Comma-separated values)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+      <th>Column 4</th>
+      <th>Column 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+    </tr>
+    <tr>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+    </tr>
+    <tr>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+    </tr>
+    <tr>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="height: 2.0em;"></div>
+
+<hr />
+
+<h2 id="csv-comma-separated-values-1">CSV (Comma-separated values)</h2>
+
+<p><img src="images/automobilesCSV.png" alt="" /></p>
+
+<ul>
+  <li>Lowest-common denominator format</li>
+  <li>Flexible delimiters</li>
+  <li>Ad hoc comments and headers</li>
+  <li>Row-oriented</li>
+  <li>Row-size can vary: no implicit indexing</li>
+</ul>
+
+<p>notes:
+Sometimes called “DSV” or “Delimiter-separated values”</p>
+
+<p>Ad hoc means data readers need to be adapted to format.</p>
+
+<hr />
+
+<h2 id="reading-csv">Reading CSV</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+390,1.83970e-003,-4.53930e-004,1.21520e-002
+395,4.61530e-003,-1.04640e-003,3.11100e-002
+400,9.62640e-003,-2.16890e-003,6.23710e-002
+405,1.89790e-002,-4.43040e-003,1.31610e-001
+410,3.08030e-002,-7.20480e-003,2.27500e-001
+415,4.24590e-002,-1.25790e-002,3.58970e-001
+420,5.16620e-002,-1.66510e-002,5.23960e-001
+425,5.28370e-002,-2.12400e-002,6.85860e-001
+...
+</code></pre></div></div>
+
+<p>notes:
+Let’s take this sample data and see how it’s represented in computer memory.</p>
+
+<hr />
+
+<h2 id="binary">Binary</h2>
+
+<p><img src="images/binaryMath1.jpg" alt="" /></p>
+
+<p>notes:
+Who can tell me what decimal number these binary digits represent?</p>
+
+<hr />
+
+<h2 id="binary-1">Binary</h2>
+
+<p><img src="images/binaryMath2.jpg" alt="" /></p>
+
+<p>notes:
+2 to each exponent is flipped on or off, then the on-values are added together.</p>
+
+<hr />
+
+<h2 id="binary-2">Binary</h2>
+
+<p><img src="images/binaryMath3.jpg" alt="" /></p>
+
+<p>notes:
+Who can tell me what these digits represent in decimal?</p>
+
+<hr />
+
+<h2 id="binary-3">Binary</h2>
+
+<p><img src="images/binaryMath.jpg" alt="" /></p>
+
+<p>notes:
+Computers use electrical current to turn millions of switches called “bits” on or off. They combine 8 bits together like this to make a “byte”.</p>
+
+<hr />
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+390,1.83970e-003,-4.53930e-004,1.21520e-002
+</code></pre></div></div>
+
+<p>If we assume ASCII encoding, this becomes:</p>
+
+<p>| | | |
+|-|-|-|
+|”390” <!-- .element: class="table-hl" --> |51 |57 |48 |
+<!-- .element: style="margin-left: 0.2em;" --></p>
+
+<p><img src="images/ASCII-Table.jpg" alt="" /></p>
+
+<p>notes:
+A string is not a number, but a list of characters. A character is a symbol represented by a unique byte as described in the ASCII table.</p>
+
+<hr />
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+390,1.83970e-003,-4.53930e-004,1.21520e-002
+</code></pre></div></div>
+
+<p>If we assume ASCII encoding, this becomes:</p>
+
+<p>| | | |
+|-|-|-|
+|”390” <!-- .element: class="table-hl" --> |51 |57 |48 |
+<!-- .element: style="margin-left: 0.2em;" --></p>
+
+<p>Breaking this further down, we encode each character:</p>
+
+<p>||||||||||
+|-|-|-|-|-|-|-|-|-|
+|51 <!-- .element: class="table-hl" --> | 0 | 0 | 1 | 1 | 0 | 0 | 1 | 1 |
+|57 <!-- .element: class="table-hl" --> | 0 | 0 | 1 | 1 | 1 | 0 | 0 | 1 |
+|48 <!-- .element: class="table-hl" --> | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
+<!-- .element: style="margin-left: 0.2em;" --></p>
+
+<hr />
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+390,1.83970e-003,-4.53930e-004,1.21520e-002
+</code></pre></div></div>
+
+<p>Then a string-to-float function translates the string “390” into a floating point number:</p>
+
+<p><img src="images/floatSample1.jpg" alt="" /></p>
+
+<p>notes:
+This is how our example would be stored as an IEEE754 Single precision 32-bit float. This IEEE standard for encoding floats tries to optimize for very small and very large numbers, with the understanding that computers cannot store infinite accuracy.</p>
+
+<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+390,1.83970e-003,-4.53930e-004,1.21520e-002
+</code></pre></div></div>
+
+<p>|||||||||||||
+|-|-|-|-|-|-|-|-|-|-|-|-|
+| “1.83970e-03” <!-- .element: class="table-hl" -->| 49 | 46 | 56 | 51 | 57 | 55 | 48 | 101 | 45 | 48 | 51 |
+<!-- .element: style="margin-left: 0.2em;"--></p>
+
+<p>And this is translated into a floating pointer number as well:</p>
+
+<p><img src="images/floatSample2.jpg" alt="" /></p>
+
+<p>notes:
+Point being, reading a CSV file is pretty processor intensive - so it’s not a great format for huge datasets.</p>
+
+<hr />
+
+<h2 id="json">JSON</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Record 1</td>
+      <td style="text-align: left">Record 2</td>
+      <td style="text-align: left">Record 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="height: 2.0em;"></div>
+
+<ul>
+  <li>Row-oriented</li>
+  <li>Potentially-unknown subcomponent sizes (lists of lists)</li>
+  <li>Common response to REST APIs</li>
+  <li>Multiple types
+    <ul>
+      <li>String</li>
+      <li>Number</li>
+      <li>Object (JSON)</li>
+      <li>Array (list)</li>
+      <li>Boolean</li>
+      <li>null</li>
+    </ul>
+  </li>
+  <li>Format of .ipynb Python Notebooks</li>
+</ul>
+
+<p>notes:
+XML-like syntax for storing data values.</p>
+
+<p>All fields for a record are presented at once.</p>
+
+<hr />
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+ ...
+ {"Agency Name":"University of Illinois",
+  "Address":"501 E Daniel",
+  "City":"Champaign",
+  "Zip code":61820,
+  "Year Acquired":1992,
+  "Year Constructed":1935,
+  "Square Footage":21845,
+  "Total Floors":5
+ }, 
+ ...
+]
+</code></pre></div></div>
+
+<div style="height: 2.0em;"></div>
+
+<ul>
+  <li><code class="highlighter-rouge">[</code> and <code class="highlighter-rouge">]</code> indicate an array</li>
+  <li><code class="highlighter-rouge">{</code> and <code class="highlighter-rouge">}</code> indicate a JSON object (or mapping)</li>
+  <li><code class="highlighter-rouge">"</code> indicates a string</li>
+  <li>Numbers are, well, numbers.</li>
+</ul>
+
+<hr />
+
+<h2 id="hdf5">HDF5</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Column 1</td>
+      <td style="text-align: left">Column 2</td>
+      <td style="text-align: left">Column 3</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="height: 2.0em;"></div>
+
+<ul>
+  <li>Columnar, chunked store</li>
+  <li>Flexible data types in-memory and on-disk</li>
+  <li>Hyperslab and boolean indexing</li>
+  <li>Fine-grained key/val metadata</li>
+  <li>Groups &amp; hierarchies</li>
+  <li>Extensible types:
+    <ul>
+      <li>Numeric</li>
+      <li>Fixed-length strings</li>
+      <li>Variable strings</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="doing-stuff-with-data">Doing Stuff with Data</h2>
+
+<p>Now that we understand a few ways that data can be stored, let’s do some things
+to it.</p>
+
+<hr />
+
+<div class="left">
+![](images/palette.jpg)<!-- .element: style="height: 20em;" -->
+</div>
+
+<div class="right" style="font-size: 150%;">
+<div style="height: 4.0em;"></div>
+You have a palette of operations to apply.
+</div>
+
+<hr />
+
+<h2 id="filtering-operations">Filtering Operations</h2>
+
+<ul>
+  <li>Relationships:
+    <ul>
+      <li>Equality, inequality</li>
+      <li>Quantitative value (less than, greater than)</li>
+      <li>Intersection, disjoint</li>
+    </ul>
+  </li>
+  <li>Subsampling
+    <ul>
+      <li>Regular sampling</li>
+      <li>Randomized sampling</li>
+      <li>Nyquist frequency</li>
+    </ul>
+  </li>
+  <li>Related data queries
+    <ul>
+      <li>Queries on other columns at fixed row location</li>
+      <li>External membership queries</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="relationships-examples">Relationships Examples</h2>
+
+<ul>
+  <li>Equality
+    <ul>
+      <li>Identity</li>
+      <li>Quantitative values</li>
+    </ul>
+  </li>
+  <li>Ordering or quantitative
+    <ul>
+      <li>Less than (or equal)</li>
+      <li>Greater than (or equal)</li>
+      <li>“Comes before” and “Comes after”</li>
+    </ul>
+  </li>
+  <li>Set-based operations
+    <ul>
+      <li>“Is a member”</li>
+      <li>“Is not a member”</li>
+      <li>“Shares members”</li>
+      <li>“Shares no members”</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="equality">Equality</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>value == "hello"
+value == 10
+</code></pre></div></div>
+
+<h3 id="ordering-and-quantitative">Ordering and Quantitative</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>value &lt; 30
+value &gt; July 1, 2010
+</code></pre></div></div>
+
+<h3 id="set-based">Set-Based</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>value in ("red", "blue")
+value not in (3.141, 2.7)
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="sampling">Sampling</h2>
+
+<p>We can choose a subset of points and use those to explore our data.  This is
+not without its possible faults, however.</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/sampling_fig1.png" data-background-size="contain" -->
+
+<hr />
+
+<!-- .slide: data-background-image="images/sampling_fig2.png" data-background-size="contain" -->
+
+<hr />
+
+<!-- .slide: data-background-image="images/sampling_fig3.png" data-background-size="contain" -->
+
+<p>notes:
+We might preserve the shape better by alternate sampling methods. These random samplings preserve features that the uniform samplings lost - but they also lose features that the uniform sampling preserved.</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/sampling_fig4.png" data-background-size="contain" -->
+
+<p>notes:
+You’ll also notice that high rates of change are more susceptible to data loss. A better sampling algorithm would target these fast changing regions.</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/sampling_fig5.png" data-background-size="contain" -->
+
+<p>notes:
+the Nyquist limit is the minimum rate at which a signal can be sampled without introducing errors - 2x the highest frequency in the data.</p>
+
+<p>You can see that in this higher frequency data, the same sampling rates fall apart faster.</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/sampling_fig6.png" data-background-size="contain" -->
+
+<hr />
+
+<!-- .slide: data-background-image="images/teapots.png" data-background-size="contain" -->
+
+<hr />
+
+<h2 id="10-minute-break">10 minute Break</h2>
+
+<p>Then, a Jupyter group coding demo.</p>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Next week, we will cover mutations, histograms, and the elements of a
+visualization.</li>
+  <li>Next week you will receive your first coding assignment.</li>
+</ul>

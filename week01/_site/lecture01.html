@@ -1,0 +1,1001 @@
+<!-- .slide: class="titleslide" -->
+
+<h1 id="data-visualization">Data Visualization</h1>
+<div style="height: 6.0em;"></div>
+<h2 id="jill-p-naiman">Jill P. Naiman</h2>
+<h2 id="spring-2019">Spring 2019</h2>
+
+<hr />
+<!-- .slide: class="vertical_center" -->
+<h2 id="basics">Basics</h2>
+
+<p>5:30-7:30PM Thursdays, Online</p>
+
+<p>Jill Naiman - <code class="highlighter-rouge">jnaiman@illinois.edu</code>
+Office Hours: Wednesday 2-4, NCSA 2040 (Room may change) &amp; Online</p>
+
+<p>Ming Jiang - <code class="highlighter-rouge">mjiang17@illinois.edu</code>
+Office Hours: Monday 10-12, Room TBD</p>
+
+<p>https://uiuc-ischool-dataviz.github.io/spring2019online/</p>
+
+<p>notes: go through website!!</p>
+
+<hr />
+
+<p><img src="images/map_to_ncsa.png" alt="drawing" width="700" /></p>
+
+<hr />
+
+<h1 id="terminology">Terminology</h1>
+
+<ul>
+  <li>Visualization</li>
+  <li>Information Visualization</li>
+  <li>Scientific Visualization</li>
+  <li>Simulation</li>
+  <li>Illustration</li>
+  <li>Scientific Illustration</li>
+</ul>
+
+<p>notes:
+visualization goes back to cave men painting star-tracking imagery during the Pleistocene Era</p>
+
+<p>illustration can be motivated by experts as well, but it can be problematic when an audience thinks it’s real - which can be especially problematic when the presentation is so well done that it looks photographic.</p>
+
+<hr />
+
+<h2 id="questions">Questions:</h2>
+
+<ul>
+  <li>Who are you?</li>
+  <li>What are we doing?</li>
+  <li>How are we going to do it?</li>
+</ul>
+
+<hr />
+
+<h2 id="questions-1">Questions:</h2>
+
+<ul>
+  <li><span style="color:red">Who are you?</span></li>
+  <li>What are we doing?</li>
+  <li>How are we going to do it?</li>
+</ul>
+
+<hr />
+
+<h3 id="my-background">My background</h3>
+
+<!--![](images/intro_naiman1.png =0.1x)-->
+<p><img src="images/intro_naiman1.png" alt="drawing" width="800" /></p>
+
+<hr />
+
+<h3 id="my-background-1">My background</h3>
+
+<p><img src="images/intro_naiman2.png" alt="drawing" width="800" /></p>
+
+<hr />
+
+<h3 id="my-background-2">My background</h3>
+
+<p><img src="images/intro_naiman3.png" alt="drawing" width="800" /></p>
+
+<hr />
+
+<h3 id="my-background-3">My background</h3>
+
+<p><img src="images/intro_naiman4.png" alt="drawing" width="800" /></p>
+
+<hr />
+
+<h3 id="my-background-4">My background</h3>
+<h4 id="ytinicom">ytini.com</h4>
+
+<p><img src="images/intro_naiman5.png" alt="drawing" height="400" /></p>
+
+<p>Naiman et al. 2017, Borkiewicz et al. 2018</p>
+
+<hr />
+
+<h3 id="my-background-5">My background</h3>
+<h4 id="ytinicom-1">ytini.com</h4>
+
+<p><img src="images/intro_naiman6.png" alt="drawing" height="400" /></p>
+
+<p>Naiman et al. 2017, Borkiewicz et al. 2018</p>
+
+<hr />
+
+<h3 id="my-background-6">My background</h3>
+<h4 id="ytinicom-2">ytini.com</h4>
+
+<p><img src="images/intro_naiman7.png" alt="drawing" height="400" /></p>
+
+<p>Naiman et al. 2017, Borkiewicz et al. 2018</p>
+
+<hr />
+
+<h3 id="my-background-7">My background</h3>
+<h4 id="ytinicom-3">ytini.com</h4>
+
+<p><img src="images/intro_naiman8.png" alt="drawing" height="400" /></p>
+
+<p>Naiman et al. 2017, Borkiewicz et al. 2018</p>
+
+<hr />
+
+<h2 id="moodle--blackboard-collaborate">Moodle &amp; Blackboard Collaborate</h2>
+
+<p>Features of Blackboard:</p>
+<ul>
+  <li>Share applications/screens</li>
+  <li>Share whiteboard</li>
+  <li>Chat window</li>
+  <li>Mic &amp; Video buttons</li>
+</ul>
+
+<hr />
+
+<h2 id="moodle--blackboard-collaborate-1">Moodle &amp; Blackboard Collaborate</h2>
+
+<ul>
+  <li>Test 1: Microphones &amp; Cameras</li>
+  <li>Test 2: Writing in the online chat</li>
+  <li>Test 3: Raising &amp; lowering hands - also: pinging in the chat window works too!</li>
+</ul>
+
+<p>Moodle - where the grades (and possibly assignments) will be posted</p>
+
+<p>https://uiuc-ischool-dataviz.github.io/spring2019online/ - where lecture slides &amp; general course info will live.</p>
+
+<hr />
+
+<h2 id="timed-activity-2-minutes">Timed activity! (~2 minutes)</h2>
+
+<p>On a piece of paper or in notes on your computer:</p>
+
+<ul>
+  <li>What are the most memorable movies you saw over the last year?</li>
+  <li>Do you prefer cats or dogs?</li>
+  <li>How would you quantify your experience in visualization?</li>
+  <li>How many hours do you spend online in classes each week?</li>
+</ul>
+
+<p>notes:
+We’re going to use these pieces of data to explore how we might approach
+visualization.  Each of these items is a different <em>type</em> of data –
+qualitative, quantitative, elements drawn from sets, and sets of numerical
+data.</p>
+
+<p>Trying to visualize each one will give us a basic idea of how we might think
+about these types of data, and how we approach visualizing them.</p>
+
+<hr />
+
+<h2 id="breakout-groups-we-will-use-these-minimally">Breakout Groups: We will use these minimally</h2>
+
+<h3 id="breakout-group-1">Breakout Group #1:</h3>
+
+<p>Break into online chat groups, and:</p>
+
+<p>(1) introduce yourself!</p>
+
+<p>(2) visualize the results from the data you wrote down previously: can use the <em>whiteboard</em> or a program of your choosing.</p>
+
+<p>Remember to screen shot your visualizations to share
+in Breakout Group #2.</p>
+
+<p>notes:
+We will use breakout groups sparingly, but its important that you all
+get to know eachother a little bit &amp; realize there are humans
+here!</p>
+
+<p>We’ll do this for ~5 minutes, maybe longer depending on where
+people are.</p>
+
+<hr />
+
+<h2 id="breakout-groups-we-will-use-these-minimally-1">Breakout Groups: We will use these minimally</h2>
+
+<h3 id="breakout-group-2">Breakout Group #2:</h3>
+
+<p>(1) introduce yourself!</p>
+
+<p>(2) Then:</p>
+<ul>
+  <li>Present your screenshot to the rest of your group.</li>
+  <li>The rest of the group will try to guess what your visualization is trying to convey.</li>
+  <li>Discuss how well the group did with their guesses &amp; why you think that is.</li>
+  <li>What things did they like about your visualization?  What things would they change?</li>
+</ul>
+
+<p>There are no hard and fast “right” or “wrong” answers at this point, so don’t worry!</p>
+
+<hr />
+
+<h2 id="download-anaconda">Download Anaconda!</h2>
+
+<p><a href="anaconda.com/download">anaconda.com/download</a></p>
+
+<hr />
+
+<h2 id="syllabus">Syllabus</h2>
+
+<ul>
+  <li>Week 1 (Jan 17): Introduction, syllabus, examples, and some basics</li>
+  <li>Week 2 (Jan 24): Operational palette, structured python, and files</li>
+  <li>Week 3 (Jan 31): Quantitative plots, plot components</li>
+  <li>Week 4 (Feb 7): Histograms and distributions</li>
+  <li>Week 5 (Feb 14): R and ggplot</li>
+  <li>Week 6 (Feb 21): Images, color, colormaps</li>
+  <li>Week 7 (Feb 28): Comparisons between datasets</li>
+</ul>
+
+<p>notes:
+This is a rough syllabus!  These are many of the topics we will cover, but
+based on how the course proceeds and how folks respond, we may shorten or
+lengthen different topics.</p>
+
+<p>The organization here is designed to start out slow, dealing with how to
+program python for visualization, understanding how data is laid out, which
+operations we can apply to that data, and then moving on to representing data
+in different ways.</p>
+
+<hr />
+
+<h2 id="syllabus-1">Syllabus</h2>
+
+<ul>
+  <li>Week 8 (Mar 7): Comparisons between different datasets</li>
+  <li>Week 9 (Mar 14): Network visualization</li>
+  <li>Week 10 (Mar 28): Principles of interactive visualization</li>
+  <li>Week 11 (Apr 4): Interactive visualization with Python</li>
+  <li>Week 12 (Apr 11): Scientific visualization</li>
+  <li>Week 13 (Apr 18): Advanced topics</li>
+  <li>Week 14 (Apr 25): Group presentations</li>
+</ul>
+
+<p>notes:
+Toward the end of class we are going to have a slightly more free-form set of
+discussion points.  Your final projects will be somewhat open-ended, requiring
+more group work and collaboration than the preceding assignments.</p>
+
+<hr />
+
+<h1 id="class-mission">Class Mission</h1>
+
+<p>While you are already a <em>consumer</em> of visualizations, your
+perspective should change to that of a <em>producer</em> of visualizations.
+You should be comfortable reading AND writing imagery.</p>
+
+<p>notes:
+We will be discussing this as the semester goes on, but the principal outcome I
+want you to take away from this class is understanding how to transform data
+into its visual representation, and to take that understanding with you as you
+observe visualizations presented to you.</p>
+
+<p>By developing visualizations, you will grow to understand the choices that
+influence those visualizations, and you will bring that with you while
+consuming information visually.</p>
+
+<hr />
+
+<h1 id="the-things-i-want-you-to-take-away">The Things I Want You To Take Away</h1>
+
+<ul>
+  <li>You should know the basics of how to manipulate data – aggregations,
+filterings, and other operations.</li>
+  <li>I want you to know <em>some</em> of the packages that are out there to visualize
+data.  These will mostly be Python-based, with a couple in Javascript.</li>
+  <li>You won’t learn how to use dashboarding software (e.g. Tableau) in detail. Instead, we
+will focus on the different operations that go into dashboarding software.</li>
+  <li>By the end of the course, you will have had the opportunity to look at and
+build visualizations in several different domains and understand how to
+interpret, critique and improve them.</li>
+</ul>
+
+<p>notes:
+This course <em>will</em> teach you some things about how to code, how to build
+visualizations, but we’re going to focus much more on learning about how to
+construct visualizations and why we make the choices that we do.  If we choose
+one way to present data, does that convey information more readily?  Or does it
+get in the way of the underlying meaning?</p>
+
+<hr />
+
+<h2 id="overview---themes-and-goals">Overview - Themes and Goals</h2>
+
+<ol>
+  <li>What are the components of an effective visualization of quantitative data?</li>
+  <li>What tools and ecosystems are available for visualizing data?</li>
+  <li>What systems can be put in place to generate visualizations rapidly and with high-fidelity representation?</li>
+</ol>
+
+<hr />
+
+<h2 id="structure-of-class">Structure of Class</h2>
+
+<ul>
+  <li>Topic introduction and lecture (~60 minutes)</li>
+  <li>Hands-on, collaborative coding</li>
+  <li>Wrap-up</li>
+</ul>
+
+<p>(Today will be a little lecture heavy)</p>
+
+<p>notes:
+This structure will likely be deviated from during the course, but in general
+we will start with lecture, take a break, then continue with collaborative or
+hands-on exercises using group coding.</p>
+
+<p>During the group coding, I might lead the class in some visualization in
+Python, Javascript, or something else.  During this section, I expect that
+students will <em>follow along</em> with what is going on – typing in the specific
+commands, and maybe even trying different things as we go.  It is not meant to
+simply be a “performance” of coding, but instead an opportunity to learn.</p>
+
+<hr />
+
+<h2 id="grading">Grading</h2>
+
+<ul>
+  <li>70% Weekly assignments in prose or code form</li>
+  <li>30% Final project - which will essentially be a 3-part HW assignment</li>
+</ul>
+
+<p>notes:
+Your weekly assignments will take different forms.  The first assignment will
+be exclusively prose and hand-writing, but subsequent assignments will be
+either notebook (coding) based or prose-based as well.</p>
+
+<p>The final project will be described later in class, but will take the form of a
+group project that touches on coding as well as visual design.</p>
+
+<hr />
+
+<h2 id="assignments">Assignments</h2>
+
+<ul>
+  <li>Weekly, assigned in class, collected following class</li>
+  <li>Prose assignments: deconstruction or analysis of a visualization or a dataset.</li>
+  <li>Coding assignments: Jupyter notebooks following step by step through
+collection and processing of data and the visualization of that data</li>
+</ul>
+
+<hr />
+
+<h2 id="plagiarism">Plagiarism</h2>
+
+<ul>
+  <li>Plagiarism is about copying ideas.</li>
+  <li>Cite all code you utilize from elsewhere.</li>
+</ul>
+
+<p>notes:
+When programming, I expect that you will do things like search on the internet
+to find help with a given problem.  This is fine.</p>
+
+<p>But, you <em>must</em> cite where any code snippets came from.  And you <em>must</em> note if
+you are working with other people in the group!</p>
+
+<p>Using snippets of code is fine – but you may not copy large-scale amounts of
+code from other work (for example, other visualizations) and pass it off as
+your own.  Always cite, and be reasonable in what you utilize.</p>
+
+<hr />
+
+<h2 id="our-tools">Our tools</h2>
+
+<ul>
+  <li>Python, with some R and Javascript along the way</li>
+  <li>Jupyter and Jupyter notebooks (maybe on a Jupyterhub)</li>
+  <li>The occasional usage of a shell such as bash</li>
+  <li>Once in a while some git, and GitHub</li>
+  <li>Slack</li>
+</ul>
+
+<p>notes:
+You will be expected to write code in Python, and to learn the very basics of
+Javascript.  Your projects may be turned in via git.  We will also utilize
+Slack for class communication.</p>
+
+<hr />
+
+<h2 id="jupyterhub-when-it-is-working">Jupyterhub when it is working…</h2>
+
+<p><img src="images/jh_arch.svg" alt="" /></p>
+
+<p>notes:
+Jupyterhub is a software system for launching multiple independent notebooks
+that can share access to data and installed software.  Ours is administered by
+the iSchool.</p>
+
+<hr />
+
+<h2 id="jupyterhub-guidelines">Jupyterhub Guidelines</h2>
+
+<ul>
+  <li><a href="https://jupyterhub.ischool.illinois.edu/">jupyterhub.ischool.illinois.edu</a></li>
+  <li>Please store your notebooks on- and off-site
+<!-- * Submissions will be via `nbgrader`-->
+<!-- * Data will be available at `/home/shared/spr18-is590dv/data/`-->
+<!-- * Previous lectures will be in `/home/shared/spr18-is590dv/fall2018/`--></li>
+  <li>You will have access to conda, etc, but I may rebuild images to add packages.</li>
+  <li>There will be shared data directories, but again, this depends on jupyterhub
+ being online.</li>
+</ul>
+
+<p>notes:
+It is possible that your JupyterHub instance may be lost – don’t store mission
+critical data there without a backup.  It should be possible to share data
+between people on the system, but I won’t pretend to know the right way to do
+that.</p>
+
+<hr />
+
+<h2 id="slack">Slack</h2>
+
+<p>We will be sharing a slack channel with the in-person class, so feel free to
+converse with them as well!</p>
+
+<ul>
+  <li>Team channel at <code class="highlighter-rouge">https://is590dv-spring2019.slack.com</code>
+    <ul>
+      <li><code class="highlighter-rouge">#general</code> : General announcements</li>
+      <li><code class="highlighter-rouge">#assignments</code> : Help with assignments</li>
+      <li><code class="highlighter-rouge">#help</code> : General help with Python, Javascript, visualization, etc</li>
+      <li><code class="highlighter-rouge">#_classroom-lectures</code> : Folks in the live lecture will post questions here during class</li>
+      <li><code class="highlighter-rouge">#online_specific_chat</code> : Can be used to ask online specific questions, but all “in class”
+questions should be posted in the Blackboard Collaborate chat, or asked over a mic</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="slack-cont">Slack (cont)</h2>
+
+<ul>
+  <li>Use the <code class="highlighter-rouge">@</code> sign appropriately: <code class="highlighter-rouge">@[person]</code>, <code class="highlighter-rouge">@here</code>, <code class="highlighter-rouge">@channel</code></li>
+  <li>Web client, standalone client and mobile devices can access this team.</li>
+  <li>At the end of the semester, the team will be discontinued.</li>
+  <li>Please think carefully before direct messaging if you could ask in a public
+forum instead.</li>
+  <li>Conduct will be held to same standards as any educational venue.</li>
+</ul>
+
+<p>As always, you can also post questions to the Moodle forum as well.</p>
+
+<p>notes:
+Please use slack as much as you need!  You can use it to share items and
+articles with the class, to collaborate, to discuss and ask questions and get
+feedback.  However, please do behave in a professional fashion.</p>
+
+<hr />
+
+<h2 id="github">Github</h2>
+
+<ul>
+  <li>Course repo is at <a href="https://github.com/UIUC-iSchool-DataViz/spring2019online/">UIUC-iSchool-DataViz/spring2019online</a></li>
+  <li>Automatically built to <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/">uiuc-ischool-dataviz.github.io/spring2019online/</a></li>
+  <li>When/if JupyterHub is up and running: Lecture notes will be placed there, and available in your JupyterHub
+instances in <code class="highlighter-rouge">shared/sp19-is590dv/spring2019online</code></li>
+  <li>Copy the notebooks to your directory before using them.</li>
+  <li>Supplemental materials can be found at <a href="https://github.com/UIUC-iSchool-DataViz/support-files">UIUC-iSchool-DataViz/support-files</a></li>
+</ul>
+
+<p>notes:
+All the materials for this course will be stored in github, and are available
+under a very permissive license.  It is largely written in markdown and
+automatically compiled to web pages when changes are made.</p>
+
+<p>You are invited to clone the repo, fork and submit changes (typos, etc!), and
+to use any information in it in the future.</p>
+
+<hr />
+
+<h2 id="this-week">This week</h2>
+
+<ul>
+  <li>Why do we visualize?</li>
+  <li>What types of data do we visualize?</li>
+  <li>How do we visualize?</li>
+</ul>
+
+<p><img src="images/pie.jpg" alt="" /></p>
+
+<p>notes:
+We’re going to start out at a very high-level, discussing why we choose to
+visualize versus other types of representation, what types of data, and how we
+might do it.</p>
+
+<hr />
+
+<h1 id="why">Why?</h1>
+
+<p>(Or rather, why <em>wouldn’t</em> we visualize?)</p>
+
+<p>notes:
+Not everything suits itself to visualization – and part of the reason for that
+is the necessary reductionism that visualization can require.</p>
+
+<hr />
+
+<h1 id="we-cant-visualize-everything">We can’t visualize everything</h1>
+
+<p>Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0</p>
+
+<p>notes:
+“There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe / You can chart how much you walk / How much that you
+laugh / There are lots of things you can compare on a graph”</p>
+
+<p>“But the one thing you can’t chart / Is how you feel in your heart”</p>
+
+<hr />
+
+<h1 id="we-cant-visualize-everything-1">We can’t visualize everything</h1>
+
+<p>Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0</p>
+
+<p><img src="images/peg_cat1.png" alt="drawing" height="400" /></p>
+
+<p>“There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe…”</p>
+
+<p>notes:
+“There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe / You can chart how much you walk / How much that you
+laugh / There are lots of things you can compare on a graph”</p>
+
+<p>“But the one thing you can’t chart / Is how you feel in your heart”</p>
+
+<hr />
+
+<h1 id="we-cant-visualize-everything-2">We can’t visualize everything</h1>
+
+<p>Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0</p>
+
+<p><img src="images/peg_cat2.png" alt="drawing" height="400" /></p>
+
+<p>“But the one thing you can’t chart / Is how you feel in your heart”</p>
+
+<p>notes:
+“There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe / You can chart how much you walk / How much that you
+laugh / There are lots of things you can compare on a graph”</p>
+
+<p>“But the one thing you can’t chart / Is how you feel in your heart”</p>
+
+<hr />
+
+<h1 id="we-cant-visualize-everything-3">We can’t visualize everything</h1>
+
+<p><img src="images/traesApp.png" alt="drawing" height="500" /></p>
+
+<hr />
+
+<h1 id="we-cant-visualize-everything-4">We can’t visualize everything</h1>
+
+<p><img src="images/traesApp2.png" alt="drawing" height="500" /></p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/fov.svg" data-background-size="contain" -->
+
+<p>notes:
+Visual information is communicated through our eyes, where it is processed.  At
+the most basic level, we can see a range of about 210 degrees horizontally with
+one or both eyes.  The region that is covered by both (“binocular”) is about
+114 degrees in extent.</p>
+
+<p>You can only cram so much information into the human eye.</p>
+
+<hr />
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/27/AcuityHumanEye.svg" alt="" /></p>
+
+<p>By Vanessa Ezekowitz <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons</p>
+
+<p>notes:
+When we think about visual communication of information, we <em>must</em> think about
+how human physiology interacts with that communication.</p>
+
+<p>Also, fair warning: I’m not a medical doctor.</p>
+
+<p>This diagram shows the visual acuity of a “standard” human eye, as a function
+of angular distance from the fovea.  We have to think about this in
+<em>conjunction</em> with our field of view.</p>
+
+<hr />
+
+<h1 id="your-brain-does-interpolation">Your brain does interpolation</h1>
+
+<p><img src="images/dotsillusion.jpg_large" alt="drawing" width="500" /></p>
+
+<p>There are 12 dots, can you count them all at the same time?</p>
+
+<hr />
+
+<h1 id="your-brain-does-interpolation-1">Your brain does interpolation</h1>
+
+<p><img src="images/blindspotcross.png" alt="drawing" width="500" /></p>
+
+<p>Step 1: Look at the cross</p>
+
+<p>Step 2: Close left eye, keep looking at the cross</p>
+
+<p>Step 3: Slowly move your head toward &amp; away from screen until dot disappears</p>
+
+<hr />
+
+<h1 id="your-brain-does-interpolation-2">Your brain does interpolation</h1>
+
+<p><img src="images/blindspotcross.png" alt="drawing" width="500" /></p>
+
+<p>Step 1: Look at the cross</p>
+
+<p>Step 2: Close left eye, keep looking at the cross</p>
+
+<p>Step 3: Slowly move your head toward &amp; away from screen until dot disappears</p>
+
+<h1 id="-and-sometimes-it-gets-it-wrong">… and sometimes it gets it wrong!</h1>
+
+<hr />
+
+<h2 id="i-need-a-volunteer">I need a volunteer!</h2>
+
+<p>notes:
+(This part is a bit of a stunt.  Sorry.)</p>
+
+<hr />
+
+<p><em>Read these numbers:</em></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">2007-01-01</td>
+      <td style="text-align: right">14233.2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2007-04-01</td>
+      <td style="text-align: right">14422.3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2007-07-01</td>
+      <td style="text-align: right">14569.7</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2007-10-01</td>
+      <td style="text-align: right">14685.3</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2008-01-01</td>
+      <td style="text-align: right">14668.4</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2008-04-01</td>
+      <td style="text-align: right">14813.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2008-07-01</td>
+      <td style="text-align: right">14843.0</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2008-10-01</td>
+      <td style="text-align: right">14549.9</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2009-01-01</td>
+      <td style="text-align: right">14383.9</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>notes:
+See what I mean?  It’s a stunt.  You’re supposed to hear these, or look at the
+numbers, and not have as clear an impression.  It also takes a lot longer.</p>
+
+<hr />
+
+<p><img src="images/fredgraph.png" alt="" /></p>
+
+<p>notes:
+You might immediately notice a few things about this image, but one item that
+we will talk about as class goes on is that often visualizations can have a
+consistent style.  FRED in particular has a “branding” that is quite obvious,
+even without the logo.</p>
+
+<p>Also, the data we read was in the last sort of gray area of this graph.</p>
+
+<hr />
+
+<h1 id="who-are-you-visualizing-for">Who are you visualizing for?</h1>
+
+<ul>
+  <li>For yourself?</li>
+  <li>For a peer?</li>
+  <li>For someone else?</li>
+</ul>
+
+<p>notes:
+<em>Whenever</em> you build a visualization you need to think about the context that
+you can assume on the part of your viewer.</p>
+
+<hr />
+
+<h1 id="tenet-1">Tenet 1:</h1>
+
+<p>“Visualizing data” is not a strict subset of “making an image.”</p>
+
+<p>notes:
+We will approach visualization as encompassing several different stages in the
+collection, organization and representation of data.</p>
+
+<hr />
+
+<ul>
+  <li>Collection of the data</li>
+  <li>Organization of that data</li>
+  <li>Representation of that data</li>
+</ul>
+
+<hr />
+
+<h1 id="tenet-2">Tenet 2:</h1>
+
+<p>We tell lies to visualize, but we <em>must</em> be honest.</p>
+
+<hr />
+
+<h3 id="the-principle-of-proportional-ink---callingbullshitorg">“The Principle of Proportional Ink” - callingbullshit.org</h3>
+<p><img src="images/proportionalInk.png" alt="" /></p>
+
+<p>notes:
+So let’s first talk about how misleading visualizations can be. This 3D pie chart violates the “principle of proportional ink” which states that the number of pixels that represent a value should be proportional to the value. With the raised edge on the pie chart, the blue wedge gets way more ink than it deserves and you get a disproportionate sense of value.</p>
+
+<hr />
+
+<h3 id="spurious-correlations---tylervigencom">“Spurious Correlations” - tylervigen.com</h3>
+<p><img src="images/spurious.png" alt="drawing" width="800" /></p>
+
+<p>notes:
+you can have a lot of absurd fun with data - but when data is presented in a visualization, people often believe the authority of it even if it’s outlandish. 
+Side note: This guy has some good ideas of where to find sample datasets for upcoming homework assignments too!</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/barCharts.png" data-background-size="contain" -->
+
+<p>notes:
+Each of these bar chart examples are meant to show the same data. But you can see how they’re a bit problematic.</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/gunDeaths.jpg" data-background-size="contain" -->
+
+<p>notes:
+Now here’s an example that’s more brazen. I’ll give you a minute to analyze this and tell me what’s wrong with this graph.</p>
+
+<p>Some people will claim the Y-axis should always start from the bottom - at zero - to avoid confusion.</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/keelingCurve.svg" data-background-size="contain" -->
+
+<p>notes:
+however, the Keeling Curve is an interesting counter-argument. This is the famous graph that was the original evidence for global warming, showing the rate at which atmospheric carbon dioxide was growing.</p>
+
+<p>Does anyone know why it’s generally accepted to show the y-axis like this, without it starting at the zero axis?</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/hearts_battery.svg" data-background-size="contain" -->
+
+<hr />
+
+<!-- .slide: data-background-image="images/battery.svg" data-background-size="contain" -->
+
+<div style="height: 10em;"></div>
+
+<ol>
+  <li>Sensors read the current “fill” of the battery
+    <ul>
+      <li>Analog / digital conversion</li>
+      <li>Normalized with respect to expected “full”</li>
+    </ul>
+  </li>
+  <li>This is then scaled to a percentage</li>
+  <li>The battery image is filled from left to right</li>
+  <li>The image is then rasterized and displayed</li>
+</ol>
+
+<hr />
+
+<!-- .slide: data-background-image="images/hearts_bw.svg" data-background-size="contain" -->
+
+<ul>
+  <li>Some fixed maximum amount of damage</li>
+  <li>Each time damage is taken, decrement</li>
+  <li>Each time damage is reversed, increment</li>
+  <li>Display number of hearts as appropriate</li>
+</ul>
+
+<hr />
+
+<p>2 out of 3 “points”</p>
+
+<!-- .slide: data-background-image="images/hearts_color.svg" data-background-size="contain" -->
+
+<hr />
+
+<!-- .slide: data-background-image="images/hearts_color.svg" data-background-size="contain" -->
+
+<p><img src="images/doom_status.png" alt="" /></p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/stitch_bg.png" data-background-size="contain"-->
+
+<p>notes:
+This is a screenshot from the movie “Lilo and Stitch” where the little girl Lilo is graphing how much evil is in the alien Stitch. It borrows from a familiar visual - the thermometer. But how could this visualization be misinterpreted? How is it different from a thermometer?</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/stitch_nobg.png" data-background-size="contain"-->
+
+<p>notes:
+The angle can be misleading. So can the relative width of the head vs the feet. The surface area is not consistent from top to bottom. Also there are empty areas in the mouth and eyes!</p>
+
+<hr />
+
+<!-- .slide: data-background-image="images/stitch_nobg_tilted.png" data-background-size="contain"-->
+
+<p>notes:
+If we rotate the image so that the red liquid is level, do we get a different impression for how much bad is in Stitch?</p>
+
+<hr />
+
+<iframe width="1024" height="576" src="https://www.youtube.com/embed/D-uBv6jB7r0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p>notes:
+How could this visualization be misleading? What about the camera move? What about the colors used? Are there actually several distinct layers of shells or is this a continuous volume?</p>
+
+<hr />
+
+<h2 id="honesty">Honesty</h2>
+
+<p>Our choices must be:</p>
+
+<ul>
+  <li>Deliberate</li>
+  <li>Informed</li>
+  <li>Motivated</li>
+  <li>Justifiable</li>
+</ul>
+
+<hr />
+
+<h2 id="election-maps">Election Maps</h2>
+
+<p>Mark Newman of the University of Michigan has created visualizations of the
+election maps from several of the most recent elections.  For more information
+and context, see his page http://www-personal.umich.edu/~mejn/election/2008/ .</p>
+
+<ul>
+  <li><a href="http://www-personal.umich.edu/~mejn/election/2008/statemapredbluer1024.png">Map 1</a></li>
+  <li><a href="http://www-personal.umich.edu/~mejn/election/2008/statepopredblue1024.png">Map 2</a></li>
+  <li><a href="http://www-personal.umich.edu/~mejn/election/2008/countymapredbluer1024.png">Map 3</a></li>
+  <li><a href="http://www-personal.umich.edu/~mejn/election/2008/countymappurpler1024.png">Map 4</a></li>
+  <li><a href="http://www-personal.umich.edu/~mejn/election/2008/countycartpurple1024.png">Map 5</a></li>
+</ul>
+
+<p>notes:
+These are great, but some criticisms might be that the color red is more apparent to the human eye than the color blue. And in the population-to-area adjusted maps, it’s difficult to read for people used to geographic accuracy.</p>
+
+<p>Map1 - this is just a geographical map of red and blue</p>
+
+<p>Map2 - cartogram weighted by population (note, NOT by electoral college population)</p>
+
+<p>Map3 - election results by county</p>
+
+<p>Map4 - percentage of votes by county</p>
+
+<p>Map5 - percentage of votes by county, weighted by population</p>
+
+<hr />
+
+<h2 id="getting-started-in-python">Getting started in Python</h2>
+
+<p><em>Open up Python &amp; get started coding!</em></p>
+
+<hr />
+
+<h2 id="this-week-wrap-up">This week: Wrap-up</h2>
+
+<ol>
+  <li>We visualize to change how we understand things.</li>
+  <li>We visualize data for ourselves, for our peers, and for others.</li>
+  <li>Visualization is a series of steps that we take to produce a different
+representation of data.</li>
+</ol>
+
+<hr />
+
+<h2 id="assignment-1">Assignment 1</h2>
+
+<ul>
+  <li>Identify three visualizations in pop culture – <em>not</em> academic literature.
+This could be, for instance, from:
+    <ul>
+      <li>Movies / TV / Music videos</li>
+      <li>Everyday life</li>
+      <li>Advertisements</li>
+    </ul>
+  </li>
+  <li>Describe each one in detail
+    <ul>
+      <li>Where did the data come from?</li>
+      <li>Is the data quantitative, qualitative, categorical, etc?</li>
+      <li>How was the data processed before being displayed?</li>
+      <li>What method was used to display that data?</li>
+    </ul>
+  </li>
+  <li>Replicate the visualization with different, but similarly “shaped,” data
+    <ul>
+      <li>By hand is acceptable</li>
+      <li>Computational methods should include source code</li>
+    </ul>
+  </li>
+</ul>
+
+<p>PLUS: an intake survey - https://goo.gl/forms/omTDQFvEpK5CwFIU2</p>
+
+<p><small>Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html</small></p>
+
+<hr />
+
+<h2 id="assignment-1-1">Assignment 1</h2>
+
+<ul>
+  <li>Identify three visualizations in pop culture – <em>not</em> academic literature.
+This could be, for instance, from:
+    <ul>
+      <li>Movies / TV / Music videos</li>
+      <li>Everyday life</li>
+      <li>Advertisements</li>
+    </ul>
+  </li>
+  <li>Describe each one in detail
+    <ul>
+      <li>Where did the data come from?</li>
+      <li>Is the data quantitative, qualitative, categorical, etc?</li>
+      <li>How was the data processed before being displayed?</li>
+      <li>What method was used to display that data?</li>
+    </ul>
+  </li>
+  <li><span style="color:red">Replicate the visualization with different, but similarly “shaped,” data</span>
+    <ul>
+      <li>By hand is acceptable</li>
+      <li>Computational methods should include source code</li>
+    </ul>
+  </li>
+</ul>
+
+<p>PLUS: an intake survey - https://goo.gl/forms/omTDQFvEpK5CwFIU2</p>
+
+<p><small>Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html</small></p>
+
+<hr />

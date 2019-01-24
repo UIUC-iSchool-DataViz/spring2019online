@@ -118,8 +118,8 @@
 
 # Data Visualization
 <div style="height: 6.0em;"></div>
-## Matthew Turk
-## Fall 2018
+## Andrew Christensen
+## Spring 2019
 ## Lecture 2
 
 ---
@@ -131,7 +131,7 @@
 1. (Bonus) Where is the outright error?
 
 
-https://www.axios.com/the-latest-on-harveys-energy-toll-2479055875.html
+[Harvey's Energy Toll](https://www.axios.com/the-latest-on-harveys-energy-toll-2479055875.html)
 
 ---
 
@@ -175,6 +175,11 @@ https://www.axios.com/the-latest-on-harveys-energy-toll-2479055875.html
 
 </div>
 
+notes:
+read-write operations from disk are extremely time consuming, so raw text files come with massive overhead
+
+REST = REpresentational State Transfer - web architecture that keeps clients and servers independent and queries using flexible JSON formatting.
+
 ---
 
 ## Organization
@@ -185,14 +190,10 @@ https://www.axios.com/the-latest-on-harveys-energy-toll-2479055875.html
 |Row 2|12|22|32|42|
 |Row 3|13|23|33|43|
 
-Internally, this data is stored linearly, with one value immediately following
-another.  We can do this in two methods:
+In computer memory, this data is all stored linearly, with one value immediately following
+another. This can affect the speed of data processing.
 
-||||||||||||
-|:-|-|-|-|-|-|-|-|-|-|-|-|-|
-| Row | 11 | 21 | 31 | 41 | 12 | 22 | 32 | 42 | 13 | 23 | 33 | 43 |
-| Column | 11 | 12 | 13 | 21 | 22 | 23 | 31 | 32 | 33 | 41 | 42 | 43 |
-<!-- .element: class="fragment" -->
+We can do this in two methods.
 
 ---
 
@@ -216,6 +217,9 @@ adjacent.
 In column-oriented storage, successive _records_ for a single _field_ are
 adjacent.
 
+notes:
+These formats are more efficient when the information you're interested in is adjacent. For instance, operations requiring many rows and only a few columns benefit from row-oriented storage.
+
 ---
 
 ## CSV (Comma-separated values)
@@ -229,13 +233,26 @@ adjacent.
 
 <div style="height: 2.0em;"></div>
 
+---
+
+## CSV (Comma-separated values)
+
+![](images/automobilesCSV.png)
+
  * Lowest-common denominator format
  * Flexible delimiters
  * Ad hoc comments and headers
  * Row-oriented
  * Row-size can vary: no implicit indexing
 
+notes:
+Sometimes called "DSV" or "Delimiter-separated values"
+
+Ad hoc means data readers need to be adapted to format.
+
 ---
+
+## Reading CSV
 
 ```
 ...
@@ -249,6 +266,64 @@ adjacent.
 425,5.28370e-002,-2.12400e-002,6.85860e-001
 ...
 ```
+
+notes:
+Let's take this sample data and see how it's represented in computer memory.
+
+---
+
+## Binary
+
+![](images/binaryMath1.jpg)
+
+notes:
+Who can tell me what decimal number these binary digits represent?
+
+---
+
+## Binary
+
+![](images/binaryMath2.jpg)
+
+notes:
+2 to each exponent is flipped on or off, then the on-values are added together.
+
+---
+
+## Binary
+
+![](images/binaryMath3.jpg)
+
+notes:
+Who can tell me what these digits represent in decimal?
+
+---
+
+## Binary
+
+![](images/binaryMath.jpg)
+
+notes:
+Computers use electrical current to turn millions of switches called "bits" on or off. They combine 8 bits together like this to make a "byte". 
+
+---
+
+```
+
+390,1.83970e-003,-4.53930e-004,1.21520e-002
+```
+
+If we assume ASCII encoding, this becomes:
+
+| | | |
+|-|-|-|
+|"390" <!-- .element: class="table-hl" --> |51 |57 |48 |
+<!-- .element: style="margin-left: 0.2em;" -->
+
+![](images/ASCII-Table.jpg)
+
+notes:
+A string is not a number, but a list of characters. A character is a symbol represented by a unique byte as described in the ASCII table.
 
 ---
 
@@ -274,17 +349,18 @@ Breaking this further down, we encode each character:
 <!-- .element: style="margin-left: 0.2em;" -->
 
 ---
+
 ```
 
 390,1.83970e-003,-4.53930e-004,1.21520e-002
 ```
 
-This is then translated into a floating point number:
+Then a string-to-float function translates the string "390" into a floating point number:
 
-||||||||||
-|-|-|-|-|-|-|-|-|-|
-|390.0 <!-- .element: class="table-hl" --> | 0 | 0 | 0 | 0 | 0 | 96 | 120 | 64 |
-<!-- .element: style="margin-left: 0.2em;" -->
+![](images/floatSample1.jpg)
+
+notes:
+This is how our example would be stored as an IEEE754 Single precision 32-bit float. This IEEE standard for encoding floats tries to optimize for very small and very large numbers, with the understanding that computers cannot store infinite accuracy.
 
 ---
 ```
@@ -299,10 +375,10 @@ This is then translated into a floating point number:
 
 And this is translated into a floating pointer number as well:
 
-||||||||||
-|-|-|-|-|-|-|-|-|-|
-|1.83970e-003 <!-- .element: class="table-hl" -->  | 2 | 166 | 103 | 213 | 66 | 36 | 94 | 63 |
-<!-- .element: style="margin-left: 0.2em;"-->
+![](images/floatSample2.jpg)
+
+notes:
+Point being, reading a CSV file is pretty processor intensive - so it's not a great format for huge datasets.
 
 ---
 
@@ -324,6 +400,12 @@ And this is translated into a floating pointer number as well:
    * Array (list)
    * Boolean
    * null
+ * Format of .ipynb Python Notebooks
+
+notes:
+XML-like syntax for storing data values. 
+
+All fields for a record are presented at once.
 
 ---
 
@@ -380,7 +462,7 @@ to it.
 ---
 
 <div class="left">
-![](images/palette.svg)<!-- .element: style="height: 20em;" -->
+![](images/palette.jpg)<!-- .element: style="height: 20em;" -->
 </div>
 
 <div class="right" style="font-size: 150%;">
@@ -403,11 +485,6 @@ You have a palette of operations to apply.
  * Related data queries
    * Queries on other columns at fixed row location
    * External membership queries
-
-|||||||||||||
-|-|-|-|-|-|-|-|-|-|-|-|-|
-|&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" -->|
-|&nbsp;<!-- .element: class="table-hl" --> |&nbsp; |&nbsp; |&nbsp; |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" --> |&nbsp; |&nbsp;<!-- .element: class="table-hl" --> |&nbsp; |&nbsp; |&nbsp;<!-- .element: class="table-hl" --> |&nbsp;<!-- .element: class="table-hl" -->|
 
 ---
 
@@ -470,17 +547,39 @@ not without its possible faults, however.
 
 <!-- .slide: data-background-image="images/sampling_fig3.png" data-background-size="contain" -->
 
+notes:
+We might preserve the shape better by alternate sampling methods. These random samplings preserve features that the uniform samplings lost - but they also lose features that the uniform sampling preserved.
+
 ---
 
 <!-- .slide: data-background-image="images/sampling_fig4.png" data-background-size="contain" -->
+
+notes:
+You'll also notice that high rates of change are more susceptible to data loss. A better sampling algorithm would target these fast changing regions.
 
 ---
 
 <!-- .slide: data-background-image="images/sampling_fig5.png" data-background-size="contain" -->
 
+notes:
+the Nyquist limit is the minimum rate at which a signal can be sampled without introducing errors - 2x the highest frequency in the data.
+
+You can see that in this higher frequency data, the same sampling rates fall apart faster.
+
 ---
 
 <!-- .slide: data-background-image="images/sampling_fig6.png" data-background-size="contain" -->
+
+---
+
+<!-- .slide: data-background-image="images/teapots.png" data-background-size="contain" -->
+
+
+---
+
+## 10 minute Break
+
+Then, a Jupyter group coding demo.
 
 ---
 

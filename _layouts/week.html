@@ -28,7 +28,7 @@ layout: default
         {%endfor%}
         {% assign notebooks = site.static_files | where: "extname", ".ipynb" %}
         {% for nb in notebooks %}
-        {% if nb.path contains page.dir f.visible_note %}
+        {% if nb.path contains page.dir and f.visible_n %}
         <li>Notebook {{nb.basename}}: 
          (<a href="../nbv.html?notebook_name={{nb.path | relative_url | url_encode }}">view</a>,
          <a href="{{nb.path | relative_url}}">download</a>)</li>
