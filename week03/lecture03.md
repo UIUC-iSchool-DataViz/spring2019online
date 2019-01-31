@@ -153,15 +153,7 @@ notes: so we see our pixelation gets less and less sever if we increase the numb
 ## Representations
 
  1. Numerical Data
- 2. ???
- 3. Pixels On Screen
-
----
-
-## Representations
-
- 1. Numerical Data
- 2. <span style="color:red">Raster & Vector representations of images</span>
+ 2. Words
  3. Pixels On Screen
 
 ---
