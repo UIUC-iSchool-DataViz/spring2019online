@@ -162,6 +162,8 @@ components of its representation.
  * Relationship
  * Motion
 
+<!-- .slide: data-background-image="images/dimensions_6.gif" data-background-size="auto 50%" data-background-position="right 20% bottom 50%"-->
+
 
 ---
 
@@ -475,7 +477,16 @@ Group discussion:
 
 ---
 
-## Assignment 2
+## Python practice
+
+ * Histogramming
+ * Binning
+ * Smoothing
+
+
+---
+
+## Assignment 3
 
 Using one of the ideas that we have discussed,
 construct a visualization of the Illinois Building Inventory that communicates
