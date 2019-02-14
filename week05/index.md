@@ -10,6 +10,6 @@ choose colors and transforms to better suit our data.
 
 # Datasets
 
- * <a href="data/michigan_lld.flt" download>Michigan Depth Map</a>
- * <a href="data/single_dicom.h5" download>Brain Scan</a>
+ * <a href="data/michigan_lld.flt" download>Michigan Depth Map (86Mb) </a>
+ * <a href="data/single_dicom.h5" download>Brain Scan (72Mb) </a>
 
