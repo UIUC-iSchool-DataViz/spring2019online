@@ -238,9 +238,22 @@ Below shows how responsive each type of cone is to a specific wavelength of ligh
 
 <img src = "images/cmf_ann.png" height=400>
 
-
 notes: here, you can think of this as how responsive your eye's cones are to different wavelengths.
 You can see that your R cone is a lot more sensitive then there rest, especially at high wavelengths.
+
+---
+
+## Color Matching Function
+
+The R,G, & B cones have different levels of responsiveness to different wavelenghts of light.
+
+Below shows how responsive each type of cone is to a specific wavelength of light.
+
+<img src = "images/cmf_ann.png" height=300>
+
+[Jupyter Notebook of Color Fundamentals](https://uiuc-ischool-dataviz.github.io/spring2019online/nbv.html?notebook_name=%2Fspring2019online%2Fweek05%2Fcolor_fundamentals.ipynb)
+
+notes: there is a lot more of this with links to research in this jupyter notebook
 
 ---
 
