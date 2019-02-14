@@ -12,4 +12,6 @@ choose colors and transforms to better suit our data.
 
  * <a href="data/michigan_lld.flt" download>Michigan Depth Map (86Mb) </a>
  * <a href="data/single_dicom.h5" download>Brain Scan (72Mb) </a>
+ * <a href="../week04/data/littleCorgiInHat.png" download>Image Example </a>
+ * <a href="affline_transformation.py" download>Affline Transformations on Images - save to notebook folder (or modify your path)</a>
 
