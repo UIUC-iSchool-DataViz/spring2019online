@@ -440,7 +440,8 @@ The blended areas of the continuous map here are kind of gross looking. This kin
 
 ## Color Meaning
 
-<img src="images/blackBodyColor2.png" width="600"/>
+<!--<img src="images/blackBodyColor2.png" width="600"/>-->
+![](images/blackbodyColor.png)
 
 notes:
 Which end of this is hot and which end is cold? What do red and blue mean?
