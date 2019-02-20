@@ -8,8 +8,8 @@ visible_n: true
 
 # Data Visualization
 <div style="height: 6.0em;"></div>
-## AJ Christensen
-## Spring 2019
+## Jill P. Naiman
+## Spring 2019 (Online)
 ## Lecture 6
 
 ---
@@ -27,16 +27,16 @@ visible_n: true
 
 ## Last Week
 
- * Transformations
- * Colors and color mapping
- * HSV/RGB/etc
- * Image visualization
+ * Transformations - affline
+ * Colors and color mapping - mapping data into colors
+ * HSV/RGB/etc - how to represent colors in different spaces
+ * Image visualization - putting these concepts together to generate images from 2D data
 
 ---
 
 ## Review: Color Mapping
 
- * Choose an accessible, appropriate colormap
+ * Choose an accessible, appropriate colormap.  Ask:
    * "Am I showing different things?"
    * "Can these things be compared directly?"
    * "Do I want to demonstrate deviation or gradiation?"
@@ -49,12 +49,29 @@ visible_n: true
 
 ## This Week
 
- * Showing Composition
+ * More about choosing your viz: appropriate for both the data
+ * Declarative vs. Imperative viz code
+   * Grammar of Graphics
+   * bqplot
+   * vega-lite (if we have time)
+ * Object oriented programming for viz
+   * traitlets
+ * More on interactivity (using widgets, bqplot & traitlets)
+
+<!-- * Showing Composition
  * Comparing Datasets
  * Traitlets in IPython/Jupyter
  * Visualization Engines
    * bqplot
-   * vega-lite
+   * vega-lite-->
+
+---
+
+<br />
+<br />
+<br />
+
+# TOPIC 1: Choosing your viz
 
 ---
 
@@ -139,24 +156,6 @@ there are really quite a few alternatives. There are many ways to show data stac
 
 ---
 
-## Alternatives
-
- * Hierarchical data
-   * Sunbursts (e.g., [snakeviz](https://jiffyclub.github.io/snakeviz/) )
-   * Nested box area (e.g., [callgrind](https://kcachegrind.github.io/html/Home.html) )
-
-<table>
-<tr>
-<td>
-<img src="images/sunburst.png" width="450"/></td><td><img src="images/callgrind.gif" width="450"/></td>
-</tr>
-</table>
-
-notes:
-For heirarchical data, you can nest some of these other formats.
-
----
-
 ## Comparison
 
 <!-- .slide: data-background-image="images/columnchart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
@@ -177,7 +176,7 @@ Or to show they're part of a whole, use a stacked column chart
 
 ## Comparison
 
-<!-- .slide: data-background-image="images/barchart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+<!-- .slide: data-background-image="images/stackedareachart.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
 
 notes:
 or to show a time-series, use connected lines that stack on top of each other to show area across the whole canvass. This shows you trends and specific vertical values.
@@ -193,9 +192,69 @@ JUST NOT THIS!
 notes:
 Just do not compare pie charts!
 
+Zomygod what is even happening right now.
+
 ---
 
-## Pandas
+## Hierarchical data
+
+<!-- .slide: data-background-image="images/hierarchical_zoos.png" data-background-size="auto 65%" data-background-position="right 50% bottom 50%" -->
+
+notes:
+Sometimes we want to show data in a proportion and show connections.
+This often happens for hierarcical data.
+
+Here in this example we want to show proportions of land based mammals that
+are popular at the zoo and then as we move out we subdivide by the individual
+animal species.
+
+---
+
+
+## Hierarchical data: example packages
+
+ * Sunbursts (e.g., [snakeviz](https://jiffyclub.github.io/snakeviz/) )
+ * Nested box area (e.g., [callgrind](https://kcachegrind.github.io/html/Home.html) ) - for
+ showing flowchart like structures for things like code programs
+
+<table>
+<tr>
+<td>
+<img src="images/sunburst.png" width="450"/></td><td><img src="images/callgrind.gif" width="450"/></td>
+</tr>
+</table>
+
+notes:
+For heirarchical data, you can nest some of these other formats.
+
+---
+
+<br />
+<br />
+<br />
+
+# TOPIC 2: Imperative vs. Declaritive Viz Programming Languages
+
+---
+
+![](images/logreas_AFrame_2.gif)
+
+ * "_Declarative_ programming languages ... are rather like logics in that programs declare statements that are known to be true and relationships between these and other statements."
+ * "_Imperative_ programming languages ... state what shall be done in given conditions. They start with an initial state and an explicit set of instructions that describe the process that will unfold."
+
+[Reference](http://cfpm.org/~bruce/logreas/logreas_7.html)
+
+---
+
+## Grammar of Graphics for Declaritive Viz
+
+ * Declaritive viz "paints" graphics on a canvas elements common to all visualizations
+
+![](images/GoG.png)
+
+---
+
+## Pandas: Have been using mostly _Imperatively_
 
  * [pandas.pydata.org](http://pandas.pydata.org/)
  * Support for indexing, multi-indexing
@@ -214,8 +273,8 @@ Just do not compare pie charts!
 
 This week we'll be looking at two new visualization engines.
 
- * `bqplot`
- * `vega-lite`
+ * `bqplot` - both imperative & declaritive methods
+ * `vega-lite` - declaritive
 
 ---
 
@@ -244,9 +303,20 @@ We will be using the latter far more frequently than the former.
 
 ---
 
-## Object-Oriented Programming
+## Why bqplot?
 
-<img src="images/vehicles.jpg" width="800"/>
+ * Has a "matplotlib" style similar to what we've been using thus far
+ * Also has an option for the declaritive style of viz software like
+ d3.js or tableau
+ * Allows us to make NYTimes and 538-style visualizations efficiently, and
+ without having to
+ learn a lot of javascript
+
+---
+
+# Topic 3: Object-Oriented Programming
+
+<img src="images/vehicles.jpg" width="700"/>
 
 notes:
 What are some traits every vehicle has?
