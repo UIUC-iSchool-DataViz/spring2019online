@@ -385,6 +385,21 @@ def name_changed(change):
 my_obj.observe(name_changed, ['name'])
 ```
 
+
+---
+
+## Watching Traitlets
+
+Once we have an object that has traits, we can watch that object for changes.
+
+```#python
+
+def name_changed(change):
+    print(change['new'])
+
+my_obj.observe(name_changed, ['name'])
+```
+
 In this case, we are watching the trait `name` for changes.  When a change
 occurs, the function `name_changed` is called.  The argument is a dict with
 these values:
@@ -395,9 +410,21 @@ these values:
  * `owner`: the object that owns this trait
  * `name`: the name of the trait
 
+notes: don't worry, this is just a quick overview and we'll get into more
+details in the Python coding part of the lecture
+
 ---
 
-## Widgets
+## Widgets: Our old friends!
+
+We can use the `ipywidgets` library to build out widgets in Jupyter notebooks.
+These widgets can be quite extensive with many different operations;
+additionally, they can have substantial CSS styling.
+
+
+---
+
+## Widgets: Our old friends!
 
 We can use the `ipywidgets` library to build out widgets in Jupyter notebooks.
 These widgets can be quite extensive with many different operations;
@@ -474,7 +501,33 @@ notes:
 
 ---
 
-## bqplot
+## Back to bqplot
+
+---
+
+## Back to bqplot
+
+Now that we've learned a bit about widgets, we can start to dig into `bqplot`.
+`bqplot` is based around traitlets and widget objects; every object you work
+with will have traits and may be represented as a widget.
+
+---
+
+## Back to bqplot
+
+Now that we've learned a bit about widgets, we can start to dig into `bqplot`.
+`bqplot` is based around traitlets and widget objects; every object you work
+with will have traits and may be represented as a widget.
+
+When we use `bqplot` we will be constructing `Figure` objects, which will
+contain `marks` and `axes`.  To use these, we will build mark objects (`Bars`,
+`Lines`, `Scatter`, `Map`, etc) and describe the relationship between points
+using `Scale` objects.
+
+
+---
+
+## Back to bqplot
 
 Now that we've learned a bit about widgets, we can start to dig into `bqplot`.
 `bqplot` is based around traitlets and widget objects; every object you work
@@ -490,7 +543,40 @@ interactivity.
 
 ---
 
-## bqplot objects
+## bqplot objects: Using Grammar of Graphics
+
+---
+
+## bqplot objects: Using Grammar of Graphics
+
+ * A mark is some mechanism for displaying data.  For example, we might have
+   data that has a set of x and y values, which we can use `Lines` to
+   represent.
+
+---
+
+## bqplot objects: Using Grammar of Graphics
+
+ * A mark is some mechanism for displaying data.  For example, we might have
+   data that has a set of x and y values, which we can use `Lines` to
+   represent.
+ * `Scale` objects describe relationships between visual attributes (position)
+   and data values.
+
+---
+
+## bqplot objects: Using Grammar of Graphics
+
+ * A mark is some mechanism for displaying data.  For example, we might have
+   data that has a set of x and y values, which we can use `Lines` to
+   represent.
+ * `Scale` objects describe relationships between visual attributes (position)
+   and data values.
+ * `Axis` objects are where data are placed.
+
+---
+
+## bqplot objects: Using Grammar of Graphics
 
  * A mark is some mechanism for displaying data.  For example, we might have
    data that has a set of x and y values, which we can use `Lines` to
@@ -524,7 +610,7 @@ display(fig)
 
 ---
 
-### vega-lite
+### vega-lite (if we have time)
 
 vega-lite is a high-level method for describing visualizations independently of
 their data.
@@ -532,6 +618,10 @@ their data.
 We will be exploring this using the online editor at:
 
 https://vega.github.io/editor/
+
+---
+
+# To Python for more interactivity!
 
 ---
 
@@ -545,12 +635,12 @@ https://vega.github.io/editor/
    1. The field to "bin"
    2. The method of aggregation (sum, mean, min, max, count)
    3. The number of bins
- * This will be collected via nbgrader, and we will work in-class next week on
-   expanding it.
+<!-- * This will be collected via nbgrader, and we will work in-class next week on
+   expanding it.-->
 
 ---
 
-## Today: Let's Try Things
+<!--## Today: Let's Try Things
 
 Today we are going to build comparisons with our (virtual) hands.
 
@@ -558,6 +648,6 @@ Today we are going to build comparisons with our (virtual) hands.
    * Patches and elements
    * "Projections"
    * Polar projections
- * Traitlets
+ * Traitlets-->
 
-## Next Week: Lab all day
+<!--## Next Week: Lab all day-->
