@@ -1,0 +1,18 @@
+import pandas as pd
+
+
+def clean_data(data):
+    for column in ['income', 'lifeExpectancy', 'population']:
+        data = data.drop(data[data[column].apply(len) <= 4].index)
+    return data
+
+def extrap_interp(data):
+    data = np.array(data)
+    x_range = np.arange(1800, 2009, 1.)
+    y_range = np.interp(x_range, data[:, 0], data[:, 1])
+    return y_range
+
+def extrap_data(data):
+    for column in ['income', 'lifeExpectancy', 'population']:
+        data[column] = data[column].apply(extrap_interp)
+    return data

@@ -250,7 +250,11 @@ For heirarchical data, you can nest some of these other formats.
 
  * Declaritive viz "paints" graphics on a canvas elements common to all visualizations
 
-![](images/GoG.png)
+<!--[](images/GoG.png)-->
+<img src="images/GoG.png" width="700"/>
+
+
+[More info here](https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149)
 
 ---
 
