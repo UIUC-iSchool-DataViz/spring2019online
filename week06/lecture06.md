@@ -629,18 +629,15 @@ https://vega.github.io/editor/
 
 ---
 
-## Assignment 3
+## Assignment 5
 
- * Using traitlets, widgets and bqplot, build a notebook that:
-   1. Uses the UFO datasets
-   2. Allows changing the x and y fields on a scatter plot from the UFO dataset
-   3. Displays tooltips when hovering over individual items
- * Build a second widget that displays binned, aggregate values where you can change:
-   1. The field to "bin"
-   2. The method of aggregation (sum, mean, min, max, count)
-   3. The number of bins
-<!-- * This will be collected via nbgrader, and we will work in-class next week on
-   expanding it.-->
+ * Viz #1: Using traitlets, widgets and bqplot, build a notebook that:
+   1. Uses the UFO dataset (see week 4) or the buildings dataset
+   2. Creates a scatter plot that you can interact with (pan & zoom, or other)
+   3. Explain why you implemented the interactivity you did - how does it help visualize what you want it to visualize?
+ * Viz #2: Work through the Wealth of Nations plot we *nearly* finished in class
+   1. Change at least 3 aspects of this visualization
+   2. Explain why you made the choices you did - how does this help visualize some aspect of this dataset that the original visualization does not?
 
 ---
 

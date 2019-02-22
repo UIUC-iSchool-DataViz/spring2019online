@@ -12,3 +12,5 @@ visible: true
 
 # Extra links
  * <a href="https://www.youtube.com/watch?v=9uaHRWj04D4">Vega-Lite overview (~30 min video)</a>
+ * <a href=" https://github.com/dmadeka/PyGotham-2017">A multitude of bqplot examples</a>
+ * <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Bqplot overview (~30 min video)</a>
