@@ -1,6 +1,6 @@
 ---
 layout: week
-visible: false
+visible: true
 ---
 
 # Week 7 - Beginning Interactivity
