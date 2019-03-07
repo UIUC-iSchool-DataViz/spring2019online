@@ -30,6 +30,11 @@ Sharing is caring! :)
 
 Limited internet availability March 15-24.
 
+---
+
+## Quick announcements
+
+Homework grades coming!
 
 ---
 
