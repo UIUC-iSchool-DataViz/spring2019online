@@ -1,0 +1,5 @@
+* I think show off idyll, and then have assignment be install it
+  & ask questions if something doesn't work
+* AJ wants to combine weeks 9 & 10 and spend more time on sci viz
+* I *think* we should also do some Idyll... but also do volume rendering,
+  software limitations
