@@ -15,3 +15,7 @@ projections in a return to matplotlib.
  * <a href='data/location.txt' download>Earthquake sensor locations data</a>
  * <a href='data/total_export.csv' download>State export data</a>
  * <a href='states_utils.py' download>State export utilities (Python library)</a>
+
+# Extra resources
+
+ * cool collection of <a href="http://www.seismicsoundlab.org/?page_id=338"> seismic viz</a>
