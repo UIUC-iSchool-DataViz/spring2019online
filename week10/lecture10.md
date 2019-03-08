@@ -2,6 +2,8 @@
 title: Lecture 10
 layout: lecture
 include_vega: true
+visible_lec: true
+visible_n: true
 ---
 
 <!-- .slide: class="titleslide" -->
