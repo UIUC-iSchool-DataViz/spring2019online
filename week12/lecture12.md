@@ -1,6 +1,8 @@
 ---
 title: Lecture 12
 layout: lecture
+visible_lec: true
+visible_n: true
 ---
 
 <!-- .slide: class="titleslide" -->
