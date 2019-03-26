@@ -1,0 +1,50 @@
+// We will build up our intuition for how this works line by line
+
+// First, lets cover some "command line" things we'll need:
+//    Start first with cd, pwd, ls in command line
+
+// Then: text editor, make sure you don't save as rich-text formatting
+
+// Onto our first idyll project:
+// so, here is what I get if I do: idyll create and enter "firstIdyll" for the
+//    directory and "Alice" for the project name
+
+// lets actually start with a blank slate ** DELETE ALL LINES BELOW HERE **
+
+
+[meta title:"My First Project" description:"This is my very first project!" /]
+// Note: I can leave comments to myself here with these to slashes
+// this won't get compiled into our final webpage and I can remember what I'm doing!  neato
+
+// Lets re-put in a nice header for our webpage:
+[Header
+  title:"My First Project"
+  subtitle:"Welcome to my new project."
+  author:"Jill P. Naiman"
+  authorLink:"https://www.astronaiman.com" /] // this links to my personal webpage, so that is cool
+
+// Now, lets add some plain text:
+This subsection here is just plain text. // magical
+
+// Like in our jupyter notebooks, we can build up interactive
+//  elements, for example we can add sliders, toggles, etc
+Here is how you can use a variable, by default it does a slider:
+
+[var name:"exampleVar" value:6 /] // first, we define our variable and its name, and its initial value
+[Range min:-5 max:10 value:exampleVar /] // next, what are the min and max of the variable
+[Display value:exampleVar /] // finally - lets display the ol' thing
+
+// now we have a slider that moves around and prints stuff which is cool
+
+// as an aside, lets say we want to write the code that it takes
+// to make this slider, we can just copy paste and include
+// 3 little ``` 's around it like so:
+
+```
+[var name:"exampleVar" value:6 /] // first, we define our variable and its name, and its initial value
+[Range min:-5 max:10 value:exampleVar /] // next, what are the min and max of the variable
+[Display value:exampleVar /] // finally - lets display the ol' thing
+```
+
+// the above ``` 's are very common to Markdown
+
