@@ -1,0 +1,19 @@
+# base page: http://www.cardiped.net/browseDogs.php?start=0&p_f=0&sortBy=name&alpha=a
+
+startSmall=0
+startLarge=0
+nDog = 1
+
+while nDog < 2402:
+    w = 'http://www.cardiped.net/browseDogs.php?start='+\
+        str(int(startSmall))+\
+        '&p_f='+\
+        str(int(startLarge))+\
+        '&sortBy=name&alpha=a'
+
+    # parse
+
+    startSmall += 20
+    if startSmall%100 = 0:
+        startSmall=0
+        startLarge += 100

@@ -1,0 +1,5 @@
+
+
+Grabs website using: http://www.httrack.com/
+
+/usr/local/Cellar/httrack/3.49.2/bin/httrack "http://www.cardiped.net/browseDogs.php" -O "./" -v
