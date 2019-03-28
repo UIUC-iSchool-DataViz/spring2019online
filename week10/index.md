@@ -16,6 +16,10 @@ ended with discussion about the Idyll framework.
 # Beginning Idyll code
 
  * We will be heavily modifying you're default : the <a href="idyll_website/index.idyll" download>index.idyll</a> file.  I've included my notes in that download if its easier to follow along that way.
+
+# Final Project Resources
+
+ * Google doc of <a href="https://docs.google.com/document/d/15UJinT5XokAHXd9fQAYD8f6d3vEkR6kJMq8kswmkOhY/edit?usp=sharing">available datasets</a>.  Feel free to use one of your own!
  
 # Outline of Topics
 
