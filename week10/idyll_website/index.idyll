@@ -62,6 +62,8 @@ Here is how you can use a variable, by default it does a slider:
 // the above ``` 's are very common to Markdown
 
 
+
+
 // PART 2: Adding images
 
 // lets put in some images, but first a header that says that is what we are doing
@@ -106,6 +108,7 @@ Here is how you can use a variable, by default it does a slider:
 // there is also no gab around them and they are side by side
 // lets play with these options a big
 
+
 // (5) 
 [img
   src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png'
@@ -122,7 +125,6 @@ Here is how you can use a variable, by default it does a slider:
 // we can also do text next to images, and do cool things with their layout
 // lets put a "fixed" image and then scroll some text next to it
 // will do this with "waypoint" and "fixed" tags
-
 
 // PART 3: Scrolling
 
@@ -159,8 +161,30 @@ Here is how you can use a variable, by default it does a slider:
 //[/Fixed]
 // Comment out this Fixed when done
 
-
 // PART 4: Adding data and interactive viz using vega-lite
 // Dataset from webscrape of: http://www.cardiped.net/browseDogs.php
 
 # Vega-Lite for dataviz
+
+Dataset comes from online database: [Corgi Database](http://www.cardiped.net/browseDogs.php)
+
+Note: a webscrape was performed to grab this dataset with [Python code](https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/grabCorgData.py) available for interested parties.
+
+
+### Reading data basics
+
+First, lets start by reading in a data set and checking it out as a table :
+
+//[data name:"corgData" source:"corgiData.json" /]
+
+//[Table data:`corgData.slice(0,10)` /]
+
+//[data name:"exData" source:"example-data.json"  /]
+
+//[Table data:exData/]
+
+//[data name:"cars" source:"cars.json"  /]
+//[Table data:`cars.slice(0, 10)` /]
+
+[data name:"corgs" source:"corgiData.json"  /]
+[Table data:`corgs.slice(0, 10)` /]
