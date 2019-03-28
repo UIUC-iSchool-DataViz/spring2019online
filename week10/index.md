@@ -1,6 +1,6 @@
 ---
 layout: week
-visible: false
+visible: true
 ---
 
 # Week 10 - Iterative Design, Idyll
@@ -11,25 +11,29 @@ ended with discussion about the Idyll framework.
 # Resources
 
  * <a href='corg/imgcropped.png' download>Example image to download for Idyll build</a>
- * <a href='data/corgiData.json' download>Example dataset Idyll build</a>
+ * <a href='data/corgiData.json' download>Example dataset for Idyll build</a>
 
+# Beginning Idyll code
+
+ * We will be heavily modifying you're default : the <a href="idyll_website/index.idyll" download>index.idyll</a> file.  I've included my notes in that download if its easier to follow along that way.
+ 
 # Outline of Topics
 
-This week our objectives will be to (1) spend more time looking at different kinds of map visualizations, (2) we'll introduce the topics of networks and think about how to visualize them.
+This week our objectives will be to (1) think about how we construct visualizations based on our audiences, (2) discuss the final project, (3) start working on publishing some visualizations with Idyll, (4) have a brief introduction to the concept of scientific visualization.
 
-Map Viz Motivation: <a href="https://www.idashboards.com/blog/2017/08/02/5-provocative-map-data-visualizations/">examples of mappable data</a> and <a href="https://www.idashboards.com/blog/2017/08/02/5-provocative-map-data-visualizations/">even more examples of data on maps</a>.
+We introduce Idyll this week and continue on with more Idyll next week.
 
-Network Viz Motivation: <a href="https://www.maa.org/sites/default/files/pdf/Mathhorizons/NetworkofThrones%20%281%29.pdf">social networks</a> and <a href="https://dataviz.tools/category/network-visualization/">many network viz platforms</a>.
 
  * Lecture
-   1. Review of map data & visualizations from last week
-   1. Discussion of networks and how they are visualized
+   1. Distinction of "viz for self", "viz for peers/experts", "viz for others/outreach/public"
+   1. Storytelling and knowing your audience
+   1. Visualizations for the web - overview of html/D3.js/etc
 
  * Programming
-   1. More ways to visualize maps (bqplot.MarketMap)
-     * want to look at code examples before class? <a href="https://github.com/bloomberg/bqplot/blob/master/examples/Marks/Object%20Model/Market%20Map.ipynb">bqplot MarketMap notebook</a>
-   1. Visualizing networks (bqplot.Graph)
-     * want to look at code examples before class? <a href="https://github.com/dmadeka/PyGotham-2017/blob/master/6%20-%20Mobile%20Patent%20Suits.ipynb">bqplot Graph notebook</a>
+   1. Introduction to scientific visualization with Python and [yt](https://yt-project.org/) - how to get data and simple plots (we'll cover this more later, but if you want to use some sci viz for your final project we'll go through the basics)
+   1. Introduction to some command line tools
+   1. Introduction to Idyll
+   1. Introduction to vega-lite in Idyll
 
 # Extra Resources
 
