@@ -232,8 +232,42 @@ npm install --save react@^16.0.0 react-dom@^16.0.0
 Color by:
  [button onClick:`colorBy = {}` ]None[/button]
  [button onClick:`colorBy = {field: 'sex', type: 'nominal'}` ]Sex of Corgi[/button]
- //[button onClick:`colorBy = {field: 'sire', type: 'nominal'}` ]Sire[/button]
 
+
+[var name:"colorBy2" value:`{}` /]
+
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  mark: "circle",
+  encoding: {
+    x: {field: "sire", type: "nominal", axis:{labels:false}}, 
+    y: {field: "dam", type: "nominal", axis:{labels:false}},
+    color: colorBy2
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy2 = {}` ]None[/button]
+ [button onClick:`colorBy2 = {field: 'year', type: 'ordinal'}` ]Year of Birth[/button]
+
+
+[var name:"colorBy3" value:`{}` /]
+
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  mark: "bar",
+  encoding: {
+    x: {field: "year", type: "temporal"},
+    y: {aggregate:"count", type: "quantitative"}, // (2)
+    color: colorBy3
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy3 = {}` ]None[/button]
+ [button onClick:`colorBy3 = {field: 'sex', type: 'nominal'}` ]Sex of Corgi[/button]
 
 
 //[data name:"cars" source:"cars.json"  /]
