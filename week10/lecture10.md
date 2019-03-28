@@ -18,12 +18,12 @@ visible_n: true
 
 ## Today
 
- * Communication with an Audience
+ * Communication with an Audience (Viz for self, peers, others)
  * Final project
  * Publishing
    * D3.js
    * Idyll
-   * Github Pages
+   * Github Pages (next week)
 
 ---
 
@@ -53,9 +53,49 @@ As the designer, you know what choices you have made, so "elegant design" isn't 
 <img src="images/walsh.gif" width="700"/>
 
 notes:
-I think this is a great example. We used 3D software to make a 2D plot, and arranged points to look like a bar chart even though they were rendered as individual points - aka a scatter plot.
+This is an example from AJ (the in-person instructor). He uses 3D software like Houdini in his "everyday" life and so this is his software of choice.  Here, he used 3D software to make a 2D plot, and arranged points to look like a bar chart even though they were rendered as individual points - aka a scatter plot.
 
 It just had to work, and we used the most convenient software.
+
+---
+
+## Viz for Self
+
+<img src="images/L25n128TNG_tmp_gas_metallicity_history.png" width="700"/>
+
+notes:
+Here are some examples from my work
+
+There are plots of data from a large scale simulation of the universe.  Here, I'm curious about how the average number of elements heavier than helium in our simulation changes over time.
+
+---
+
+## Viz for Self
+
+name of: L25n512TNG_shenplot_STARS_ylimn0p5_bins_largeEu_1e2_nx050_ny050_sn099.png
+
+<img src="images/L25n512TNG_shenplot_STARS_ylimn0p5_bins_largeEu_1e2_nx050_ny050_sn099.png" width="500"/>
+
+notes:
+You can even tell from the name of the file (which runs off the page here) that I'm playing with a bunch of things.  For example I'm plotting here stars, but there is no way you'd really get that from the actual plot itself.
+
+These are plots that show an example of how one might "explore" the data - look for relationships.
+
+---
+
+## Viz for Self
+
+Later this became (viz for peers)
+
+<img src="images/L75n1820TNG_eufef07065_allMstar_eucut_massweighted_bigrange_rfracAll_histo.png" width="600"/>
+
+[Paper if you're really curious](https://arxiv.org/pdf/1707.03401.pdf)
+
+notes:
+later, that plot became this plot right here which can be thought of as viz-for peers
+
+While its probably not something that you all understand (unless there are some astronomers in our midst) - you can see I'm more careful here about fonts, presentatin, color schemes and actually labeling things
+
 
 ---
 
@@ -110,6 +150,10 @@ What do you want to get out of visualization for yourself?
 notes:
 shortcut ideas ... subsampling, delete unused fields, use a simpler tool, manually select outliers by hand instead of doing it procedurally
 
+forget labels that others have to figure out
+
+don't worry about color schemee
+
 ---
 
 ## Viz for Experts
@@ -127,7 +171,7 @@ To design a visualization for experts, you need to analyze how they process info
 <img src="images/sci_tornado.png" width="700"/>
 
 notes:
-Here's a series of visualizations made by or for domain experts that I just had lying around on my laptop.
+Here's a series of visualizations made by or for domain experts that AJ just had lying around on his laptop.
 
 What are some things you notice they have in common?
 
@@ -199,7 +243,7 @@ Experts are looking to isolate variables to make scientific conclusions.
 How can we make visualizations more analytical?
  * Reduce the dimensionality of the image (slices)
  * Viewpoint from "outside the box"
- * Extremely high contrast color choices
+ * Extremely high contrast color choices (or highlight different features)
 
 notes:
 ask students - other ideas? What about animated data?
@@ -222,6 +266,11 @@ Who here is an expert on the historical accuracy of movies? Do you think this vi
 <iframe src="https://player.vimeo.com/video/206139648" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/206139648">Jaret before and after</a> from <a href="https://vimeo.com/aldacenter">Alan Alda Center</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
+notes:
+so here is an example of a scientist and, in a typical scientist fashion, using a  lot of jargon
+
+but then after taking some improv he's able to communicate more effectively to the public
+
 ---
 
 ## Jargon
@@ -239,7 +288,7 @@ When working with experts on their data, they will often try to use words that a
 
 <img src="images/upgoerfive.png" width="600"/>
 
-[xkcd.com/1133](xkcd.com/1133)
+[xkcd.com/1133](https://xkcd.com/1133/)
 
 notes:
 This XKCD webcomic makes fun of how much jargon scientists use. He tries to explain NASA's Saturn V rocket using only the 1000 most common words in the English language. 
@@ -296,6 +345,8 @@ Freytag's Pyramid
 notes:
 A story needs setup, conflict, and resolution. One thing many novice storytellers forget is to have a resolution or ending. You need to wrap it up in a neat package!
 
+aside - "denouement" is one of my favorite words
+
 ---
 
 ## Storytelling
@@ -303,13 +354,21 @@ A story needs setup, conflict, and resolution. One thing many novice storyteller
 Characters and Conflict
  * People as subjects: Two political candidates are battling for office
  * People as researchers: Dr. Smith is trying to cure cancer
- * Objects as characters: The protons are trying to push their way to the sun's surface
+ * Objects as characters: The photons are trying to push their way to the sun's surface
+
+notes:
+each story is going to have different sorts of characters and different kinds of conflicts
+
+here are a few examples - you can even make scientific data into a story!  Don't you really want to root for the photons to make it out of the sun?
 
 ---
 
 ## Know your Audience
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/opqIa5Jiwuw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+notes:
+so, we won't watch this whole thing, but it is worth checking out how the jargon/language changes when he's talking to different groups of folks
 
 ---
 
@@ -350,6 +409,8 @@ Context is vital for the public.
 notes:
 This is different from a visualization for Experts where you usually want to isolate the dataset.
 
+With experts, you can asssume some background of understanding.  You might start a presentation or paper with a background summary, but based on the field you don't have to explain as much.  For example, if I'm giving a astronomy talk, I can assume folks know the difference between newtonian gravity and general relativistc treatments and roughly when each apply (GR for going fast, or near big things).
+
 ---
 
 ## Visualization for the Public
@@ -374,11 +435,13 @@ Identifying the narrative
  * What is the difference between the data narrative and a narrative for the public?
 
 notes:
-Typically we will start with a dataset, and then build a narrative around it, and seek out more data to build context.
+In visualization for the public, typically we will start with a dataset, and then build a narrative around it, and seek out more data to build context.
 
 Data narrative = what the data collector is researching
 
 Public narrative = what makes an interesting story and provides context
+
+This is different than viz for experts where you are typically talking about the dataset you have been working with specifically.
 
 ---
 
@@ -477,7 +540,7 @@ JavaScript is a dynamic programming language that runs natively on webpages. If 
 
 Most of this is hidden from you when writing in Idyll! But it helps to understand the underlying mechanisms.
 
-We will be using D3.js and Idyll for the Final Project to share interactive visualizations connected in a narrative.
+D3.js and Idyll are another set of tools that can be used for the Final Project to share interactive visualizations connected in a narrative.
 
 notes:
 what are the limits to data size in Idyll and the web browser?
@@ -486,24 +549,22 @@ what are the limits to data size in Idyll and the web browser?
 
 ## Final Project
 
-Your final project is due on December 5.
+Your final project is due on April 25th.  
 
-That is just over a month.
+That is about a month.
 
 You will have three components:
 
-1. Viz for Self (Due November 14)
-1. Viz for Peers (Due November 21)
-1. Viz for Others (Due December 5)
+1. Viz for Self (Due April 4)
+1. Viz for Peers (Due April 11)
+1. Viz for Others (Due April 18)
 
 ---
 
 ## Final Project: Part 1
 
-This will be graded individually.  Due by class on November 14, submitted via
-Moodle.  Submit in a Jupyter notebook.
+Due by class next week (April 4th). Submit in a Jupyter notebook.
 
- * Organize yourselves into groups of 4
  * Identify a dataset to explore.
    * This will be iterative!  You probably won't get one you like on the first
      try.
@@ -512,7 +573,8 @@ Moodle.  Submit in a Jupyter notebook.
      [data.gov](https://data.gov/),
      [developer.marvel.com](https://developer.marvel.com/),
      [IDB](https://databank.illinois.edu/), etc.
- * Explore the dataset in a Jupyter notebook.  **Do not delete any cells.**
+   * or the dataset doc that [lives right here](https://docs.google.com/document/d/15UJinT5XokAHXd9fQAYD8f6d3vEkR6kJMq8kswmkOhY/edit?usp=sharing)
+ * Explore the dataset in a Jupyter notebook.  Make sure you include things that did and did not work.
  * Summarize the characteristics of the dataset in words: what does it
    represent, what are the fields/columns/rows, what data types are they, etc
 
@@ -528,12 +590,23 @@ information in your Jupyter notebook:
  * Where can we obtain it?  (i.e., URL)
  * What is the license of the dataset?  What are we allowed to do with it?
  * How big is it in file size and in items?
+ * Make a simple plot showing a relationship of interest.  You can use matplotlib or pandas (or other). Don't worry about colors, labels or anything else of that nature!
+
+---
+
+## Final Project: Part 1 (cont, cont)
+
+Per usual, there will be a class google doc for this assignment.
+
+You can share raw data sets and sources, ask questions about reading/modifying the dataset and post code to do so **that isn't working**.
+
+Please do not share processed or cleaned datasets.
 
 ---
 
 ## Final Project: Part 2
 
-This will be graded per group.  Submit in a Jupyter notebook.
+Submit in a Jupyter notebook.  
 
  * Using your dataset, generate visualizations that explore the data in a
    guided way.
@@ -543,6 +616,11 @@ This will be graded per group.  Submit in a Jupyter notebook.
    discussion and descriptions.
  * If you can identify improvements to the visualizations that come from
    interactivity, implement that.
+
+---
+
+## Final Project: Part 2 (cont)
+
  * The visualizations should utilize visual language relevant for "Viz for
    Peers."
     * Each and every plot should contain all relevant information: appropriate
@@ -554,13 +632,20 @@ This will be graded per group.  Submit in a Jupyter notebook.
 
 ## Final Project: Part 3
 
-You will submit this as your final project and will present it to the class.
+You will submit this as your final project in week 13 and get some feedback.
 
-You may submit one or more of the following items, but they *must* be in a
-repository that is rendered as HTML.  More information will be coming shortly.
+For week 14 (last day of class, April 25th), everbody will share their viz for a few minutes in class
+(tech willing).  This doesn't have to be a formal presentation, just a quick screen-share and a few
+comments about what you have been working on.
+
+---
+
+## Final Project: Part 3 (cont)
+
+You may submit one or more of the following items: Idyll webpage repository, narrative Jupyter notebook.
 
 This component will include a "for others" visualization that is deeply
-narrative with appropriate interactive (or static) content and shared on a
+narrative with appropriate interactive (or static) content and, ideally, sharable on a
 website.
 
 Some possible ways to approach this:
@@ -572,64 +657,10 @@ Some possible ways to approach this:
 
 ---
 
-## Idyll
+## Onto Idyll!
 
 Idyll is a reactive markup language for visualization and narrative documents.
 
 [idyll-lang.org](idyll-lang.org)
 
----
-
-## Idyll Again
-
-Go to your Jupyter Hub environment.  Create a terminal.
-
-```
-source activate /home/shared/sp18-is590dv/conda_envs/is590dv-default/
-yo idyll
-```
-
-This will autogenerate a project for you.  Go into that directory and type `npm
-start`.
-
-This will watch for changes and rebuild.  It tells you that you can connect to
-it in a web browser but **this is a lie**.  You have to browse to the location
-in your tree view and then go to the directory `build` and choose `index.html`
-in the Jupyter main page.
-
----
-
-## Breakout: Birth Names (Part 1)
-
-Last week, we talked about how one would represent a birth name browser.
-
-What did you come up with?
-
----
-
-## Breakout: Birth Names (Part 2)
-
-On the Jupyterhub, you have access to a `names` directory:
-
-```
-/home/shared/sp18-is590dv/data/names
-```
-
-This has a bunch of files, with the counts of birth names per year and
-categorized by sex assigned at birth.
-
----
-
-## Breakout: Birth Names (Part 3)
-
-You are to break into groups and decide how to proceed.  We need to:
-
-1. Explore the data
-1. Generate an interactive visualization
-1. See if we can get it into Idyll
-
----
-
-## Idyll and Data
-
-What are the barriers to using Idyll with really big, unfiltered data?
+... after a quick detour into sci viz topics!
