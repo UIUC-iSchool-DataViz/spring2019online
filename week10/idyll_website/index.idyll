@@ -171,20 +171,100 @@ Dataset comes from online database: [Corgi Database](http://www.cardiped.net/bro
 Note: a webscrape was performed to grab this dataset with [Python code](https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/grabCorgData.py) available for interested parties.
 
 
+// I THINK THIS SHOULD BE PART OF HW
+
 ### Reading data basics
 
-First, lets start by reading in a data set and checking it out as a table :
+First, lets start by reading in a data set and checking it out as a table (just first 10 rows):
 
-//[data name:"corgData" source:"corgiData.json" /]
+[data name:"corgs" source:"corgiData.json"  /]
+[Table data:`corgs.slice(0, 10)` /]
 
-//[Table data:`corgData.slice(0,10)` /]
+### Plotting our data
 
-//[data name:"exData" source:"example-data.json"  /]
+To plot this we want use vega-lite to start.
 
-//[Table data:exData/]
+In the directory with this index.idyll file do:
+
+```
+npm install --save idyll-vega-lite
+```
+
+From this, you might get some errors like:
+
+```
+npm WARN acorn-dynamic-import@4.0.0 requires a peer of acorn@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN idyll-component@1.2.2 requires a peer of react@^15.5.4 but none is installed. You must install peer dependencies yourself.
+npm WARN idyll-component@1.2.2 requires a peer of react-dom@^15.5.4 but none is installed. You must install peer dependencies yourself.
+npm WARN react-vega-lite@1.1.3 requires a peer of vega-lite@^2.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-vega@3.1.2 requires a peer of vega@^3.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN myfirstpost@1.0.0 No description
+npm WARN myfirstpost@1.0.0 No repository field.
+```
+
+This is because of some silly install errors where it is looking for the "^" character.  Its annoying, but we have a way around it -
+we'll install them by hand:
+
+```
+npm install --save acorn@^6.0.0 react@^15.5.4 react-dom@^15.5.4 vega-lite@^2.0.0 vega@^3.0.0
+```
+
+You might still get some errors about react 16 so you can then do:
+
+```
+npm install --save react@^16.0.0 react-dom@^16.0.0 
+```
+
+[var name:"colorBy" value:`{}` /]
+
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  mark: "circle",
+  encoding: {
+    //x: {field: "dam", type: "nominal", // (1)
+    x: {field: "dam", type: "nominal", axis:{labels:false}}, // (2)
+    y: {field: "year", type: "temporal"},
+    color: colorBy
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy = {}` ]None[/button]
+ [button onClick:`colorBy = {field: 'sex', type: 'nominal'}` ]Sex of Corgi[/button]
+ //[button onClick:`colorBy = {field: 'sire', type: 'nominal'}` ]Sire[/button]
+
+
 
 //[data name:"cars" source:"cars.json"  /]
 //[Table data:`cars.slice(0, 10)` /]
 
-[data name:"corgs" source:"corgiData.json"  /]
-[Table data:`corgs.slice(0, 10)` /]
+//[IdyllVegaLite data:cars spec:`{
+//  width: 300,
+//  height: 200,
+//  renderer: 'svg',
+//  mark: "circle",
+//  encoding: {
+//    x: {field: "Horsepower", type: "quantitative"},
+//    y: {field: "Miles_per_Gallon", type: "quantitative"}
+//  }
+//}` /]
+
+
+//[var name:"colorBy" value:`{}` /]
+
+//[IdyllVegaLite data:cars spec:`{
+//  width: 300,
+//  height: 200,
+//  mark: "circle",
+//  encoding: {
+//    x: {field: "Horsepower", type: "quantitative"},
+//    y: {field: "Miles_per_Gallon", type: "quantitative"},
+//    color: colorBy
+//  }
+//}` /]
+
+//Color by:
+// [button onClick:`colorBy = {}` ]None[/button]
+// [button onClick:`colorBy = {field: 'Year', type: 'nominal'}` ]Year[/button]
+// [button onClick:`colorBy = {field: 'Origin', type: 'nominal'}` ]Origin[/button]

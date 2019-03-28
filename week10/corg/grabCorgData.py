@@ -107,7 +107,7 @@ for i in range(len(name)-1):
         f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
         f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
         f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
-        f.write('   "year":'+str(int(replaceWeird(year[i])))+'\n')
+        f.write('   "year": "'+str(int(replaceWeird(year[i])))+'"\n')
         f.write(' },\n')
 
 i=-1
@@ -117,7 +117,7 @@ if len(year[i].split()) > 0: # this is not ideal here
     f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
     f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
     f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
-    f.write('   "year":'+str(int(replaceWeird(year[i])))+'\n')
+    f.write('   "year": "'+str(int(replaceWeird(year[i])))+'"\n')
     f.write(' }\n')
 
     
