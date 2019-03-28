@@ -13,7 +13,7 @@ ended with discussion about the Idyll framework.
  * <a href='corg/imgcropped.png' download>Example image to download for Idyll build</a>
  * <a href='data/corgiData.json' download>Example dataset for Idyll build</a>
 
-# Beginning Idyll code
+### Beginning Idyll code
 
  * We will be heavily modifying you're default : the <a href="idyll_website/index.idyll" download>index.idyll</a> file.  I've included my notes in that download if its easier to follow along that way.
 
