@@ -260,14 +260,110 @@ Color by:
   mark: "bar",
   encoding: {
     x: {field: "year", type: "temporal"},
-    y: {aggregate:"count", type: "quantitative"}, // (2)
+    y: {aggregate:"count", type: "quantitative", title:"Number of Corgis Born"}, // (2)
     color: colorBy3
   }
 }` /]
 
 Color by:
  [button onClick:`colorBy3 = {}` ]None[/button]
- [button onClick:`colorBy3 = {field: 'sex', type: 'nominal'}` ]Sex of Corgi[/button]
+ [button onClick:`colorBy3 = {field: 'sex', type: 'nominal'}` ]Sex of Corgi Born[/button]
+ [button onClick:`colorBy3 = {field: 'dam', type: 'nominal'}` ]Dam[/button]
+ [button onClick:`colorBy3 = {field: 'FamilyName', type: 'nominal'}` ]Family Name[/button]
+
+
+// Now, lets make these plots even more interactive.
+// Lets say we really like the # of corgis born vs year
+
+// ****COMMENT OUT ALL OTHERS, WORK ON CORIES PER YEAR ***
+
+// we can, much like with ipywidgets, make little interactive sliders
+// lets make a little slider to play with our year plot
+
+// reference: https://github.com/idyll-lang/examples/blob/master/csv/index.idl
+// And: https://vega.github.io/vega-lite/docs/filter.html
+
+// lets first start by plotting only a little range in years
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  transform:[{filter:{"timeUnit":"year", field:"year", "lte":2000}},
+             {filter:{"timeUnit":"year", field:"year", "gte":1960}}],
+  mark: "bar",
+  encoding: {
+    x: {
+       field: "year",
+       type: "temporal"//,
+       //timeUnit:"year"
+    },
+    y: {
+       aggregate:"count",
+       type: "quantitative",
+       axis:{title:"Number of Corgis Born"}
+    }, 
+    color: colorBy3
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy3 = {}` ]None[/button]
+ [button onClick:`colorBy3 = {field: 'sex', type: 'nominal'}` ]Sex of Corgi Born[/button]
+
+// We can actually make this range a variable!
+
+[var name:"yearStart" value:1960 /]
+[var name:"yearEnd" value:2000 /]
+
+// lets first start by plotting only a little range in years
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  transform:[{filter:{"timeUnit":"year", field:"year", "lte":yearEnd}},
+             {filter:{"timeUnit":"year", field:"year", "gte":yearStart}}],
+  mark: "bar",
+  encoding: {
+    x: {
+       field: "year",
+       type: "temporal"//,
+       //timeUnit:"year"
+    },
+    y: {
+       aggregate:"count",
+       type: "quantitative",
+       axis:{title:"Number of Corgis Born"}
+    }, 
+    color: colorBy3
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy3 = {}` ]None[/button]
+ [button onClick:`colorBy3 = {field: 'sex', type: 'nominal'}` ]Sex of Corgi Born[/button]
+
+[section] // format the sliders into their own section
+Lowest Year: 1925 [Range min:1925 max:yearEnd value:yearStart /] 2020
+
+Highest Year: 1925 [Range min:yearStart max:2020 value:yearEnd /] 2020
+[/section]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Extra examples
 
 
 //[data name:"cars" source:"cars.json"  /]

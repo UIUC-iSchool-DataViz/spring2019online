@@ -90,16 +90,6 @@ def replaceWeird(st):
 f = open(saveFilejson,'w')
 f.write('[\n')
 for i in range(len(name)-1):
-#for i in range(455):
-    # formatting
-#    n = name[i]
-#    if n.find('"') != -1:
-#        n=n.replace('"','')
-#    d = dam[i]
-#    d=d.replace("'","")
-#    if d.find('"') != -1:
-#        d=d.replace('"','')
-#    se = sex[i]
     # only with birthdays
     if len(year[i].split()) > 0:
         f.write(' { \n')
@@ -107,7 +97,12 @@ for i in range(len(name)-1):
         f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
         f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
         f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
-        f.write('   "year": "'+str(int(replaceWeird(year[i])))+'"\n')
+        # grab family name
+        fn = replaceWeird(name[i]).split()[0]
+        #### only if 1 thing:
+        ###if fn == 'A': fn = replaceWeird(name[i]).split()[0:1]
+        f.write('   "FamilyName": "'+fn+'",\n')
+        f.write('   "year": '+str(int(replaceWeird(year[i])))+'\n')
         f.write(' },\n')
 
 i=-1
@@ -117,7 +112,10 @@ if len(year[i].split()) > 0: # this is not ideal here
     f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
     f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
     f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
-    f.write('   "year": "'+str(int(replaceWeird(year[i])))+'"\n')
+    # grab family name
+    fn = replaceWeird(name[i]).split()[0]
+    f.write('   "FamilyName": "'+fn+'",\n')
+    f.write('   "year": '+str(int(replaceWeird(year[i])))+'\n')
     f.write(' }\n')
 
     
