@@ -11,6 +11,7 @@ ended with discussion about the Idyll framework.
 # Resources
 
  * <a href='corg/imgcropped.png' download>Example image to download for Idyll build</a>
+ * <a href='data/corgiData.csv' download>Example dataset Idyll build</a>
 
 # Outline of Topics
 
