@@ -5,6 +5,7 @@ import httplib2
 
 # were are we saving data?
 saveFile = '/Users/jillnaiman1/spring2019online/week10/data/corgiData.csv'
+saveFilejson = '/Users/jillnaiman1/spring2019online/week10/data/corgiData.json'
 
 #-----------------------------------------------------------
 
@@ -71,11 +72,55 @@ while startSmall < 2402:
     if startSmall%100 == 0:
         startLarge += 100
 
-# write file
+# write file for csv
 f = open(saveFile,'w')
-f.write('name, dam, sire, sex, year\n')
+f.write('"","name", "dam", "sire", "sex", "year"\n')
 
 for i in range(len(name)):
-    f.write(name[i] + ',' + dam[i] + ',' + sire[i] + ',' + sex[i] + ',' + year[i] + '\n')
+    f.write('"' + str(int(i)) + '","'+name[i] + '","' + dam[i] + '","' + sire[i] + '","' + sex[i] + '",' + year[i] + '\n')
+
+f.close()
+
+def replaceWeird(st):
+    sto = st.replace("'","")
+    sto = st.replace('"','')
+    return sto
+
+# for json
+f = open(saveFilejson,'w')
+f.write('[\n')
+for i in range(len(name)-1):
+#for i in range(455):
+    # formatting
+#    n = name[i]
+#    if n.find('"') != -1:
+#        n=n.replace('"','')
+#    d = dam[i]
+#    d=d.replace("'","")
+#    if d.find('"') != -1:
+#        d=d.replace('"','')
+#    se = sex[i]
+    # only with birthdays
+    if len(year[i].split()) > 0:
+        f.write(' { \n')
+        f.write('   "name": "'+replaceWeird(name[i])+'",\n')
+        f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
+        f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
+        f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
+        f.write('   "year":'+str(int(replaceWeird(year[i])))+'\n')
+        f.write(' },\n')
+
+i=-1
+if len(year[i].split()) > 0: # this is not ideal here
+    f.write(' { \n')
+    f.write('   "name": "'+replaceWeird(name[i])+'",\n')
+    f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
+    f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
+    f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
+    f.write('   "year":'+str(int(replaceWeird(year[i])))+'\n')
+    f.write(' }\n')
+
+    
+f.write(']\n')
 
 f.close()
