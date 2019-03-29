@@ -13,12 +13,12 @@ ended with discussion about the Idyll framework.
  * <a href='corg/imgcropped.png' download>Example image to download for Idyll build</a>
  * <a href='data/corgiData.json' download>Example dataset for Idyll build</a>
 
-### Beginning Idyll code
+## Beginning Idyll code
 
  * We will be heavily modifying you're default : the <a href="idyll_website/index.idyll" download>index.idyll</a> file.  I've included my notes in that download if its easier to follow along that way.
  * Also, check that the package.json file matchs <a href="idyll_website/package.json" download> the one right here</a>.
 
-More instructions for install can be found below:
+### Mac/Unix/Linux install instructions:
 
 1. Install idyll with npm: npm install -g idyll
 (the -g is to install globally - you probably need root access.  If you don't have root access, then leave out the -g and make a note of where idyll installs.  When I say "idyll" you will have to provide the entire path like "/Users/jillnaiman1/MYINSTALLLOCATION/idyll")
