@@ -20,21 +20,28 @@ ended with discussion about the Idyll framework.
 
 ### Mac/Unix/Linux install instructions:
 
-1. Install idyll with npm: npm install -g idyll
-(the -g is to install globally - you probably need root access.  If you don't have root access, then leave out the -g and make a note of where idyll installs.  When I say "idyll" you will have to provide the entire path like "/Users/jillnaiman1/MYINSTALLLOCATION/idyll")
-1. idyll create
-(select a directory and post name)
+1. Install idyll with: ```npm: npm install -g idyll``` (the -g is to install globally - you probably need root access.  If you don't have root access, then leave out the -g and make a note of where idyll installs.  When I say "idyll" you will have to provide the entire path like ```/Users/jillnaiman1/MYINSTALLLOCATION/idyll```)
+1. Run idyll: ```idyll create``` (select a directory and post name)
 1. cd into your post directory
-1. type "idyll" to build and run
-1. install vega-lite for idyll, in your post directory run: "npm install --save idyll-vega-lite"
+1. type ```idyll``` to build and run
+1. install vega-lite for idyll, in your post directory run:
+```
+npm install --save idyll-vega-lite
+```
 you will probably get some errors about dependencies not being installed
-1. To fix these dependencies run: "npm install --save acorn@^6.0.0 vega-lite@^2.0.0 react@^15.5.4 react-dom@^15.5.4 vega@^3.0.0"
+1. To fix these dependencies run:
+```
+npm install --save acorn@^6.0.0 vega-lite@^2.0.0 react@^15.5.4 react-dom@^15.5.4 vega@^3.0.0
+```
 (or what ever packages you are missing)
-1. Re run the vega-lite install to double check: "npm install --save idyll-vega-lite"
+1. Re run the vega-lite install to double check: ``npm install --save idyll-vega-lite```
 you should have less errors
-1. You might want the latest version of react, so you can do: "npm install --save npm install --save react@^16.0.0 react-dom@^16.0.0"
+1. You will want the latest version of react, so you can do:
+```
+npm install --save react@^16.0.0 react-dom@^16.0.0
+```
 1. Try replacing your index.idyll file with the <a href="idyll_website/index.idyll">index.idyll file attached above</a>
-1. Check your package.json file and make sure it reacs like the <a href="idyll_website/package.json">package.json file attached above</a>
+1. Check your package.json file and make sure it reacts like the <a href="idyll_website/package.json">package.json file attached above</a>
 
 # Final Project Resources
 

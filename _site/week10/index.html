@@ -19,7 +19,7 @@
 <!-- End Jekyll SEO tag -->
 
     <link href='https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/spring2019online/assets/css/style.css?v=7e63bf11fbb4a68503321e56e1ce3fc5c73ca6bb">
+    <link rel="stylesheet" href="/spring2019online/assets/css/style.css?v=d1e79f508c8efa66fb4edbaaf31d4d5a17aad58e">
     <script src="/spring2019online/assets/js/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -52,31 +52,38 @@ ended with discussion about the Idyll framework.</p>
   <li><a href="data/corgiData.json" download="">Example dataset for Idyll build</a></li>
 </ul>
 
-<h3 id="beginning-idyll-code">Beginning Idyll code</h3>
+<h2 id="beginning-idyll-code">Beginning Idyll code</h2>
 
 <ul>
   <li>We will be heavily modifying you’re default : the <a href="idyll_website/index.idyll" download="">index.idyll</a> file.  I’ve included my notes in that download if its easier to follow along that way.</li>
   <li>Also, check that the package.json file matchs <a href="idyll_website/package.json" download=""> the one right here</a>.</li>
 </ul>
 
-<p>More instructions for install can be found below:</p>
+<h3 id="macunixlinux-install-instructions">Mac/Unix/Linux install instructions:</h3>
 
 <ol>
-  <li>Install idyll with npm: npm install -g idyll
-(the -g is to install globally - you probably need root access.  If you don’t have root access, then leave out the -g and make a note of where idyll installs.  When I say “idyll” you will have to provide the entire path like “/Users/jillnaiman1/MYINSTALLLOCATION/idyll”)</li>
-  <li>idyll create
-(select a directory and post name)</li>
+  <li>Install idyll with: <code class="highlighter-rouge">npm: npm install -g idyll</code> (the -g is to install globally - you probably need root access.  If you don’t have root access, then leave out the -g and make a note of where idyll installs.  When I say “idyll” you will have to provide the entire path like <code class="highlighter-rouge">/Users/jillnaiman1/MYINSTALLLOCATION/idyll</code>)</li>
+  <li>Run idyll: <code class="highlighter-rouge">idyll create</code> (select a directory and post name)</li>
   <li>cd into your post directory</li>
-  <li>type “idyll” to build and run</li>
-  <li>install vega-lite for idyll, in your post directory run: “npm install –save idyll-vega-lite”
-you will probably get some errors about dependencies not being installed</li>
-  <li>To fix these dependencies run: “npm install –save acorn@^6.0.0 vega-lite@^2.0.0 react@^15.5.4 react-dom@^15.5.4 vega@^3.0.0”
-(or what ever packages you are missing)</li>
-  <li>Re run the vega-lite install to double check: “npm install –save idyll-vega-lite”
+  <li>type <code class="highlighter-rouge">idyll</code> to build and run</li>
+  <li>install vega-lite for idyll, in your post directory run:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save idyll-vega-lite
+</code></pre></div>    </div>
+    <p>you will probably get some errors about dependencies not being installed</p>
+  </li>
+  <li>To fix these dependencies run:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save acorn@^6.0.0 vega-lite@^2.0.0 react@^15.5.4 react-dom@^15.5.4 vega@^3.0.0
+</code></pre></div>    </div>
+    <p>(or what ever packages you are missing)</p>
+  </li>
+  <li>Re run the vega-lite install to double check: <code class="highlighter-rouge">npm install --save idyll-vega-lite</code>`
 you should have less errors</li>
-  <li>You might want the latest version of react, so you can do: “npm install –save npm install –save react@^16.0.0 react-dom@^16.0.0”</li>
+  <li>You will want the latest version of react, so you can do:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save react@^16.0.0 react-dom@^16.0.0
+</code></pre></div>    </div>
+  </li>
   <li>Try replacing your index.idyll file with the <a href="idyll_website/index.idyll">index.idyll file attached above</a></li>
-  <li>Check your package.json file and make sure it reacs like the <a href="idyll_website/package.json">package.json file attached above</a></li>
+  <li>Check your package.json file and make sure it reacts like the <a href="idyll_website/package.json">package.json file attached above</a></li>
 </ol>
 
 <h1 id="final-project-resources">Final Project Resources</h1>
