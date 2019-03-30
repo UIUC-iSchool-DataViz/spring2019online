@@ -34,8 +34,7 @@ you will probably get some errors about dependencies not being installed
 npm install --save acorn@^6.0.0 vega-lite@^2.0.0 react@^15.5.4 react-dom@^15.5.4 vega@^3.0.0
 ```
 (or what ever packages you are missing)
-1. Re run the vega-lite install to double check: ``npm install --save idyll-vega-lite```
-you should have less errors
+1. Re run the vega-lite install to double check: ```npm install --save idyll-vega-lite``` and you should have less errors
 1. You will want the latest version of react, so you can do:
 ```
 npm install --save react@^16.0.0 react-dom@^16.0.0
