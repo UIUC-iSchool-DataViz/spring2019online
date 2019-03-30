@@ -42,6 +42,8 @@ npm install --save react@^16.0.0 react-dom@^16.0.0
 1. Try replacing your index.idyll file with the <a href="idyll_website/index.idyll">index.idyll file attached above</a>
 1. Check your package.json file and make sure it reacts like the <a href="idyll_website/package.json">package.json file attached above</a>
 
+### Windows install instructions: coming soon!
+
 # Final Project Resources
 
  * Google doc of <a href="https://docs.google.com/document/d/15UJinT5XokAHXd9fQAYD8f6d3vEkR6kJMq8kswmkOhY/edit?usp=sharing">available datasets</a>.  Feel free to use one of your own!
