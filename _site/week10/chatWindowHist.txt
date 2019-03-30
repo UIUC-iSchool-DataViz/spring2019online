@@ -1,0 +1,301 @@
+Connected to "Data Visualization - Course Room"
+
+
+Recording in progress
+
+Everyone
+Recording messages in this chat.
+ Ian Chapman
+Ian Chapman
+5:29 PM
+
+That's a bummer
+
+Jill Naiman
+Jill Naiman
+5:29 PM
+
+hi all!
+
+5:30 PM
+what's a bummer?  I didn't see the previous chat
+
+Ian Chapman
+Ian Chapman
+5:30 PM
+
+snow in spring
+
+Jennifer Sikora
+Jennifer Sikora
+5:30 PM
+
+snow on saturday 
+
+Jill Naiman
+Jill Naiman
+5:30 PM
+
+did I miss anything important?
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:30 PM
+
+Happy Thursday!
+
+Jill Naiman
+Jill Naiman
+5:30 PM
+
+aaaah
+
+5:30 PM
+got it!
+
+5:30 PM
+we'll wait for a few more folks and then we'll get started
+
+Kayla Abner
+Kayla Abner
+5:30 PM
+
+just chatting about the weather haha 
+
+Jill Naiman
+Jill Naiman
+5:30 PM
+
+important!
+
+David Marcus
+David Marcus
+5:43 PM
+
+Often multiple vizs in the same dashboard
+
+Kayla Abner
+Kayla Abner
+5:43 PM
+
+a lot of very specific vocabulary
+
+Paige Crowl
+Paige Crowl
+5:43 PM
+
+lots of supplemental/contextual data
+
+Jennifer Sikora
+Jennifer Sikora
+5:44 PM
+
+units of measurement and labels are included
+
+Ian Chapman
+Ian Chapman
+5:44 PM
+
+Sometimes the labelling is quite minimal
+
+5:47 PM
+Could be useful, depending on nature of data and goals
+
+Kayla Abner
+Kayla Abner
+5:47 PM
+
+personally i'd shy way from too much animantion, but zooming in and out could be useful. like here is a high level view and now we will look at x data opint 
+
+Jolen Minetz
+Jolen Minetz
+5:47 PM
+
+helpful! combines info better and more seemlessly than isolated views... but isolated views might be highlighted?
+
+Jennifer Sikora
+Jennifer Sikora
+5:47 PM
+
+I think if I were trying to make a point, I would keep the visualizations static to draw attention those specifics 
+
+David Marcus
+David Marcus
+5:47 PM
+
+Seeing how certain variables affect outcomes could be useful
+
+Kayla Abner
+Kayla Abner
+5:47 PM
+
+@Ian yes, definitely depends on your goals 
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:47 PM
+
+Animation looks cool, but not always necessary
+
+Hunju Yun
+Hunju Yun
+5:48 PM
+
+what's mean by isolating variables in here? like selecting? 
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:50 PM
+
+Depends on the movie...Lol
+
+Paige Crowl
+Paige Crowl
+5:51 PM
+
+Experts usually don't use terms like "true-ish" 
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:51 PM
+
+-ish
+
+David Marcus
+David Marcus
+5:51 PM
+
+Variety of movies seems to reflect a general audience
+
+Eric Johnson
+Eric Johnson
+5:51 PM
+
+no overwhelming amounts of data
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:51 PM
+
+Mostly newer movies
+
+Kayla Abner
+Kayla Abner
+5:51 PM
+
+general audience b/c it's very easy to understand
+
+Paige Crowl
+Paige Crowl
+5:51 PM
+
+we don't get to see the underlying data source either
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:51 PM
+
+For historical data, I always like more relational data. 
+
+5:52 PM
+Ye
+
+5:52 PM
+s
+
+5:52 PM
+Sorry!
+
+Paige Crowl
+Paige Crowl
+5:52 PM
+
+jargon!
+
+5:52 PM
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:52 PM
+
+Bachelors in History rearing its head 
+
+Jill Naiman
+Jill Naiman
+5:53 PM
+
+vimeo.com/206139648
+
+Elizabeth McMullen
+Elizabeth McMullen
+5:54 PM
+
+Haha!
+
+Jill Naiman
+Jill Naiman
+5:55 PM
+
+xkcd.com/1133
+
+Ian Chapman
+Ian Chapman
+5:56 PM
+
+Thousand isn't either - so ten hundred words
+
+Jill Naiman
+Jill Naiman
+6:01 PM
+
+youtube.com/watch?v=opqIa5Jiwuw
+
+Paige Crowl
+Paige Crowl
+6:05 PM
+
+I would never have guessed it was a moon forming
+
+Elizabeth McMullen
+Elizabeth McMullen
+6:05 PM
+
+I wished there were labels
+
+David Marcus
+David Marcus
+6:05 PM
+
+A title or one sentence quick description might have helped indicate that it was the moon being formed
+
+Ian Chapman
+Ian Chapman
+6:05 PM
+
+First sequence so fast it's hard to follow visually.
+
+Kayla Abner
+Kayla Abner
+6:05 PM
+
+yeah i am wondering about the colors b/c it looks like the sun 
+
+Press Shift + Tab to navigate to chat history.
+Say something
+
+1 Chat, 1 new
+15 Attendees, 15
+Share Content
+My Settings 
+You are sharing an application
+
+Global keyboard shortcuts: To toggle microphone, press alt+m. To toggle camera, press alt+c. To raise or lower hand, press alt+h.
+
+Ian Chapman
+Ian Chapman
+You are sharing an application
+
+Jill Naiman
+Current feedback: none
+ 
+   Sharing audio off

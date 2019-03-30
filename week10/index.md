@@ -67,3 +67,4 @@ We introduce Idyll this week and continue on with more Idyll next week.
 # Extra Resources
 
  * <a href='corg/grabCorgData.py'>Webscrape Python code for this week's dataset</a>
+ * <a href="chatWindowHist.txt">Chat window text from missed recording on Thursdays class</a>
