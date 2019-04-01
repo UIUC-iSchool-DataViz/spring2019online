@@ -20,6 +20,8 @@ ended with discussion about the Idyll framework.
 
 ### Mac/Unix/Linux install instructions:
 
+A video of this process can be <a href="https://youtu.be/mWxXmWk_vDU">found right here</a>.
+
 1. Install idyll with: ```npm: npm install -g idyll``` (the -g is to install globally - you probably need root access.  If you don't have root access, then leave out the -g and make a note of where idyll installs.  When I say "idyll" you will have to provide the entire path like ```/Users/jillnaiman1/MYINSTALLLOCATION/idyll```)
 1. Run idyll: ```idyll create``` (select a directory and post name)
 1. cd into your post directory
