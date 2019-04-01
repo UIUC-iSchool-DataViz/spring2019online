@@ -18,33 +18,42 @@ ended with discussion about the Idyll framework.
  * We will be heavily modifying you're default : the <a href="idyll_website/index.idyll" download>index.idyll</a> file.  I've included my notes in that download if its easier to follow along that way.
  * Also, check that the package.json file matchs <a href="idyll_website/package.json" download> the one right here</a>.
 
-### Mac/Unix/Linux install instructions:
+### General install instructions:
 
-A video of this process can be <a href="https://youtu.be/mWxXmWk_vDU">found right here</a>.
+A video of this process (with errors & explaination) for Macs can be <a href="https://youtu.be/mWxXmWk_vDU">found right here</a>.
 
-1. Install idyll with: ```npm: npm install -g idyll``` (the -g is to install globally - you probably need root access.  If you don't have root access, then leave out the -g and make a note of where idyll installs.  When I say "idyll" you will have to provide the entire path like ```/Users/jillnaiman1/MYINSTALLLOCATION/idyll```)
-1. Run idyll: ```idyll create``` (select a directory and post name)
-1. cd into your post directory
-1. type ```idyll``` to build and run
-1. install vega-lite for idyll, in your post directory run:
+A video of this process (with errors & explaination) for Windows 10 can be <a href="https://youtu.be/nQ2FFGzREos">found right here</a> (and see notes at the end of this section).
+
+
+1. Install Idyll:
+```
+npm install -g idyll
+```
+1. Create new post with idyll
+```
+idyll create
+```
+1. cd into post directory
+1. Install dependencies to install vegalite
+```
+npm install --save acorn@^6.0.0 vega-lite@^2.0.0 react@^16.0.0 react-dom@^16.0.0 vega@^3.3.1
+```
+1. Install vegalite for Idyll
 ```
 npm install --save idyll-vega-lite
 ```
-you will probably get some errors about dependencies not being installed
-1. To fix these dependencies run:
+1. Copy <a href="idyll_website/index.idyll" download>index.idyll</a> to your post directory
+1. Update <a href="idyll_website/package.json" download>package.json</a> file to match the linked one
+1. Build this website with
 ```
-npm install --save acorn@^6.0.0 vega-lite@^2.0.0 react@^15.5.4 react-dom@^15.5.4 vega@^3.0.0
+idyll
 ```
-(or what ever packages you are missing)
-1. Re run the vega-lite install to double check: ```npm install --save idyll-vega-lite``` and you should have less errors
-1. You will want the latest version of react, so you can do:
-```
-npm install --save react@^16.0.0 react-dom@^16.0.0
-```
-1. Try replacing your index.idyll file with the <a href="idyll_website/index.idyll">index.idyll file attached above</a>
-1. Check your package.json file and make sure it reacts like the <a href="idyll_website/package.json">package.json file attached above</a>
 
-### Windows install instructions: coming soon!
+**Notes for Windows install:**
+
+* You need to have Nodejs installed - <a href="https://nodejs.org/en/download/">download link here</a>. You will have to restart your computer.
+* You need to have git installed - <a href="https://git-scm.com/">download link here</a>.  You will have to restart your computer.
+
 
 # Final Project Resources
 
@@ -72,3 +81,28 @@ We introduce Idyll this week and continue on with more Idyll next week.
 
  * <a href='corg/grabCorgData.py'>Webscrape Python code for this week's dataset</a>
  * <a href="chatWindowHist.txt">Chat window text from missed recording on Thursdays class</a>
+
+**Long form Idyll install instructions more Macs/Unix/Linux:**
+
+1. Install idyll with: ```npm: npm install -g idyll``` (the -g is to install globally - you probably need root access.  If you don't have root access, then leave out the -g and make a note of where idyll installs.  When I say "idyll" you will have to provide the entire path like ```/Users/jillnaiman1/MYINSTALLLOCATION/idyll```)
+1. Run idyll: ```idyll create``` (select a directory and post name)
+1. cd into your post directory
+1. type ```idyll``` to build and run
+1. install vega-lite for idyll, in your post directory run:
+```
+npm install --save idyll-vega-lite
+```
+you will probably get some errors about dependencies not being installed
+1. To fix these dependencies run:
+```
+npm install --save acorn@^6.0.0 vega-lite@^2.0.0 react@^15.5.4 react-dom@^15.5.4 vega@^3.0.0
+```
+(or what ever packages you are missing)
+1. Re run the vega-lite install to double check: ```npm install --save idyll-vega-lite``` and you should have less errors
+1. You will want the latest version of react, so you can do:
+```
+npm install --save react@^16.0.0 react-dom@^16.0.0
+```
+1. Try replacing your index.idyll file with the <a href="idyll_website/index.idyll">index.idyll file attached above</a>
+1. Check your package.json file and make sure it reacts like the <a href="idyll_website/package.json">package.json file attached above</a>
+
