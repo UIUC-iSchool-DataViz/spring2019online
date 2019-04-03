@@ -4,8 +4,7 @@ import requests, bs4
 import httplib2
 
 # were are we saving data?
-saveFile = '/Users/jillnaiman1/spring2019online/week10/data/corgiData.csv'
-saveFilejson = '/Users/jillnaiman1/spring2019online/week10/data/corgiData.json'
+saveFilejson = '/Users/jillnaiman1/spring2019online/week11/corg/corgiData_countries.json'
 
 #-----------------------------------------------------------
 
@@ -77,16 +76,27 @@ while startSmall < numberOfDoggos:
         name = ((soup_details.split('Registered Name:')[1]).split('<td>')[1]).split('</td>')[0]
         # Dad
         sire = ((soup_details.split('Sire:')[1]).split('<td>')[1]).split('</td>')[0]
-        sire = (sire.split('>')[1]).split('<')[0]
+        #   listed?
+        if len(sire) > 0:
+            sire = (sire.split('>')[1]).split('<')[0]
+        else:
+            sire = ''
         # Mom
         dam = ((soup_details.split('Dam:')[1]).split('<td>')[1]).split('</td>')[0]
-        dam = (dam.split('>')[1]).split('<')[0]
+        if len(dam) > 0:
+            dam = (dam.split('>')[1]).split('<')[0]
+        else:
+            dam = ''
         # Sex
         sex = ((soup_details.split('Sex:')[1]).split('<td>')[1]).split('</td>')[0]
         # Birthday
         dob = ((soup_details.split('Date of Birth:')[1]).split('<td>')[1]).split('</td>')[0]
-        #  just grab year
-        year = dob.split()[-1]
+        # listed?
+        if len(dob.split()) > 0:
+            #  just grab year
+            year = dob.split()[-1]
+        else:
+            year = ''
         # nationality
         country = ((soup_details.split('Country of Birth:')[1]).split('<td>')[1]).split('</td>')[0]
         # siblings
@@ -116,57 +126,35 @@ while startSmall < numberOfDoggos:
 
 
 
-import sys
-sys.exit()
 
-# write file for csv
-f = open(saveFile,'w')
-f.write('"","name", "dam", "sire", "sex", "year"\n')
-
-for i in range(len(name)):
-    f.write('"' + str(int(i)) + '","'+name[i] + '","' + dam[i] + '","' + sire[i] + '","' + sex[i] + '",' + year[i] + '\n')
-
-f.close()
-
+# now, save this dataset
 def replaceWeird(st):
     sto = st.replace("'","")
     sto = st.replace('"','')
+    sto = st.replace("'",'')
     return sto
 
-# for json
+# loop through things and replace any weirdos
+for i in range(len(names)):
+    names[i] = replaceWeird(names[i])
+    dams[i] = replaceWeird(dams[i])
+    sires[i] = replaceWeird(sires[i])
+    sexes[i] = replaceWeird(sexes[i])
+    years[i] = replaceWeird(years[i])
+    countries[i] = replaceWeird(countries[i])
+
+
+
+# save to json
+import json
+
+v = []
+for i in range(len(names)):
+    v.append( {"name":names[i], "dam":dams[i], "sire":sires[i], "sex":sexes[i],
+               "year":years[i], "countries":countries[i] } )
+
+# dump to file
 f = open(saveFilejson,'w')
-f.write('[\n')
-for i in range(len(name)-1):
-    # only with birthdays
-    if len(year[i].split()) > 0:
-        f.write(' { \n')
-        f.write('   "name": "'+replaceWeird(name[i])+'",\n')
-        f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
-        f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
-        f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
-        # grab family name
-        fn = replaceWeird(name[i]).split()[0]
-        #### only if 1 thing:
-        ###if fn == 'A': fn = replaceWeird(name[i]).split()[0:1]
-        f.write('   "FamilyName": "'+fn+'",\n')
-        f.write('   "year": "'+str(int(replaceWeird(year[i])))+'"\n')
-        f.write(' },\n')
-
-# last one, different formatting
-i=-1
-if len(year[i].split()) > 0: # this is not ideal here
-    f.write(' { \n')
-    f.write('   "name": "'+replaceWeird(name[i])+'",\n')
-    f.write('   "dam": "'+replaceWeird(dam[i])+'",\n')
-    f.write('   "sire": "'+replaceWeird(sire[i])+'",\n')
-    f.write('   "sex": "'+replaceWeird(sex[i])+'",\n')
-    # grab family name
-    fn = replaceWeird(name[i]).split()[0]
-    f.write('   "FamilyName": "'+fn+'",\n')
-    f.write('   "year": "'+str(int(replaceWeird(year[i])))+'"\n')
-    f.write(' }\n')
-
-    
-f.write(']\n')
-
+f.write(json.dumps(v,indent=2))
 f.close()
+    
