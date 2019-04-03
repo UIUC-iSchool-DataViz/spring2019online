@@ -1,7 +1,4 @@
-// FOR ME: Vanilla Emacs: You can use ` CTRL-x CTRL-+ ' and 'CTRL-x CTRL--' ( 'text-scale-adjust' ) to increase or decrease
-// FOR ME: also, note, following text editing for markdown mode: https://jblevins.org/projects/markdown-mode/
-// FOR ME: also adding to .emacs file: (add-to-list 'auto-mode-alist '("\\.idyll\\'" . markdown-mode)) 
-<!--stuff-->
+// FOR ME: Vanilla Emacs: You can use ` C-x C-+ ' and 'C-x C--' ( 'text-scale-adjust' ) to increase or decrease
 
 // go over: cd, pwd, ls
 // go over: text editors
