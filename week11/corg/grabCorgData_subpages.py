@@ -142,6 +142,8 @@ for i in range(len(names)):
     sexes[i] = replaceWeird(sexes[i])
     years[i] = replaceWeird(years[i])
     countries[i] = replaceWeird(countries[i])
+    for j in range(len(siblings[i])):
+        siblings[i][j] = replaceWeird(siblings[i][j])
 
 
 
@@ -151,7 +153,7 @@ import json
 v = []
 for i in range(len(names)):
     v.append( {"name":names[i], "dam":dams[i], "sire":sires[i], "sex":sexes[i],
-               "year":years[i], "countries":countries[i] } )
+               "year":years[i], "countries":countries[i], "siblings":siblings[i] } )
 
 # dump to file
 f = open(saveFilejson,'w')

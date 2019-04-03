@@ -212,7 +212,7 @@ Note: a webscrape was performed to grab this dataset with [Python code](https://
 
 ## Reading data basics
 
-First, lets start by reading in a data set.  We can do this by s
+First, lets start by reading in a data set.  We can do this by placing the dataset 
 
 ```
 [data name:"corgs" source:"corgiData_countries.json"  /]
