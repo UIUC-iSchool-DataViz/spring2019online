@@ -499,6 +499,18 @@ Then, you need to link this on [mybinder.org](https://mybinder.org)
 
 ---
 
+## github.io for publishing Jupyter notebooks
+
+<img src="images/binderLook.png" width="800"/>
+
+notes: Here, we just put in a link to our "home" github.io page and we also put a link to our specific notebook file
+
+Then we can press "launch" and away we go!
+
+Also, for some cases you can use "nbviewer" to render notebooks.  However, this doesn't work with the latest version of ipywidgets and bqplot. Hopefully that will change soon!
+
+---
+
 ## Final Project: Part 2
 
 Due by class on April 18th, submitted via Moodle in a Jupyter notebook.
