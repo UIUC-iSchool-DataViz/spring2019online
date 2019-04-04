@@ -153,6 +153,7 @@ The address is 1205 W Clark St, just north of the Siebel computer science buildi
  * Validation
  * Publishing
  * More on Idyll
+ * github.io pages
 
 ---
 
@@ -449,7 +450,7 @@ This is how you can reach people through their phones and popular new media like
 
 <img src="images/blanketAndLeggings.png" width="800"/>
 
-notes: here the blanket is the hottest temperature recorded every year 
+notes: here the blanket is the daily temperature recorded every day for a year 
 
 the leggings are a scientific viz - the leg on the left is density and the right is temperature, taken from a simulation of stars forming in a gaseous region
 
@@ -483,29 +484,159 @@ Cons:
  * Difficult to design and implement well
  * Hard to work with editorial collaborators (not in CMS’s)
 
+---
+
+## Idyll: getting your viz on the web
+
+We'll be using github pages (github.io) to do this.
+
+The steps will be:
+
+ * Create the repository ```[username].github.io``` 
+ * Clone this repository
+ * Fill it with your Idyll build
+ * Push your repository
+ * PROFIT
+
+---
+
+## ~~Idyll~~ Jupyter notebooks: getting your viz on the web
+
+We'll be using github pages (github.io) to do this.
+
+The steps will be:
+
+ * Create the repository ```[username].github.io``` 
+ * Clone this repository
+ * Fill it with your ~~Idyll build~~ Jupyter notebook & dataset
+ * Push your repository
+ * Use [mybinder.org](https://mybinder.org/) to create a link to your notebook
+ * PROFIT
+
+notes: the process for building a jupyter notebook will be very much the same, the steps are just a little different
+
+---
+
+## github.io for publishing
+
+Step 1: Create/login to your github account
+
+(We'll also do this "live" in the coding section of class)
+
+---
+
+## github.io for publishing
+
+Step 2: Create new repository
+
+<img src="images/githubio1.png" width="800"/>
+
+---
+
+## github.io for publishing
+
+Step 2: Create new repository
+
+<img src="images/githubio1_nm.png" width="800"/>
+
+---
+
+## github.io for publishing
+
+Step 3: Name your new repository as ```[username].github.io```
+
+<img src="images/githubio2_nm.png" width="800"/>
+
+---
+
+## github.io for publishing
+
+Step 3: Name your new repository as ```[username].github.io```
+
+<img src="images/githubio2.png" width="800"/>
+
+notes: the name is important here!!
+
+---
+
+## github.io for publishing
+
+Step 4: Clone your repository
+
+<img src="images/githubio3_nm.png" width="800"/>
+
+---
+
+## github.io for publishing
+
+Step 4: Clone your repository
+
+<img src="images/githubio3.png" width="800"/>
+
+notes: make note of your git name, we'll use this for "cloning" our github repo
+
+---
+
+## github.io for publishing
+
+Step 5: Clone your repository
+ * In command line do: ```git clone YOUR_REPO_LINK```
+
+Step 6: Copy contents of your Idyll build to this directory
+ * ```cp -r MY_IDYLL_FILE/build MY_REPO_DIR```
+
+---
+
+## github.io for publishing
+
+Step 7: Add these files to your repo officially
+ * ```git add -A```
+ 
+Step 8: Commit these files (say what you are doing)
+ * ```git commit -m "my first add"
+ 
+Step 9: Push to your online repo
+ * ```git push```
+ 
+Step 10: wait for your website to build and then check it out!
+ * Link: ```https://YOUR_GITHUB_USER_NAME.github.io/```
+
+---
+
+## github.io for publishing Jupyter notebooks
+
+Steps are essentially the same, but instead of your Idyll build directory, you add in your notebook file.
+
+Then, you need to link this on [mybinder.org](https://mybinder.org)
 
 ---
 
 ## Final Project: Part 2
 
-Due by class on April 15th, submitted via Moodle in a Jupyter notebook.
+Due by class on April 18th, submitted via Moodle in a Jupyter notebook.
 
-As a group you should submit:
+Submit code and a writeup (either seperate or within the notebook):
 
 Code:
- * Jupyter notebook with an interactive dashboard that helps an expert explore your dataset thoroughly. There should be 4 linked visualizations all exploring the same dataset and all visible at the same time. (3 linked visualizations for teams of 3.)
+ * Jupyter notebook with an interactive dashboard that helps an expert explore your dataset thoroughly. 
+ * There should be a "dashboard" type aspect to this - i.e. a linked view exploring your dataset in an interactive way
  * Do not delete any cells, just comment them out. Show your work.
 
 ---
 
 ## Final Project: Part 2 (cont)
 
-As a group you should submit:
+Also submit:
 
 Prose:
  * One paragraph explaining how to use the dashboard you created, to help someone who is not an expert understand your dataset. 
- * A list of 5 (or more) contextual datasets you have identified, links to where they reside, and a sentence about why they might be useful in telling the final story.
- * A brief description of which group members completed which tasks. There should be an equal division of labor. Each group member will be graded based on how well they completed their tasks. If one group member clearly does less work, they may receive a grade deduction.
+ * A list of 1 or more contextual datasets you have identified, links to where they reside, and a sentence about why they might be useful in telling the final story.
+ 
+ Per usual, we will have a group google doc for this assignment.  
+
+---
+
+## Let's get into some Idyll & publishing!
 
 
           </script>
