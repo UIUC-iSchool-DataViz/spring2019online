@@ -11,7 +11,7 @@ This week we built up a case study of a visualization of a dataset of Corgis.
 
  * Motivation and information for <a href="https://www.youtube.com/watch?v=KnPe6dZuwlg">Idyll</a> and why you might want to use it for your data.
  * Updated corgi <a href="corg/corgiData_countries.json" download>Corgi Dataset with Country info</a>.
- * <a href='corg/imgcropped.png' download>Example image to download for Idyll build</a>
+ * <a href='images/imgcropped.png' download>Example image to download for Idyll build</a>
 
 
 # Outline of Topics
