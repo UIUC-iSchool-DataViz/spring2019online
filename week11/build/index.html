@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <title>My First Project</title>
+    <meta property="og:title" content="My First Project" />
+    <meta charset="utf-8" />
+    <meta property="og:type" content="article" />
+
+    <meta property="og:description" content="This is my very first project!" />
+    <meta property="description" content="This is my very first project!" />
+
+    <link rel="stylesheet" href="static/idyll_styles.css" />
+  </head>
+  <body>
+    <div id="idyll-mount"><div data-reactroot=""><div class="idyll-root"><div class=" idyll-text-container"><p><div class="article-header"><h1 class="hed">Example Corgi Website</h1><h2 class="dek">Welcome to my example project for IS590DVO at UIUC.</h2><div class="byline">By: <a href="https://www.astronaiman.com">Jill P. Naiman</a></div></div> 
+  
+Like this stuff?  Check out all the great topics we covered at the <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/">IS590DVO page for Spring 2019</a>.</p><p>This subsection here is just plain text. We can easily write stuff like we normally would, nbd. </p><p>Like in our jupyter notebooks, we can build up interactive elements, for example we can add sliders, toggles, etc. </p><p>Here is how you can use a variable, by default it does a slider:</p><p> <input type="range" value="6" min="-5" max="10" step="1"/> <span>6.00</span> </p><pre><code>[var name:&quot;exampleVar&quot; value:6 /] // first, we define our variable and its name, and its initial value 
+[Range min:-5 max:10 value:exampleVar /] // next, what are the min and max of the variable 
+[Display value:exampleVar /] // finally - lets display the ol&#x27; thing</code></pre><p>Note that comments can be done with ”//”.  Now, lets move onto populating our new blog with stuff!</p><h2>Putting in Images</h2><p>We’ll start our blog with some examples of corgis in the wild, 
+so our reader can identify them when they are out in the real world.<img src="https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png" style="height:300px;padding:10px" idyll="[object Object]"/><img src="https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2809.jpg" style="height:300px;padding:10px" idyll="[object Object]"/></p><h2>Scrolling Overlays</h2><p>We can also make our figures interactive.  Lists of corgi facts might be boring, but we 
+can spice them up by doing scrolling overlays with this little bit of code:</p><pre><code>[Scroller currentStep:scrollerIndex]
+  [Graphic style:`{padding: 5}`]
+      [img
+        src:&#x27;https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2814.jpg&#x27;
+        style:`{height:700, float:&quot;left&quot;}` 
+       /]
+  [/Graphic]
+
+  [Step]## Welsh Corgis are a small type of herding dog that originated in Wales, UK.[/Step]
+  [Step]## &quot;Corgi&quot; is Welsh for &quot;dwarf dog&quot;   [/Step]
+  [Step]## Queen Elizabeth II has owned more than 30 corgis in her lifetime.[/Step]
+  [Step]## Corgi-Dachshund mixes are called dorgis.[/Step]
+
+[/Scroller]</code></pre></div><div class="idyll-scroll" id="idyll-scroll-0" style="position:relative"><div class="idyll-scroll-graphic" style="height:100vh;top:0;left:0;right:0;bottom:auto;width:100%;transform:translate3d(0, 0, 0);z-index:-1"><div style="width:0;position:absolute;left:0;right:0;top:50%;transform:translateY(-50%)"><div style="padding:5px"><img src="https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2814.jpg" style="height:700px;float:left" idyll="[object Object]"/></div></div></div><div class=" idyll-text-container"><div class="idyll-scroll-text"><div class="idyll-step "><h2>Welsh Corgis are a small type of herding dog that originated in Wales, UK.</h2></div><div class="idyll-step "><h2>“Corgi” is Welsh for “dwarf dog”</h2></div><div class="idyll-step "><h2>Queen Elizabeth II has owned more than <!-- -->3<!-- -->0<!-- --> corgis in her lifetime.</h2></div><div class="idyll-step "><h2>Corgi-Dachshund mixes are called dorgis.</h2></div></div></div></div><div class=" idyll-text-container"><h1>Vega-Lite for dataviz</h1><p>Now that we have the basics of Idyll down, let’s build up some interactive visualizations that tie our opening images to a dataset.  This is a dataviz class after all!</p><p>We’re going to start with a dataset that comes from an online <a href="http://www.cardiped.net/browseDogs.php">Corgi Database</a>.</p><p>Note: a webscrape was performed to grab this dataset with <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week11/corg/grabCorgData_subpages.py">Python code</a> available for interested parties, but we won’t be delving into webscraping for this course.</p><h2>Reading data basics</h2><p>First, lets start by reading in a data set.  We can do this by placing the dataset <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week11/corg/corgiData_countries.json">that we downloaded from the week11 webpage</a> in our <code>POST_DIRECTORY/data</code> file.  Once we’ve done that, we can add this to our Idyll webpage:</p><pre><code>[data name:&quot;corgs&quot; source:&quot;corgiData_countries.json&quot;  /]
+[Table data:`corgs.slice(0, 10)` /]</code></pre><p>
+which first names the dataset and then prints out its first 10 rows in a table.</p><div class="ReactTable table "><div class="rt-table" role="grid"><div class="rt-thead -header" style="min-width:700px"><div class="rt-tr" role="row"><div class="rt-th rt-resizable-header -cursor-pointer" role="columnheader" tabindex="-1" style="flex:100 0 auto;width:100px"><div class="rt-resizable-header-content">name</div><div class="rt-resizer"></div></div><div class="rt-th rt-resizable-header -cursor-pointer" role="columnheader" tabindex="-1" style="flex:100 0 auto;width:100px"><div class="rt-resizable-header-content">dam</div><div class="rt-resizer"></div></div><div class="rt-th rt-resizable-header -cursor-pointer" role="columnheader" tabindex="-1" style="flex:100 0 auto;width:100px"><div class="rt-resizable-header-content">sire</div><div class="rt-resizer"></div></div><div class="rt-th rt-resizable-header -cursor-pointer" role="columnheader" tabindex="-1" style="flex:100 0 auto;width:100px"><div class="rt-resizable-header-content">sex</div><div class="rt-resizer"></div></div><div class="rt-th rt-resizable-header -cursor-pointer" role="columnheader" tabindex="-1" style="flex:100 0 auto;width:100px"><div class="rt-resizable-header-content">year</div><div class="rt-resizer"></div></div><div class="rt-th rt-resizable-header -cursor-pointer" role="columnheader" tabindex="-1" style="flex:100 0 auto;width:100px"><div class="rt-resizable-header-content">countries</div><div class="rt-resizer"></div></div><div class="rt-th rt-resizable-header -cursor-pointer" role="columnheader" tabindex="-1" style="flex:100 0 auto;width:100px"><div class="rt-resizable-header-content">siblings</div><div class="rt-resizer"></div></div></div></div><div class="rt-tbody" style="min-width:700px"><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -odd" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Blackstone Westwyn Baby</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Westwyn Dindael Mercedes</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Luray Blackstones Treat CDX NA NAJ</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Female</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">1990</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">USA</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Westwyn Dindael Ferarri<!-- -->Westwyn English Muffin</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -even" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Blue Day Pleasure from The Small Hill Rebels</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Bonnie from the Stone of Scone</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Blåtirans Gandalf The Gray</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Male</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">2013</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Germany</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Adam Atom from The Small Hill Rebels<!-- -->Aery Arya from The Small Hill Rebels<!-- -->Alert Annie from The Small Hill Rebels<!-- -->All tomorrows parties from The Small Hill Rebels<!-- -->Allistair Applepie from The Small Hill Rebels<!-- -->Always Alwin from The Small Hill Rebels<!-- -->Arctic Aeryn from The Small Hill Rebels<!-- -->Ask for Aron from The Small Hill Rebels</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -odd" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Country Penny Saved</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Silver Creeks Bit O Honey</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Silver Creek Imp Of Rhydowen</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Female</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">1981</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">USA</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px"></div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -even" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Countrys Autumn Dancer</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Country Penny Saved</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Agawop Karaway Coriander</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Female</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">1983</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">USA</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Countrys Charming Chloe<!-- -->Countrys Claim To Glory<!-- -->Countrys Magic Sonshine<!-- -->Countrysides Mandy<!-- -->Countrysides Prince Charles</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -odd" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Gardners Delight</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Twinroc Steel Magnolia HSAs</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Davenitch Peer of Pluperfect ROMg</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Female</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">1993</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">USA</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Poohs Amelia Earhart<!-- -->Poohs Bonnie Hunny Bee<!-- -->Poohs Copper Penny<!-- -->Poohs Mischief Maker<!-- -->Seabrooks Thunder Boomer</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -even" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Lone Star Angus CD</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Sisterwoods Angel N Disguise</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Windshyres Personna</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Male</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">2000</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">USA</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Sisterwood Brine N Brimstone<!-- -->Sisterwood Vision Of The Sea<!-- -->Sisterwoods Ocean Breeze<!-- -->William Son Of Kings</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -odd" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Solar Flare for Lily Crown</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Kherders Madrai Brusnika</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Aethwy Ultramarine</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Female</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">2017</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Russia</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Anariel from Distans Land</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -even" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Summers Touch Of Daisy</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Adams Acres Holiday Charm AM CD ROMb</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Ula Maunas Sir Gawaine</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Female</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">1999</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">USA</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Adams Smokin Like Joe Amato<!-- -->Adams Acres Clever Trevor<!-- -->Adams Acres Mud Slide<!-- -->Bentley<!-- -->Cks Luck Of The Draw<!-- -->Jakes Master Jedi Yoda<!-- -->Morgan Anne Perry<!-- -->Ula Maunas Panda Bear<!-- -->Ula Maunas The Gamblin Man<!-- -->Uno Joe Cletus<!-- -->Wilcox Sir Charming Winston</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -odd" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">A Twelve-Point Riff</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Sisterwoods Happy Angel Wings ROMb</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Sisterwoods Magic Moment</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Male</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">1991</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">USA</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Sisterwood Amanda Madison<!-- -->Sisterwood Angel Dancing<!-- -->Sisterwood Im No Angel<!-- -->Sisterwood Undercover Angel<!-- -->Sisterwoods About Face<!-- -->Sisterwoods Amazin<!-- -->Sisterwoods Ambler<!-- -->Sisterwoods Amo Te<!-- -->Sisterwoods Billy Angel</div></div></div><div class="rt-tr-group" role="rowgroup"><div class="rt-tr -even" role="row"><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Åaleasbrindleyobplet</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Sankt-Cardis Alea</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Lesley v.d. Besthmerberg</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Male</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">1980</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Denmark</div><div class="rt-td" role="gridcell" style="flex:100 0 auto;width:100px">Åbolitionofxanthippes<!-- -->Ågirlleassoftredsphinx<!-- -->Åhsmokysniffylemonsqueezer<!-- -->Årsharpasyataganscoobydoo<!-- -->Åvangardangelface�hdedy</div></div></div></div></div><div class="-loading"><div class="-loading-inner">Loading...</div></div></div><p>Note that you can scroll around the table and move around the size of the displayed columns.</p><h2>Plotting our data</h2><p>To plot this we want use vega-lite to start.  Don’t forget, there are text and video install instructions for 
+both Mac and Windows stored on the <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week10/">week 10 webpage</a>. We’ll assume you have vega-lite for Idyll installed and go from there.</p><h3>Simple Scatter plots</h3><p>Let’s start with some simple scatter plots of our data.</p><p>We can run the simple code below and make a simple scatter plot of countries and years born:</p><pre><code>[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  mark: &quot;circle&quot;,
+  encoding: {
+    x: {field: &quot;countries&quot;, type: &quot;nominal&quot;}, 
+    y: {field: &quot;year&quot;, type: &quot;temporal&quot;},
+  }
+}` /]</code></pre><div class=""></div><p>So this is a good start!  Let’s add some other data into the mix by using colors.  We can select what we color by with a “color by” variable like so:</p><pre><code>[var name:&quot;colorBy&quot; value:`{}` /]</code></pre><p>Once we’ve included this new variable in our webpage, we can re-do our scatter plot like so:</p><pre><code>[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  mark: &quot;circle&quot;,
+  encoding: {
+    x: {field: &quot;countries&quot;, type: &quot;nominal&quot;}, 
+    y: {field: &quot;year&quot;, type: &quot;temporal&quot;},
+    color: colorBy
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy = {}` ]None[/button]
+ [button onClick:`colorBy = {field: &#x27;sex&#x27;, type: &#x27;nominal&#x27;}` ]Sex of Corgi[/button]</code></pre><div class=""></div><p>Color by:
+ <button>None</button><button>Sex of Corgi</button></p><p>Let’s try another little scatter plot showing info about the parents and country of origin with:</p><pre><code>[var name:&quot;colorBy2&quot; value:`{}` /]
+
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 400,
+  mark: &quot;circle&quot;,
+ encoding: {
+    x: {field: &quot;sire&quot;, type: &quot;nominal&quot;, axis:{labels:false}}, 
+    y: {field: &quot;dam&quot;, type: &quot;nominal&quot;, axis:{labels:false}},
+    color: colorBy2
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy2 = {}` ]None[/button]
+ [button onClick:`colorBy2 = {field: &#x27;countries&#x27;, type: &#x27;nominal&#x27;}` ]Country[/button]</code></pre><div class=""></div><p>Color by:
+ <button>None</button><button>Country</button></p><p>Note that the default color scheme has a lot of repeated colors, which makes it a little hard to tell what country is what.  
+We can check out the <a href="https://vega.github.io/vega/docs/schemes/#reference">available Vega-lite</a> colors and pick one. 
+Maybe <code>category20</code> could work, but its only 20 colors or maybe something like <code>viridis</code> would work too.</p><h3>Binning and aggregating data - histograms</h3><p>Beyond scatter plots, we can do histograms in which we aggregate parts of our data set:</p><pre><code>[var name:&quot;colorBy3&quot; value:`{}` /]
+
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 200,
+  mark: &quot;bar&quot;,
+  encoding: {
+    x: {field: &quot;year&quot;, type: &quot;temporal&quot;},
+    y: {aggregate:&quot;count&quot;, type: &quot;quantitative&quot;, title:&quot;Number of Corgis Born&quot;}
+  }
+}` /]</code></pre><p>So here we are counting up all the entries in a particular year and plotting this as a histogram:</p><div class=""></div><p>We can do some light manipulations of our data with “transforms” and “filters”.  There are more 
+complicated examples of filtering our data <a href="https://vega.github.io/vega-lite/docs/filter.html">on the Vega-lite website docs</a>.</p><p>Here, lets just look at data between the years 1960 and 2000. We can do this by adding some filtering code 
+to our vega-lite plot:</p><pre><code>transform:[{filter:{&quot;timeUnit&quot;:&quot;year&quot;, field:&quot;year&quot;, &quot;lte&quot;:2000}},
+	  {filter:{&quot;timeUnit&quot;:&quot;year&quot;, field:&quot;year&quot;, &quot;gte&quot;:1960}}],</code></pre><div class=""></div><p>Neat!  Of course, the goal is to make these interactive plots. So let’s get to it!</p><h3>Interactive plotting with Vega-lite</h3><p>Just like we did with ipywidgets in our Jupyter notebooks, we can include sliders and toggles to 
+make our plots interactive.  We in fact did this above when we made the ability to change colors 
+based on different aspects of our datasets.</p><p>Let’s add two new variables to our webpage to control the range over which we are plotting our data:</p><pre><code>[var name:&quot;yearStart&quot; value:1960 /]
+[var name:&quot;yearEnd&quot; value:2000 /]</code></pre><p>Now our “transform” operation will look a little different:</p><pre><code>transform:[{filter:{&quot;timeUnit&quot;:&quot;year&quot;, field:&quot;year&quot;, &quot;lte&quot;:yearEnd}},
+             {filter:{&quot;timeUnit&quot;:&quot;year&quot;, field:&quot;year&quot;, &quot;gte&quot;:yearStart}}],</code></pre><p>Finally, let’s combine all of these concepts (colors, sliders, binning) into one MEGA-histogram with all kinds of 
+interactions:</p><p> </p><div class=""></div><p>Color by:
+ <button>None</button><button>Sex of Corgi Born</button><button>Country</button></p><section><p> 
+Lowest Year: 1925<input type="range" value="1960" min="1925" max="1970" step="1"/> 2020</p><p>Highest Year: 1925<input type="range" value="1970" min="1960" max="2020" step="1"/> 2020</p></section><p>We can also print out in text the values of our sliders - the current
+maxiumum year of our plot is <span class="idyll-dynamic">1960.00</span>.
+You’ll note you can also drag around this value and it will update the plot.</p><p>** Other cool viz goes here **</p><h1>Beginning Interactivity with D<!-- -->3<!-- -->.js</h1><p>A good reference is the <a href="https://idyll-lang.github.io/idyll-d3-component/">D3 Link on the Idyll Webpage</a>.</p><p>In our basic template, we have a folder called components.  Let’s check out the
+custom-d3-component.js file. </p><p>Before going through this code, lets use it here in our post and see what it does:<!-- --> </p><div class="d3-component" style="width:100%"></div><button> 
+  Click Me.</button><h3>The Code:</h3><p>The code that does this is:</p><pre><code>const React = require(&#x27;react&#x27;); // this allows us to interact with the component
+const D3Component = require(&#x27;idyll-d3-component&#x27;); // uses D3.js and javascript to make our plot
+const d3 = require(&#x27;d3&#x27;); // use D3 javascript background
+
+const size = 600; // our thing will be 600 pixels across
+
+class CustomD3Component extends D3Component { // hey, add to D3!
+
+  // This block here will just initialize our setup
+  initialize(node, props) {
+    const svg = this.svg = d3.select(node).append(&#x27;svg&#x27;);
+    // first, lets make a box of size 600 X 600 pixels
+    svg.attr(&#x27;viewBox&#x27;, `0 0 ${size} ${size}`)
+      .style(&#x27;width&#x27;, &#x27;100%&#x27;)
+      .style(&#x27;height&#x27;, &#x27;auto&#x27;);
+
+    // now, draw a circle
+    svg.append(&#x27;circle&#x27;)
+      .attr(&#x27;r&#x27;, 20) // 20px radius
+      // these next two lines specify a random x &amp; y coordinates
+      .attr(&#x27;cx&#x27;, Math.random() * size)
+      .attr(&#x27;cy&#x27;, Math.random() * size);
+  }
+
+  // on an &quot;update&quot; of our plot this is what we do:
+  update(props, oldProps) {
+    this.svg.selectAll(&#x27;circle&#x27;) // grab the circle part
+      .transition() // make a nice animation
+      .duration(750)
+      .attr(&#x27;cx&#x27;, Math.random() * size) // update random location
+      .attr(&#x27;cy&#x27;, Math.random() * size);
+  }
+}</code></pre><p>Now that we know a bit about what we are doing, lets, starting from this custom component,
+modify it to make our own.</p><p>In the components directory do:</p><pre><code>cp custom-d3-component.js my-custom-d3-component.js</code></pre><p>Then open my-custom-d3-component.js with your favorite text editor.</p><p> </p><div class="d3-component" style="width:100%"></div><button> 
+  Click Me.</button></div></div></div></div>
+    <script src="static/idyll_index.js"></script>
+  </body>
+</html>
