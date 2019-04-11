@@ -120,8 +120,8 @@
 
 # Data Visualization
 <div style="height: 6.0em;"></div>
-## Matthew Turk
-## Fall 2018
+## Jill P. Naiman
+## Spring 2019 (Online)
 ## Lecture 12
 
 ---
@@ -139,97 +139,113 @@ http://biologylabs.utah.edu/farmer/index_dinosaur.html
 
 ## Today
 
- * Publishing
  * Scientific Visualization
-   * Overview
-   * yt
-   * ThreeJS
- * Quick look at Networks
 
 ---
 
-## Tools We've Used
+## Information Visualization
 
-We've learned a number of different tools in class.
-
-* Numpy
-* Pandas
-* Matplotlib
-* Bqplot
-* IPython widgets
-* Cartopy
-* Vega
-* Vega-lite
-* Idyll
-
-Each of these has strengths and weaknesses.
-
----
-
-## Questions To Ask
-
-* Do I know anything about the data?
-  * What form will it take?
-  * What tale do I think it will tell?
-* How should I present this data?
-  * Can the data be reconstructed from my visualization?
-  * What technical issues impede clarity?
-  * Am I providing visual context?
-* How will this visualization be received?
-  * What implicit or explicit assumptions am I making about the observer?
-  * What questions will they ask of it?
-  * Do I have empathy for my viewer?
-
----
-
-## Building Stuff
-
-Let's return to that visualization.
-
-Do you know how to build something like that?
-
-What tools could you use?
-
-Where would you put it?
-
----
-
-## Publishing Pages
-
-GitHub pages is a simple, straightforward way to publish websites.
-
- * Static-site generation using Jekyll
- * Manual HTML building
- * Integration with other systems (Idyll)
-
----
-
-## Publishing Notebooks
-
-Jupyter Notebooks can be published online.  The simplest way:
-
- * Commit them to a github repository
- * View them using nbviewer.jupyter.org
-
-Widget state can be saved in many cases.
-
-http://ipywidgets.readthedocs.io/en/latest/embedding.html
-
----
-
-## Your First Github Page
-
- * We will use Jekyll to build a github page
- * Create the repository `[username].github.io`
- * Clone this repository.
- * Let's talk about the branches `gh-pages` and `master`
+So far: Spatial encoding is chosen by the designer
 
 ---
 
 ## Scientific Visualization
 
-[Intro Slides](https://docs.google.com/presentation/d/1kogT-aDJ_sgjpjRFzTYMDKXAXypSu2WoMrTXC5f8B7I/edit#slide=id.g2071ebcff9_0_5)
+Sci Viz: Spatial encoding is provided in the data
 
+---
+
+## Spatial Data
+
+ 1. Geometry
+ 1. Volumetric Fields
+
+---
+
+## Spatial Data
+
+ 1. Geometry
+   * Polygons
+   * Point Clouds
+
+notes:
+point clouds can be static, or they can have physics which make them a "particle system".
+
+---
+
+## Spatial Data
+
+ 2. Volumetric Fields
+    * Scalar
+    * Vector
+
+notes:
+Fields can be 2D or 3D. Images can be used as 2D data fields.
+
+---
+
+## Spatial Data
+
+ 2. Volumetric Fields
+    * Uniform or non-uniform
+    * Rectangular or non-rectangular
+
+notes:
+Adaptive mesh refinement is an especially efficient 3D storage for datatypes that have small areas of high detail.
+
+---
+
+## Spatial Data Types
+
+ 1. Statistical
+ 1. Observational
+ 1. Simulated from computer models
+
+---
+
+## Visualizing Point Data
+
+ * Dots with scale
+ * Sprites
+ * Meshing
+
+---
+
+## Visualizing Polygons
+
+ * Vector lines with width, can be filled
+    * Think geographic data
+ * Direct rendering of architectural schematics
+ * Direct rendering of 3D scans (pre-meshed)
+
+---
+
+## Visualizing Scalar Fields
+
+ * Slice
+ * Isosurface
+ * 3D Volumetric Rendering
+
+---
+
+## Visualizing Vector Fields
+
+ * Arrow glyphs
+ * Streamlines / Streamtubes
+
+---
+
+## yt
+
+yt is an open-source, permissively-licensed python package for analyzing and visualizing volumetric data.
+
+There is a good portion of the yt group here at UCSC and NCSA!
+
+<!--yt creator Dr. Matt Turk originated this course!-->
+
+---
+
+## Final Project: Part 3
 
           </script>
         </section>
