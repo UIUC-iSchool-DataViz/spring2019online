@@ -10,11 +10,7 @@ visible_n: true
 # Data Visualization
 <div style="height: 6.0em;"></div>
 ## Jill P. Naiman
-<<<<<<< HEAD
-## Spring 2019 (online)
-=======
 ## Spring 2019 (Online)
->>>>>>> 88327e0e4253d9514a3c283d68f06466ce7f18c2
 ## Lecture 12
 
 ---
@@ -59,7 +55,6 @@ http://biologylabs.utah.edu/farmer/index_dinosaur.html
 ## Today
 
  * Scientific Visualization
-<<<<<<< HEAD
  * (And some JS if we have time)
  
 We'll also go through the pathway of GitHub -> uploading your Jupyter notebook again.
@@ -87,25 +82,11 @@ science where we should be placing things in 3D space
 
 we did this sort of thing in 2D for data on maps, but this gives even more detail on 
 where each data point should be placed
-=======
 
----
-
-## Information Visualization
-
-So far: Spatial encoding is chosen by the designer
-
----
-
-## Scientific Visualization
-
-Sci Viz: Spatial encoding is provided in the data
->>>>>>> 88327e0e4253d9514a3c283d68f06466ce7f18c2
 
 ---
 
 ## Spatial Data
-<<<<<<< HEAD
 
  1. Geometry
   * Volumetric Fields
@@ -119,11 +100,6 @@ Here is shown some volumetric data - i.e. you are given points of things in 3D s
 shown here is a simulation in Houdini (a special effects software package) showing smoke rising
 
 The left plot shows the simulation data points, the middle plot shows how they are interpolated to a surface and the right shows how they are "rendered" i.e. made into a movie using a smoke "shader" which dictates how light rays will travel through the object
-=======
-
- 1. Geometry
- 1. Volumetric Fields
->>>>>>> 88327e0e4253d9514a3c283d68f06466ce7f18c2
 
 ---
 
@@ -131,7 +107,6 @@ The left plot shows the simulation data points, the middle plot shows how they a
 
  1. Geometry
    * Polygons
-<<<<<<< HEAD
 
 <img src="images/wheel.gif" width="800"/>
 
@@ -140,29 +115,12 @@ notes: another thing you will see a lot is 3-dimensional surfaces like the one s
 Instead of specifying data at each point in the 3D volume, we are specifying the surface - i.e. an interconnected list of polygons that makes this shape
 
 (we'll actually play with surfaces later in class and volumes either next week or the last week)
-=======
-   * Point Clouds
 
-notes:
-point clouds can be static, or they can have physics which make them a "particle system".
 
 ---
 
 ## Spatial Data
 
- 2. Volumetric Fields
-    * Scalar
-    * Vector
-
-notes:
-Fields can be 2D or 3D. Images can be used as 2D data fields.
->>>>>>> 88327e0e4253d9514a3c283d68f06466ce7f18c2
-
----
-
-## Spatial Data
-
-<<<<<<< HEAD
  1. Geometry
    * Polygons
    * Point Clouds
@@ -438,42 +396,6 @@ Isosurfaces can make analysis easier.
 
 ---
 
-=======
- 2. Volumetric Fields
-    * Uniform or non-uniform
-    * Rectangular or non-rectangular
-
-notes:
-Adaptive mesh refinement is an especially efficient 3D storage for datatypes that have small areas of high detail.
-
----
-
-## Spatial Data Types
-
- 1. Statistical
- 1. Observational
- 1. Simulated from computer models
-
----
-
-## Visualizing Point Data
-
- * Dots with scale
- * Sprites
- * Meshing
-
----
-
-## Visualizing Polygons
-
- * Vector lines with width, can be filled
-    * Think geographic data
- * Direct rendering of architectural schematics
- * Direct rendering of 3D scans (pre-meshed)
-
----
-
->>>>>>> 88327e0e4253d9514a3c283d68f06466ce7f18c2
 ## Visualizing Scalar Fields
 
  * Slice
@@ -501,15 +423,12 @@ vectors are often represented with arrows at specific points
 
 I'm actually not sure what this is showing, but my guess is magnetic field lines, probably in some explosive astro event (like a super novae or something)
 
-=======
->>>>>>> 88327e0e4253d9514a3c283d68f06466ce7f18c2
 ---
 
 ## Visualizing Vector Fields
 
  * Arrow glyphs
  * Streamlines / Streamtubes
-<<<<<<< HEAD
     * Particle Advection!
 
 <img src="images/tornado.gif" width="600"/>
@@ -579,19 +498,4 @@ In class:
 1. More details about mybinder.org
 1. yt and sci viz, output to other formats
 1. JS if we have time
-=======
 
----
-
-## yt
-
-yt is an open-source, permissively-licensed python package for analyzing and visualizing volumetric data.
-
-There is a good portion of the yt group here at UCSC and NCSA!
-
-<!--yt creator Dr. Matt Turk originated this course!-->
-
----
-
-## Final Project: Part 3
->>>>>>> 88327e0e4253d9514a3c283d68f06466ce7f18c2
