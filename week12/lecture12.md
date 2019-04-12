@@ -402,7 +402,6 @@ Isosurfaces can make analysis easier.
  * Isosurface
  * 3D Volumetric Rendering
 
-<<<<<<< HEAD
 <img src="images/bock.gif" width="600"/>
 
 notes:
