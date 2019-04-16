@@ -354,7 +354,31 @@ Note that the default color scheme has a lot of repeated colors, which makes it 
 We can check out the [available Vega-lite](https://vega.github.io/vega/docs/schemes/#reference) colors and pick one. 
 Maybe ```category20``` could work, but its only 20 colors or maybe something like ```viridis``` would work too.
 
+We can specify our colormap explicitly like so:
+
+```
+[var name:"colorBy2" value:`{}` /]
+
+[IdyllVegaLite data:corgs spec:`{
+  width: 400,
+  height: 400,
+  mark: "circle",
+ encoding: {
+    x: {field: "sire", type: "nominal", axis:{labels:false}}, 
+    y: {field: "dam", type: "nominal", axis:{labels:false}},
+    color: colorBy2
+  }
+}` /]
+
+Color by:
+ [button onClick:`colorBy2 = {}` ]None[/button]
+ [button onClick:`colorBy2 = {field: 'countries', type: 'nominal', scale:{"scheme":"category20"}}` ]Country[/button]
+```
+
+
 // */
+
+
 
 ### Binning and aggregating data - histograms
 
@@ -503,7 +527,13 @@ Highest Year: 1925 [Range min:yearStart max:2020 value:yearEnd /] 2020
 [/section]
 
 We can also print out in text the values of our sliders - the current
-maxiumum year of our plot is [dynamic min:1925 max:yearEnd step:1 value:yearStart /].
+minimum year of our plot is [dynamic min:1925 max:yearEnd step:1 value:yearStart /]. 
+Which is given by the inline code:
+
+```
+[dynamic min:1925 max:yearEnd step:1 value:yearStart /]
+```
+
 You'll note you can also drag around this value and it will update the plot.
 
 //  ** Other cool viz goes here ** */
@@ -515,13 +545,17 @@ Now that we have created these cool images and interactive visualizations, we wa
 
 We will publish our new data blog on github with the "github.io" webhosting services.  All for free!
 
+Learn more about github.io here: [GitHub Pages](https://pages.github.com/).
 
-// PART 5: Beginning interactivity
-// lets check out what is in our "default" component directory */
 
-# Beginning Interactivity with D3.js
+// This is a revisit in later weeks, we got to publishing in week11 and then did sci viz in week 12 */
 
-A good reference is the [D3 Link on the Idyll Webpage](https://idyll-lang.github.io/idyll-d3-component/).
+
+# Beginning Interactivity with D3.js (Return the the Corgs)
+
+A good reference is the [D3 Link on the Idyll Webpage](https://idyll-lang.github.io/idyll-d3-component/) for D3.js 
+within the Idyll framework, but you can also check out the extensive [D3.js docs](https://d3js.org/) for ideas and 
+inspiration.
 
 In our basic template, we have a folder called components.  Let's check out the
 custom-d3-component.js file. 
@@ -538,43 +572,58 @@ Before going through this code, lets use it here in our post and see what it doe
 
 ### The Code:
 
-The code that does this is:
+In class, we'll go through this code line by line and comment what each line is doing.  
+For reference, here are the comments on this code:
+
 // lets go through line by line and figure out what each line is */
+// see the custom-d3-component_comments.js file in components directory for more info */
 
 ```
-const React = require('react'); // this allows us to interact with the component
-const D3Component = require('idyll-d3-component'); // uses D3.js and javascript to make our plot
-const d3 = require('d3'); // use D3 javascript background
+// read in several libraries to allow us to
+//  make reactive things & use d3.js
+const React = require('react');
+const D3Component = require('idyll-d3-component');
+const d3 = require('d3');
 
-const size = 600; // our thing will be 600 pixels across
+// set the size of our canvas
+const size = 600;
 
-class CustomD3Component extends D3Component { // hey, add to D3!
+// here is the class we'll use to define our component
+class CustomD3Component extends D3Component {
 
-  // This block here will just initialize our setup
-  initialize(node, props) {
-    const svg = this.svg = d3.select(node).append('svg');
-    // first, lets make a box of size 600 X 600 pixels
-    svg.attr('viewBox', `0 0 ${size} ${size}`)
-      .style('width', '100%')
-      .style('height', 'auto');
+    // each custom component will have an initialize function
+    //  that "sets the scene" and an update component
+    //  that will update when something changes on our webpage
+    initialize(node, props) {
+	// let's use vector graphics to draw a viewer box
+	const svg = this.svg = d3.select(node).append('svg');
+	// define the size of our box based on our chosen
+	//  constant size variable
+	svg.attr('viewBox', `0 0 ${size} ${size}`)
+	    .style('width', '100%')
+	    .style('height', 'auto');
 
-    // now, draw a circle
-    svg.append('circle')
-      .attr('r', 20) // 20px radius
-      // these next two lines specify a random x & y coordinates
-      .attr('cx', Math.random() * size)
-      .attr('cy', Math.random() * size);
-  }
+	// let's also include a little circle in our scene
+	svg.append('circle')
+	    .attr('r', 20) // 20px radius
+       	    // next 2 lines specify random x&y
+	    .attr('cx', Math.random() * size)
+	    .attr('cy', Math.random() * size);
+    }
 
-  // on an "update" of our plot this is what we do:
-  update(props, oldProps) {
-    this.svg.selectAll('circle') // grab the circle part
-      .transition() // make a nice animation
-      .duration(750)
-      .attr('cx', Math.random() * size) // update random location
-      .attr('cy', Math.random() * size);
-  }
+    // now we define what happens when we update our scene
+    update(props, oldProps) {
+	// first, select the circle object
+	this.svg.selectAll('circle')
+	    .transition() // say we are changing things
+	    .duration(750) // animation over 750 millisecs
+	    .attr('cx', Math.random() * size) // place randomly again
+	    .attr('cy', Math.random() * size);
+    }
 }
+
+module.exports = CustomD3Component; // output our component
+
 ```
 
 // */
@@ -582,13 +631,18 @@ class CustomD3Component extends D3Component { // hey, add to D3!
 Now that we know a bit about what we are doing, lets, starting from this custom component,
 modify it to make our own.
 
-In the components directory do:
+In the ```components``` directory do:
 
 ```
 cp custom-d3-component.js my-custom-d3-component.js
 ```
 
-Then open my-custom-d3-component.js with your favorite text editor.
+Note: this naming structure is important.  As we'll see below, our new output structure
+will be called "MyCustomD3Component" - the "my" at the beginning is necessary.  
+See more about this in the [Idyll D3.js post](https://idyll-lang.github.io/idyll-d3-component/).
+
+Then open my-custom-d3-component.js with your favorite text editor and let's start adding!  
+Note, you'll have to have [this image file](https://uiuc-ischool-dataviz.github.io/spring2019online/week11/images/imgcropped.png) saved in your ```static/images``` directory.
 
 // start by just changing the names of things so that it says "my" now to remind
 // us that we are doing things our way */
@@ -600,14 +654,6 @@ Then open my-custom-d3-component.js with your favorite text editor.
   Click Me.
 [/button]
 
-
-# If we have time: more complex data viz
-
-If time permits, we can do some more complex dataviz things with Vega-lite.
-
-First, let's grab some map data: 
-
-[TestCustomD3Component className:"d3-component" /]
 
 
 
