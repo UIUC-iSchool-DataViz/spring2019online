@@ -74,16 +74,18 @@ class MapCustomD3Component extends D3Component {
 	d3.queue() // JPN: had to change queue -> d3.queue()
 	    .defer(d3.json, "https://raw.githubusercontent.com/jdamiani27/Data-Visualization-and-D3/master/lesson4/world_countries.json")
 	    //.defer(d3.tsv, "https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/world_population.tsv")
-	    .defer(d3.json, "https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/world_population.tsv")
+	    .defer(d3.json, "https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/corgiData_countries.json")
 	    //.defer(d3.tsv, "world_population.tsv") // JPN: note: you can't use local data because of security concerns
 	    .await(ready);
 
+	// data = world data
+	// population = population/corgPopulation data
 	function ready(error, data, population) {
 	    if (error) throw error;
 	    //var populationById = {};
 	    var corgPopulationById = {};
 	    
-	    population.forEach(function(d) { populationById[d.id] = +d.population; }); // This fills populationById from our pop file
+	    population.forEach(function(d) { corgPopulationById[d.countries] = +1; }); // This fills populationById from our pop file
 	    //console.log('YO');
 	    //console.log(population);
 	    //data.features.forEach(function(d) { d.population = populationById[d.id] }); // This places populationById into our data.features
