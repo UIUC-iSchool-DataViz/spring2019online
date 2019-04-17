@@ -2,6 +2,8 @@ const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 
+// this draws heavily from: http://bl.ocks.org/micahstubbs/8e15870eb432a21f0bc4d3d527b2d14f
+
 // JPN: had to add the following
 const topojson = require('topojson-client'); // Need this for map
 const d3tip = require('d3-tip');
@@ -59,13 +61,11 @@ class MapCustomD3Component extends D3Component {
 
 
 	var path = d3.geoPath();
-	
-//	var svg = d3.select("body")
-//            .append("svg")
-	
-	var projection = d3.geoMercator()
+		
+	//var projection = d3.geoMercator()
+	var projection = d3.geoEquirectangular()
             .scale(130)
-            .translate( [width / 2, height / 1.5]);
+            .translate( [width / 2, height / 2]);
 	
 	var path = d3.geoPath().projection(projection);
 	
@@ -73,17 +73,21 @@ class MapCustomD3Component extends D3Component {
 
 	d3.queue() // JPN: had to change queue -> d3.queue()
 	    .defer(d3.json, "https://raw.githubusercontent.com/jdamiani27/Data-Visualization-and-D3/master/lesson4/world_countries.json")
-	    .defer(d3.tsv, "https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/world_population.tsv")
+	    //.defer(d3.tsv, "https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/world_population.tsv")
+	    .defer(d3.json, "https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/world_population.tsv")
+	    //.defer(d3.tsv, "world_population.tsv") // JPN: note: you can't use local data because of security concerns
 	    .await(ready);
 
 	function ready(error, data, population) {
 	    if (error) throw error;
-	    var populationById = {};
+	    //var populationById = {};
+	    var corgPopulationById = {};
 	    
-	    population.forEach(function(d) { populationById[d.id] = +d.population; });
+	    population.forEach(function(d) { populationById[d.id] = +d.population; }); // This fills populationById from our pop file
 	    //console.log('YO');
 	    //console.log(population);
-	    data.features.forEach(function(d) { d.population = populationById[d.id] });
+	    //data.features.forEach(function(d) { d.population = populationById[d.id] }); // This places populationById into our data.features
+	    data.features.forEach(function(d) { d.population = corgPopulationById[d.id] }); // This places populationById into our data.features
 	    
 	    svg.append("g")
 		.attr("class", "countries")
@@ -99,7 +103,7 @@ class MapCustomD3Component extends D3Component {
 		.style("stroke","white")
 		.style('stroke-width', 0.3)
 		.on('mouseover',function(d){
-		    tip.show(d, this);
+		    tip.show(d, this); // JPN: changed tip.show(d) to tip.show(d, this), following: https://github.com/Caged/d3-tip/issues/231#issuecomment-391242702
 		    
 		    d3.select(this)
 			.style("opacity", 1)
@@ -117,8 +121,6 @@ class MapCustomD3Component extends D3Component {
 	    
 	    svg.append("path")
 		.datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
-	    //.datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
-		//.attr("d", topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }) )
 		.attr("class", "names")
 		.attr("d", path);
 	}
