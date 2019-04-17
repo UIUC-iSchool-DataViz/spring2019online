@@ -33,23 +33,33 @@ class MapCustomD3Component extends D3Component {
             .attr('class', 'd3-tip')
             .offset([-10, 0])
             .html(function(d) {
-		return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Population: </strong><span class='details'>" + format(d.population) +"</span>";
+		return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Corgis Born: </strong><span class='details'>" + format(d.population) +"</span>";
             })
 	
 	
 	var color = d3.scaleThreshold()
-	    .domain([10000,
-		     100000,
-		     500000,
-		     1000000,
-		     5000000,
-		     10000000,
-		     50000000,
-		     100000000,
-		     500000000,
-		     1500000000])
-	    .range(["rgb(247,251,255)",
-		    "rgb(222,235,247)",
+//	    .domain([10000,
+//		     100000,
+//		     500000,
+//		     1000000,
+//		     5000000,
+//		     10000000,
+//		     50000000,
+//		     100000000,
+//		     500000000,
+//		     1500000000])
+	    .domain([0,
+		     1,
+		     5,
+		     10,
+		     25,
+		     50,
+		     100,
+		     300,
+		     750,
+		     1000])
+	    .range(["rgb(0,0,0)",
+		    "rgb(1,1,1)",
 		    "rgb(198,219,239)",
 		    "rgb(158,202,225)",
 		    "rgb(107,174,214)",
@@ -84,10 +94,14 @@ class MapCustomD3Component extends D3Component {
 	    if (error) throw error;
 	    //var populationById = {};
 	    var corgPopulationById = {};
+
+	    // First, fill are countries with zeros
+	    data.features.forEach( function(d) { corgPopulationById[d.id] = 0; });
 	    
-	    population.forEach(function(d) { corgPopulationById[d.countries] = +1; }); // This fills populationById from our pop file
-	    //console.log('YO');
-	    //console.log(population);
+	    // HERE: gotta process into country code
+	    // add in population of corgs for each country
+	    //population.forEach(function(d) { corgPopulationById[d.country_id] += 1; console.log(d.country_id, corgPopulationById[d.country_id]); }); // This fills populationById from our pop file
+	    population.forEach(function(d) { corgPopulationById[d.country_id] += 1;  }); // This fills populationById from our pop file
 	    //data.features.forEach(function(d) { d.population = populationById[d.id] }); // This places populationById into our data.features
 	    data.features.forEach(function(d) { d.population = corgPopulationById[d.id] }); // This places populationById into our data.features
 	    
@@ -97,7 +111,7 @@ class MapCustomD3Component extends D3Component {
 		.data(data.features)
 		.enter().append("path")
 		.attr("d", path)
-		.style("fill", function(d) { return color(populationById[d.id]); })
+		.style("fill", function(d) { return color(corgPopulationById[d.id]); })
 		.style('stroke', 'white')
 		.style('stroke-width', 1.5)
 		.style("opacity",0.8)

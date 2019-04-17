@@ -12,8 +12,10 @@ class MyCustomD3Component extends D3Component {
 	// all of this is the same
 	const svg = this.svg = d3.select(node).append('svg');
 	svg.attr('viewBox', `0 0 ${size} ${size}`)
-	    .style('width', '100%')
-	    .style('height', 'auto');
+	    //.style('width', '100%')
+	    //.style('height', 'auto');
+	    .style('width', size) // JPN: '100%' to size
+	    .style('height',size/2); // JPN 'auto' to size/2
 	
 	// instead of a circle, lets add a little vector rectangel
 	svg.append('rect')

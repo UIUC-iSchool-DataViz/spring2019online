@@ -20,6 +20,24 @@ sexes = []
 years = []
 siblings = []
 countries = []
+# save country id to put on a map
+country_id = []
+
+# for getting/comparing country id
+#import numpy as np
+#data = np.genfromtxt('https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/world_population.tsv',
+#                     delimiter='\t', skip_header=1)
+
+import pandas as pd
+df = pd.read_csv('https://raw.githubusercontent.com/jnaiman/champaignElection/master/website_test/random_data/world_population.tsv', sep="\t")   # read dummy .tsv file into memory
+
+# convert to array
+import numpy as np
+data = np.array(df)
+
+country_codes = data[:,0]
+country_names = data[:,1]
+
 
 # find number of doggos listed
 w = 'http://www.cardiped.net/browseDogs.php?start='+\
@@ -37,6 +55,8 @@ x = soup.split('Displaying')[1]
 x = x.split('</b>')[0]
 x = x.split('of ')[1]
 numberOfDoggos = int(x)
+
+print('Grabbing ' + str(numberOfDoggos) + ' corgos')
 
 while startSmall < numberOfDoggos:
     w = 'http://www.cardiped.net/browseDogs.php?start='+\
@@ -145,15 +165,30 @@ for i in range(len(names)):
     for j in range(len(siblings[i])):
         siblings[i][j] = replaceWeird(siblings[i][j])
 
-
-
+# now associate country names with country codes for plotting with d3.js
+#  give each a country id
+import re
+country_id = []
+for i in range(len(names)):
+    myId = ''
+    for j in range(len(country_names)):
+        #if (countries[i].find('Germany') != -1) and (country_names[j].find('Germany') != -1):
+        #    print(countries[i], country_names[j])
+        if re.search(countries[i], country_names[j], re.IGNORECASE) or \
+           re.search(countries[i], country_codes[j], re.IGNORECASE):
+            myId = country_codes[j]
+        
+            
+    country_id.append(myId)
+            
 # save to json
 import json
 
 v = []
 for i in range(len(names)):
     v.append( {"name":names[i], "dam":dams[i], "sire":sires[i], "sex":sexes[i],
-               "year":years[i], "countries":countries[i], "siblings":siblings[i] } )
+               "year":years[i], "countries":countries[i], "siblings":siblings[i],
+               "country_id":country_id[i]} )
 
 # dump to file
 f = open(saveFilejson,'w')
