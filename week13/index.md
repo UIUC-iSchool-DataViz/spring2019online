@@ -10,4 +10,4 @@ This week will give a brief overview of graphics concepts and the rendering of i
 # Resources
 
 For the D3.js portion, we'll be starting from our previous Idyll website using:
-  * This <a href="corg_website_example_preBuild/index.idyll" download>index.idyll file</a>
+  * This <a href="corg_website_files/index.idyll" download>index.idyll file</a>
