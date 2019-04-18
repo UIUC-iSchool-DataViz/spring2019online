@@ -13,6 +13,9 @@ For the D3.js portion, we'll be starting from our previous Idyll website using:
   * This <a href="corg_website_files/index.idyll" download>index.idyll file</a>.
   * And <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week11/images/imgcropped.png" download>this image</a>.
   
+For volume rendering in Python we'll be using:
+  * This tiny cosmology <a href="http://yt-project.org/data/enzo_tiny_cosmology.tar.gz">dataset</a>
+  
 ### We will build to:
 
  * This final [index.idyll file](corg_website_files/prep/index.idyll)
