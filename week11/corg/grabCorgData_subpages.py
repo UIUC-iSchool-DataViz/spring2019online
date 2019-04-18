@@ -175,7 +175,7 @@ for i in range(len(names)):
         #if (countries[i].find('Germany') != -1) and (country_names[j].find('Germany') != -1):
         #    print(countries[i], country_names[j])
         if re.search(countries[i], country_names[j], re.IGNORECASE) or \
-           re.search(countries[i], country_codes[j], re.IGNORECASE):
+           (countries[i].find(country_codes[j]) != -1):
             myId = country_codes[j]
         
             
