@@ -24,6 +24,8 @@ Feedback on Part 2 will be posted on Friday/Saturday.
 
 Feedback on Part 3 will be posted on Tues/Wednesday.
 
+notes: again, let me know if this is an issue for anybody that has submitted already.
+
 ---
 
 ## Announcement #2
@@ -35,6 +37,8 @@ In-person class is having live demos from the Advanced Visualization Lab.  Feel 
 We will meet in 1005 on the ground floor.
 
 The address is 1205 W Clark St, just north of the Siebel computer science building.
+
+notes: this will be some cool VR stuff, I know its early but it should be fun!  And AJ (the other instructor) knows his stuff!
 
 ---
 
@@ -53,6 +57,16 @@ http://scienceofhiv.org/
  * 3D Computer Graphics
  * 3D Graphics Tools
  * Visual Effects tools
+ 
+ notes: so today we're going to talk a bit about some "high-end" graphics tools  and about how rendering works
+
+---
+
+## A fun ~2min movie from Pixar
+
+[Check out this link here](https://www.youtube.com/watch?v=NEzJH-JrAdw)
+ 
+notes: this a fun link to see how folks from pixar describe what they do
 
 ---
 
@@ -62,6 +76,8 @@ http://scienceofhiv.org/
  * Often time evolving (animated)
  * Displayed on 2D screens
  * Attempts to simulate photorealism to some extent
+ 
+notes: note these can also be displayed on 3D screens, but the way that happens is a little different
 
 ---
 
@@ -77,7 +93,7 @@ real-time graphics refresh the screen faster than the eye perceives, usually at 
 
 Frames are individual images that when strung together in time create the illusion of motion. They are the "timesteps" of a movie. But scientific data also have "timesteps" which may not be synchronized with the speed of the movie.
 
-You'll notice in this GIF, the frame rate and the time step rate are different.
+You'll notice in this GIF, the frame rate and the time step rate are different - we are zooming out quicker than we are updating the data in the images
 
 ---
 
@@ -88,6 +104,8 @@ You'll notice in this GIF, the frame rate and the time step rate are different.
  * FPS - frames per second
  * GUI - graphic user interface
  * HUD - heads up display
+ 
+notes: you aren't required to remember any of these, but if you see them pop up, here they are
 
 ---
 
@@ -101,6 +119,9 @@ You'll notice in this GIF, the frame rate and the time step rate are different.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pfiHFqnPLZ4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 notes:
+
+you can note if you try to follow the 15 or 30 FPS (frames per second) with your eye you see that it is jumpy
+
 24 fps is considered the absolute minimum necessary frequency so that people don't perceive individual frames.
 
 48 fps is widely considered so fast the human eye can't perceive any separation at all - but 60 fps is safer.
@@ -122,7 +143,7 @@ This youtube video actually only plays at 60FPS, so the 120 ball is kind of poin
 notes:
 Often people refer to these formats as 1k or 2k or 4k in graphics, referring to the number of pixels along the horizontal axis.
 
-While these are the most common formats today, there's a long history of a crazy variety of formats. Cinemascope had a ratio of 2.35:1 which was wider than modern wide screens. Also fun fact, it didn't have a resolution because it was film note digital. 
+While these are the most common formats today, there's a long history of a crazy variety of formats. Cinemascope had a ratio of 2.35:1 which was wider than modern wide screens. Also fun fact, it didn't have a resolution because it was film before? digital. 
 
 ---
 
@@ -149,6 +170,8 @@ All 3D geometry is represented as:
 
 <img src="images/points.png" width="600"/>
 
+notes: how do we represent geometry in space? one way is points...
+
 ---
 
 ## 3D Geometry
@@ -172,6 +195,8 @@ All 3D geometry is represented as:
 
 <img src="images/surfaces.png" width="600"/>
 
+notes: we can connect these points and images to make surfaces
+
 ---
 
 ## 3D Geometry
@@ -185,14 +210,21 @@ All 3D geometry is represented as:
 
 <img src="images/voxels.png" width="600"/>
 
+notes: or we can give the 3D surfaces some depth and make them into shapes
+
+here these 3D cubes are called "voxels" which are similar to 2D "pixels" but for volumes
+
 ---
 
 ## 3D Geometry
 
 <iframe src="https://player.vimeo.com/video/169599296?color=949494&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+Link: https://player.vimeo.com/video/169599296?color=949494&title=0&byline=0&portrait=0
+
 notes:
-As you can see, all of these can be converted from one to the other. And you can create lots of crazy permutations.
+
+You can convert between points, surfaces and volumes, ofthen to really cool effects like shown - you can get some bananas permutations.
 
 ---
 
@@ -250,6 +282,8 @@ Surfaces can be encoded as:
 notes:
 This is a NURBS sphere. You can see the control vertices are floating off the surface. Every patch on the surface is influenced by many of the neighboring points.
 
+Here if I wanted to deform this surface, I could pull at one of the blue points and the shape of the surface would change.
+
 ---
 
 ## 3D Geometry
@@ -279,6 +313,8 @@ Datasets with many fields called "attributes":
 notes:
 These transform attributes are the same for all objects.
 
+Recall we discussed some of these in earlier classes for 2D plots.  Same principle here.
+
 ---
 
 ## 3D Geometry
@@ -293,6 +329,8 @@ Datasets with many fields called "attributes":
 notes:
 shape attributes depend totally on what the shape is.
 
+These are something you won't really see in 2D unless you start modifying 2D shapes with some weird transforms.
+
 ---
 
 ## Rendering
@@ -300,6 +338,46 @@ shape attributes depend totally on what the shape is.
 Rendering is the process of flattening a 3-dimensional scene into a flat image.
 
 How do photographic cameras accomplish this?
+
+---
+
+## Photographic Rendering
+
+ 1. White light leaves a light source like the sun
+
+---
+
+## Photographic Rendering
+
+ 1. White light leaves a light source like the sun
+ 1. The light bounces off an object like a ball or a leaf, and inherits the object's color
+
+---
+
+## Photographic Rendering
+
+ 1. White light leaves a light source like the sun
+ 1. The light bounces off an object like a ball or a leaf, and inherits the object's color
+ 1. Colored light arrives at the camera lens
+
+---
+
+## Photographic Rendering
+
+ 1. White light leaves a light source like the sun
+ 1. The light bounces off an object like a ball or a leaf, and inherits the object's color
+ 1. Colored light arrives at the camera lens
+ 1. The camera lens directs the light to a specific location on the CCD sensor, effectively a pixel
+
+---
+
+## Photographic Rendering
+
+ 1. White light leaves a light source like the sun
+ 1. The light bounces off an object like a ball or a leaf, and inherits the object's color
+ 1. Colored light arrives at the camera lens
+ 1. The camera lens directs the light to a specific location on the CCD sensor, effectively a pixel
+ 1. The camera processor stores the color of the light at the location of the pixel
 
 ---
 
@@ -346,14 +424,18 @@ Houdini VEX path tracer
 
 <iframe src="https://player.vimeo.com/video/331150010" width="640" height="412" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
+Link: https://player.vimeo.com/video/331150010
+
 ---
 
 ## Raytracing
 
 Q: How does the renderer handle procedural (formula-driven) geometry?
+
 A: Micropolygon dicing
 
 Q: How does the renderer handle volumetric data that doesn't just "bounce"?
+
 A: Volume ray marching
 
 notes:
@@ -361,7 +443,7 @@ The renderer will divide interpolated or dense geometry into smaller and smaller
 
 In volume ray marching, a ray steps through a volume and accumulates opacity at regular intervals. Each interval generates a bounce to figure out lighting. Once it reaches 100% opacity, it stops ray marching.
 
---- 
+---
 
 ## Shaders
 
@@ -371,6 +453,10 @@ Shaders are code that tells the renderer what something looks like. There are ma
  1. Geometry Shaders
  1. Fragment or Pixel or Material Shaders
  1. Lens Shaders
+
+notes:
+
+basically, a shader tells a light ray that hits an object, "hey!" you hit something that is glass and so it should bend light like glass, or something like a leaf so it should be bumpy like a leaf
 
 ---
 
@@ -424,7 +510,7 @@ Shaders are code that tells the renderer what something looks like. There are ma
  1. Photographs have motion blur - use a motion blur algorithm
  1. Photographs have depth of field - use a depth of field algorithm
  1. Scenes need backgrounds - embed your dataset inside a contextual dataset
- 1. Indirect light is everywhere - use an ambient occlusion algorithm
+ 1. Indirect light is everywhere - use an "ambient occlusion" algorithm
 
 <img src="images/ambient.png" width="500"/>
 
@@ -472,11 +558,13 @@ It is meant to be more user-friendly than raw WebGL code.
 
 ---
 
-## SketchFab
+## SketchFab & ipyvolume
 
 SketchFab uses WebGL to render YOUR 3D data in a 3D viewport in a web browser. 
 
 [SketchFab.com](https://sketchfab.com)
+
+ipyvolume uses WebGL to render volumes to your jupyter notebook.
 
 ---
 
@@ -487,6 +575,10 @@ SketchFab uses WebGL to render YOUR 3D data in a 3D viewport in a web browser.
  * VisIt
  * VMD
  * Vapor
+ 
+ notes: there is a lot of overlap between what scientists & visual effects/special effects artists are trying to do, but their data formats are usually quite differnt
+ 
+ so far we've looked at "yt" for scientific viz
 
 ---
 
@@ -496,11 +588,15 @@ SketchFab uses WebGL to render YOUR 3D data in a 3D viewport in a web browser.
  * Maya - for animators
  * Houdini - for dynamics
 
+notes: we haven't covered any viz effects tools, but AJ will step in at the end of our class next week to talk about Houdini & show some fun things you can try
+
 ---
 
 ## Scientific Viz Tools VERSUS Visual Effects Tools
 
 <img src="images/versus.png" width="800"/>
+
+notes: here is a quick comparision chart to show key differences between yt like we've been using & a special effects tool like houdini
 
 ---
 
@@ -531,3 +627,8 @@ You will have 4 minutes to present your article to the class:
  * The final presentation is worth 10 points of your Part 3 project.
  * The dashboard+description is worth 15 points, and there are 5 extra credit points possible.
 
+---
+
+## Coding
+
+Onto some Javascript & volume rendering in Python!

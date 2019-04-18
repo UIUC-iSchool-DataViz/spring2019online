@@ -30,3 +30,8 @@ This week our objectives are: (1) understand how images are made from spatial da
    1. JS scripting in Idyll webpages
    1. How to add D3.js ideas into your webpage -> how to debug this process
    1. Volume rendering in Python
+
+
+# Extra resources
+ 
+  * pixar's [2 minute video about rendering](https://www.youtube.com/watch?v=NEzJH-JrAdw)
